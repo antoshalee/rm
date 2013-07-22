@@ -1,0 +1,174 @@
+!!!
+%html#n
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title Стартовая
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "keywords"}/
+    %meta{:content => "width=1024, user-scalable=yes", :name => "viewport"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %link{:href => "/assets/remix.css", :media => "screen,tv,projection,print", :rel => "stylesheet", :type => "text/css"}/
+    /[if lt IE 8] <link href="/assets/remix-ie.css" rel="stylesheet" media="screen,tv,projection,print" />
+    %script{:src => "/assets/html5shiv.js", :type => "text/javascript"}
+    %script{:src => "/assets/jq.js", :type => "text/javascript"}
+    %script{:src => "/assets/waypoints.min.js"}
+    %script{:src => "/assets/jquery.mCustomScrollbar.min.js", :type => "text/javascript"}
+    %script{:src => "/assets/jquery.magnific-popup.min.js"}
+    %script{:src => "/assets/jquery.bxslider.min.js"}
+    %script{:src => "/assets/jquery.validate.min.js"}
+    %script{:src => "/assets/remix.js", :type => "text/javascript"}
+    %link{:href => "/assets/remix-img-src.png", :rel => "image_src"}/
+    %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
+  %body.body-bkg
+    .page-wrp.page-width
+      .page-cntt
+        .redblueshadow.top-nav-mar
+          #top-nav.page-width
+            .s-black-bkg.top-nav-wrp
+              .top-nav.alt-font.jst-layout.page-margin
+                %ul.site-nav-col
+                  %li.site-nav-item
+                    .site-nav-link.top-nav-link.site-nav-link-pad
+                      %span.ib.relpos
+                        %a.white{:href => "/pages/jewelry-house.html"} О компании
+                        %span#about-drop-down-link.top-nav-link-arr-cnt
+                          %span.dd-barr-ico.ico
+                    %ul#about-drop-down-cnt.site-nav-col.top-nav-cnt.about-top-nav-cnt
+                      %li.site-nav-item
+                        %a.site-nav-link.site-nav-link-pad.white{:href => "/pages/news.html"} Новости
+                      %li.site-nav-item
+                        %a.site-nav-link.site-nav-link-pad.white{:href => "/pages/magazine.html"} Журнал
+                      %li.site-nav-item
+                        %a.site-nav-link.site-nav-link-pad.white{:href => "/pages/edu-center.html"} Ювелирная фабрика
+                      %li.site-nav-item
+                        %a.site-nav-link.site-nav-link-pad.white{:href => "/pages/contact.html"} Контактная информация
+                %ul.site-nav-col
+                  %li.site-nav-item
+                    %a.site-nav-link.top-nav-link.site-nav-link-pad.white{:href => "/pages/wedding-rings-center.html"} Центр обручальных колец
+                %ul.site-nav-col
+                  %li.site-nav-item
+                    %a.site-nav-link.site-nav-link-pad.top-nav-link.white{:href => "#"} Ювелирный дискаунтер
+                %ul.site-nav-col
+                  %li.site-nav-item
+                    %a.site-nav-link.site-nav-link-pad.top-nav-link.white.txd-n{:href => "#"}
+                      %span.txd-u Сеть магазинов
+                %ul.site-nav-col
+                  %li.site-nav-item
+                    %a.site-nav-link.site-nav-link-pad.top-nav-link.white{:href => "/pages/companies.html"} Для компаний
+                %ul.site-nav-col
+                  %li.site-nav-item
+                    %a.site-nav-link.top-nav-link.site-nav-link-pad.light-blue.txd-n{:href => "/pages/wholesale-dept.html"}
+                      %span.txd-u.f09.uc Оптовый отдел
+              / end top nav
+            / end s-black-bkg
+        .site-logo-header
+          %a.site-logo.site-logo-full{:href => "/remix-pre"}
+            %span.site-logo-i-cnt
+              %img.site-logo-i{:alt => "Ювелирный дом Ремикс", :src => "/i/logo.png"}/
+        / end site logo header
+        / main-menu
+        .main-menu.page-margin
+          %nav.main-menu-content.jst-layout
+            %a.main-menu-link{:href => "/pages/collection.html"} Коллекции
+            %span.main-menu-sep
+            %a.main-menu-link{:href => "/pages/actions.html"} Акции и скидки
+            %span.main-menu-sep
+            %a.main-menu-link{:href => "/pages/photo.html"} Фото и мероприятия
+            %span.main-menu-sep
+            %a.main-menu-link{:href => "/pages/jewelry-fashion-week.html"} Неделя ювелирной моды
+          .menu-top-deco-wrp
+            .menu-top-deco
+            .menu-top-left-deco
+            .menu-top-right-deco
+          .menu-center-deco-wrp
+            .menu-center-deco
+            .menu-center-left-deco
+            .menu-center-right-deco
+          .menu-bottom-deco-wrp
+            .menu-bottom-deco
+            .menu-bottom-left-deco
+            .menu-bottom-right-deco
+        = yield
+    %footer.page-ftr.page-width
+      .footer.s-black-bkg
+        / page-margin
+        .page-margin
+          / bottom menu
+          .bottom-menu.brd-bottom.gray20-brd.jst-layout
+            %a.bottom-menu-link.pl0{:href => "/pages/collection.html"} Коллекции
+            %span.bottom-menu-sep
+            %a.bottom-menu-link{:href => "/pages/actions.html"} Акции и скидки
+            %span.bottom-menu-sep
+            %a.bottom-menu-link{:href => "/pages/photo.html"} Фото и мероприятия
+            %span.bottom-menu-sep
+            %a.bottom-menu-link.pr0{:href => "#"} Неделя ювелирной моды
+          / end bottom menu
+          / site-nav
+          .site-nav.alt-font.jst-layout
+            %ul.site-nav-col
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/jewelry-house.html"} О компании
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/news.html"} Новости
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/magazine.html"} Журнал
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/edu-center.html"} Ювелирная фабрика
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "#"} Дизайн-студия
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/edu-center.html"} Учебный центр
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "#"} Сувенирная продукция
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/contact.html"} Контактная информация
+            %ul.site-nav-col
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/wedding-rings-center.html"} Центр обручальных колец
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/wedding-photo-shoot.html"} Свадебная фотосессия
+            %ul.site-nav-col
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "#"} Ювелирный дискаунтер
+            %ul.site-nav-col
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/store-adress.html"} Сеть магазинов
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/store-adress.html"} Адреса магазинов
+            %ul.site-nav-col
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/companies.html"} Для компаний
+            %ul.site-nav-col
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/wholesale-dept.html"} Оптовый отдел
+              %li.site-nav-item
+                %a.site-nav-link.white{:href => "/pages/collection.html"} Каталог продукции
+          / end site-nav
+          .gem-sep.gem-sep-gray20.mb18.mt8
+            %span.ico.gem-sep-ico
+          / footer contcat
+          .footer-contact.alt-font.brd-bottom.gray20-brd
+            %div г. Красноярск, ул. Перенсона, 23а
+            %div +7 (391) 227-06-27, info@af-remix.ru
+            .footer-contact-link-cnt
+              %a.white{:href => "#"} Контактная информация
+            %a.footer-logo{:href => "/remix-pre"}
+              %img.footer-logo-i{:alt => "Ремикс ювелирный дом", :src => "/i/logo-footer.png"}/
+          / end footer contcat
+          / footer-end
+          .footer-end.alt-font
+            %span.abspos.t0.l0.mt2 © Ремикс. 2013
+            Ювелирный дом «Ремикс» в соц. сетях
+            %a.ml4.va-m.ib{:href => "#", :rel => "nofollow", :target => "_blank"}
+              %span.ico.fb-ico-white
+            %a.ml4.va-m.ib{:href => "#", :rel => "nofollow", :target => "_blank"}
+              %span.ico.vk-ico-white
+            %a.ml4.va-m.ib{:href => "#", :rel => "nofollow", :target => "_blank"}
+              %span.ico.inst-ico-white
+            %span.abspos.t0.r0.mt2
+              Дизайн
+              %a.white{:href => "http://to-mars.com/", :rel => "nofollow", :target => "_blank"} to-mars.com
+          / end footer-end
+        / end page-margin
+      / footer s-black-bkg
+    / end page-ftr
