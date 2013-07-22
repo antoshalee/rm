@@ -1,0 +1,303 @@
+@charset "UTF-8";
+
+@media screen, tv, projection {
+
+/*-- basic --*/
+
+/*-- end basic --*/
+
+/*-- layout elements --*/
+
+.ns {
+  letter-spacing:-.3em;
+  word-spacing:-.3em;
+}
+
+.lb {
+  display: inline;
+  zoom: 1;
+}
+
+.jst-layout-after {
+  display: inline;
+  zoom: 1;
+  width: 100%;
+}
+
+.jst-layout {
+    zoom:expression(
+      runtimeStyle.zoom="1",
+      ii=createElement("span"),
+      ii.className="jst-layout-after",
+      appendChild(ii)
+    );
+}
+
+/*-- end layout elements --*/
+
+/*-- text --*/
+/*-- end text --*/
+
+/*-- site navigation --*/
+
+.top-nav {
+  margin: 0;
+}
+
+.site-nav-col {
+  margin: 0;
+  display: inline;
+  zoom: 1;
+}
+
+.site-nav-link {
+  display: inline;
+  zoom: 1;
+}
+
+.top-nav-cnt {
+  display: none;
+}
+
+.site-nav-link-select {
+  display: block;
+}
+
+/*-- end site navigation --*/
+
+/* главное меню */
+/*-- main menu --*/
+
+.menu-top-deco, .menu-bottom-deco {
+  background-image: url(/i/menu-deco/horizontal.png);
+}
+
+.menu-top-left-deco, .menu-top-right-deco, .menu-bottom-left-deco, .menu-bottom-right-deco {
+  background-image: url(/i/menu-deco/corners.png);
+}
+
+.menu-center-deco-wrp {
+  clip: rect(67px auto auto auto);
+}
+
+.menu-center-deco {
+  clip: rect(auto auto auto 64px);
+}
+
+.menu-center-left-deco, .menu-center-right-deco {
+  background-image: url(/i/menu-deco/left-right-vertical.png);
+}
+
+/*-- end main menu --*/
+
+/*-- footer --*/
+
+/* нижнее меню */
+/*-- bottom menu --*/
+
+.bottom-menu {
+  margin-bottom: 28px
+}
+
+
+/*-- end bottom menu --*/
+
+/*-- end footer --*/
+
+
+/*-- icons --*/
+
+.ico {
+  display: inline;
+  zoom: 1;
+}
+
+/*-- end icons --*/
+
+/*-- gem line separator --*/
+
+.gem-sep-before,.gem-sep-after {
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 50%;
+}
+
+.gem-sep-before {
+  left: -15px;
+}
+
+.gem-sep-after {
+  right: -15px;
+}
+
+.gem-sep-gray20 .gem-sep-before, .gem-sep-gray20 .gem-sep-after {
+  background-color: #302d29;
+}
+
+.gem-sep-gold .gem-sep-before, .gem-sep-gold .gem-sep-after {
+  background: #ccae62;
+}
+
+.gem-sep {
+    zoom:expression(
+      runtimeStyle.zoom="1",
+      elbef=createElement("span"),
+      elaft=createElement("span"),
+      elbef.className="gem-sep-before",
+      elaft.className="gem-sep-after",
+      appendChild(elbef),
+      appendChild(elaft)
+    );  
+}
+
+/*-- end gem line separator --*/
+
+/*-- dissolve accents --*/
+
+.dissolve-accent {
+  display: inline;
+  zoom: 1;
+}
+
+/*-- end dissolve accents --*/
+
+/* рамка с тенью вокруг изображения */
+/*-- image deco frame --*/
+
+.deco-frame {
+  display: inline;
+  zoom: 1;
+}
+
+/*-- end image deco frame --*/
+
+/*-- newsletters (inf pages) --*/
+
+/* newsletter page layout */
+
+/* колнка контента */
+.nl-content-col {
+  margin-right: 2%;
+}
+
+.nl-2col {
+  width: 47.5%;
+}
+
+/* end newsletter page layout */
+
+/*-- end newsletters (inf pages) --*/
+
+/* сетка товаров (коллекции)*/
+/*-- goods grid (collections) --*/
+
+.goods-grid-item {
+  border: 0;
+  display: inline;
+  width: 18%;
+  zoom: 1;
+}
+
+/*-- end goods grid (collections) --*/
+
+/* Элементы фотогалереий */
+/*-- photo elements --*/
+
+/* сетка фото-превью */
+/* photo grid */
+
+.ph-g-item, .ph-g-i-l {
+  display: inline;
+  zoom: 1;
+}
+
+/* end photo grid */
+
+/* черный фон для фото */
+.photo-bkg {
+  background-image: url(/i/bkg-photo-ptrn.jpg);
+}
+
+/* черный фон для золтой тени фото */
+.photo-shadow-bkg {
+  background-image: url(/i/bkg-photo-shadow-bkg.jpg);
+}
+
+/* верхняя тень для золотой тени фото */
+.photo-shadow-top-ptrn {
+  background-image: url(/i/bkg-photo-top-shadow-ptrn.jpg);
+}
+
+/*-- end photo elements --*/
+
+/* стартовая страница */
+/*-- start page --*/
+
+/* колонки превью новостей, акций, журанала */
+/* start page previews cols */
+
+.sp-previews {
+  letter-spacing:-.2em;
+  word-spacing:-.2em;  
+}
+
+.sp-pview-col {
+  display: inline;
+  zoom: 1;
+  
+  vertical-align: top;
+  letter-spacing:0;
+  word-spacing:0;  
+  
+}
+
+.sp-pview-gap {
+  display: inline;
+  width: 1%;
+  zoom: 1;
+}
+
+.sp-pview-col-mid {
+  display: inline;
+  zoom: 1;
+  
+  vertical-align: top;
+  letter-spacing:0;
+  word-spacing:0;  
+  
+}
+
+/* end start page previews cols */
+
+/* Адреса магазинов на стартовой странице */
+/* store address */
+
+.sp-address-item, .sp-address-item-highlight {
+  display: inline;
+  zoom: 1;
+}
+
+/* end store address */
+
+/*-- end start page --*/
+
+/*-- helpers --*/
+
+.cf {
+  zoom: 1;
+}
+
+/* display */
+
+.ib {display: inline; zoom: 1}
+.block {display: block}
+
+/* end display */
+
+/*-- end helpers --*/
+  
+}
+
+@media print {}
