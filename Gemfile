@@ -14,6 +14,8 @@ end
 
 group :development do
   gem 'letter_opener'
+  gem 'nifty-generators'
+  gem 'rb-readline'
 end
 
 # one more WYSIWYG. Use for frontend
@@ -44,3 +46,5 @@ gem 'capistrano'
 gem 'rvm-capistrano'
 gem 'figaro'
 gem 'delayed_job_active_record'
+
+gem "mocha", :group => :test
