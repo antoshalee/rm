@@ -1,0 +1,7 @@
+.text.nl-mb
+  %h2
+    = link_to article.title, article, class: %w(black thin-link)
+  .nl-date= l(article.created_at, format: '%d.%m.%Y')
+  != article.lead
+  %div
+    %img{:alt => "", :src => "/i/temp/socbtns.png"}/
