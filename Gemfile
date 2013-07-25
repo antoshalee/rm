@@ -15,7 +15,7 @@ end
 group :development do
   gem 'letter_opener'
   gem 'nifty-generators'
-  gem 'rb-readline'
+  gem 'rb-readline', '~> 0.4.2'
 end
 
 # one more WYSIWYG. Use for frontend

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725034508) do
+ActiveRecord::Schema.define(:version => 20130725043348) do
 
   create_table "actions", :force => true do |t|
     t.string   "title"
@@ -56,6 +56,22 @@ ActiveRecord::Schema.define(:version => 20130725034508) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "album_items", :force => true do |t|
+    t.string   "image"
+    t.integer  "album_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "album_items", ["album_id"], :name => "index_album_items_on_album_id"
+
+  create_table "albums", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "articles", :force => true do |t|
     t.string   "title"

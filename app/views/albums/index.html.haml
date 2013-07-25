@@ -1,0 +1,28 @@
+%h1.page-h-anim.txa-c Фото и мероприятия
+/ sub-menu
+.sub-menu.alt-font
+  %a.sub-menu-link.sub-menu-link-select.black{:href => "#"} Все мероприятия
+  %a.sub-menu-link.black{:href => "#"} Неделя ювелирной моды
+  %a.sub-menu-link.black{:href => "#"} Мероприятия оптового отдела
+  %a.sub-menu-link.black{:href => "#"} Интерьеры
+/ end sub-menu
+/ photo-bkg
+.photo-bkg
+  .photo-shadow-bkg
+    .photo-shadow-top-ptrn
+    .photo-shadow-gold
+  / page-margin
+  .page-margin.content-margin
+    - @albums.each_with_index do |album, i|
+      = render 'list_item', album: album
+      - unless i==(@albums.length-1)
+        .gem-sep.gem-sep-gray20.mb16
+          %span.ico.gem-sep-ico
+
+    .ph-showmore
+      %a.btn.btn-big.btn-big-gold.btn-big-gold-drksh.ph-showmore-btn Показать ещё
+      .ph-showmore-hr-txt.hr-txt.f16
+        %span.hr-txt-in.gem-sep-gold
+          %span.ph-showmore-sub-place.btn.btn-big
+  / end page-margin
+/ end photo-bkg

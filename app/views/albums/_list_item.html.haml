@@ -1,0 +1,29 @@
+.text.text-width.white
+  %h2.gold
+    = link_to album.title, album, class: %w(gold thin-link)
+  .nl-date= l(album.created_at, format: '%d.%m.%Y')
+  %p
+    С 11 по 19 октября в Красноярске прошла V юбилейная выставка-продажа «Неделя Ювелирной моды 2012».
+    %a.dot-link.white.pointer.hsb-link.hsb-link-hided{"data-hsb-block" => "nedauvmod"} Читать далее...
+  #nedauvmod.hsb-container
+    .hsb-content
+      %p
+        С 18 по 21 апреля 2013 года состоялась
+        = succeed "&nbsp;&mdash;" do
+          %a{:href => "#"} VII выставка «Ювелирный салон Сибири»
+        единственный проект ювелирной отрасли в Сибирском федеральном округе. По праву считаясь одним из знаковых событий в культурной жизни Красноярья, с каждым годом выставка привлекает внимание все большего числа ведущих ювелиров страны.
+      %p
+        В этом году специальным гостем стал ученый секретарь Мемориального фонда Карла Фаберже, полный кавалер ордена Карла Фаберже Валентин Скурлов.
+        = succeed "\u{412}\u{430}\u{43b}\u{435}\u{43d}\u{442}\u{438}\u{43d}" do
+          %br/
+        Васильевич выступил в качестве председателя наградной комиссии конкурса «Лучшее ювелирное украшение Сибири» и прочитал ряд лекций о традициях Фаберже в современном ювелирном искусстве.
+#photo-grid-02.photo-grid.photo-grid-minimized
+  .hsb-content
+    - album.album_items.each do |item|
+      .ph-g-item
+        %a.ph-g-i-l{:href => item.image.url, :title => ""}
+          %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
+.mb16
+  %a.onhoverlink.f16.pointer.js-phb-tggl.white{"data-gallery-id" => "photo-grid-02"}
+    %span.ico.show-photo-ico.mr4.js-btgl-icon
+    %span.dot-link.onhoverlink-signal.js-btgl-txt Смотреть все фото
