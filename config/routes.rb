@@ -1,5 +1,8 @@
 Remix::Application.routes.draw do
 
+  get "subscribe" => "subscriptions#new"
+  post "subscribe" => "subscriptions#create", as: :subscriptions
+
   root to: 'start#index'
 
   resources :articles, only: [:index, :show]

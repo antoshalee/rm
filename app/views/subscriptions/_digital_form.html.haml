@@ -1,0 +1,23 @@
+= form_for @subscription, html: {id: 'mag-subs-form-digital', class: 'form-in-mw na'} do |f|
+  = f.hidden_field :kind, value: 'paper'
+  .f-row
+    .f-wfield-col
+      .f-lbl-top-c
+        = f.label :name, class: 'f-lbl' do
+          = precede 'Ваше имя и фамилия' do
+            %span.gold *
+      = f.text_field :name, class: %w(f-t-field w100pc)
+      .f-remark.f-t-field-remark Например, Иван Петров
+  .f-row
+    .f-wfield-col
+      .f-lbl-top-c
+        = f.label :email, class: 'f-lbl' do
+          = precede 'Ваша электронная почта' do
+            %span.gold *
+      = f.text_field :email, class: %w(f-t-field w100pc)
+      .f-remark.f-t-field-remark Например, itsme@myemail.ru
+  .f-row.f-submit-sect-line.palegold-brd
+    %span.f-wfield-col.ib.va-m
+      %input.btn.btn-big.btn-big-gold{:type => "submit", :value => "Оформить подписку"}/
+    %span.gold.f13.ib.va-m.leading13
+      *Поля обязательные для заполнения

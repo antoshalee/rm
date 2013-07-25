@@ -1,0 +1,30 @@
+.h-section.page-h-anim.txa-c О компании
+.sub-menu.alt-font
+  %a.sub-menu-link.black{:href => "/pages/news.html"} Новости
+  %a.sub-menu-link.sub-menu-link-select.black{:href => "/pages/magazine.html"} Журнал
+  %a.sub-menu-link.black{:href => "/pages/edu-center.html"} Ювелирная фабрика
+  %a.sub-menu-link.black{:href => "/pages/contact.html"} Контактная информация
+.content-shadow.mb12
+.page-margin.content-margin.ns
+  .nl-content-col.lb
+    .text.text-width.nl-mb
+      %h1.rst.h-article Подписка
+      .nl-article-menu.alt-font
+        %a.nl-am-l.gray50{:href => "/pages/magazine.html"} Журнал
+        %a.nl-am-l.gray50 Подписка
+      %p
+        Начиная с 2007 года вопрос «где в Красноярске можно найти самый большой выбор элегантный классических и необычных дизайнерских украшений», перестал быть актуальным. Ведь именно в это время в самом сердце города свои двери открыл Ювелирный Дом «Ремикс».
+    .nl-top-message.text-width.alt-font
+      .f-lbl.mb6 Версия журнала
+      #mag-subs-form-select.ib.va-m
+        %a.btn.btn-sw.btn-sw-sel> Бумажная
+        %a.btn.btn-sw> Электронная
+      #mag-subs-form-digital-remark.f-remark.ml20.ib.va-m.na
+        Отправляется вам на электронную почту.
+        %br>/
+        Формат PDF.
+      = render 'paper_form'
+      = render 'digital_form'
+    :javascript
+      remix.magsubscribeform();
+  .nl-aside-col.lb
