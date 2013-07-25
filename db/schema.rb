@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725043348) do
+ActiveRecord::Schema.define(:version => 20130725053332) do
 
   create_table "actions", :force => true do |t|
     t.string   "title"
@@ -80,6 +80,27 @@ ActiveRecord::Schema.define(:version => 20130725043348) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "collection_items", :force => true do |t|
+    t.string   "article"
+    t.decimal  "weight"
+    t.string   "image"
+    t.integer  "collection_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "collection_items", ["collection_id"], :name => "index_collection_items_on_collection_id"
+
+  create_table "collections", :force => true do |t|
+    t.string   "title"
+    t.string   "price"
+    t.text     "description"
+    t.integer  "position"
+    t.string   "note"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

@@ -1,0 +1,9 @@
+%h1.txa-c.page-h-anim Коллекции
+.sub-menu.alt-font
+  %a.sub-menu-link.sub-menu-link-select.black{:href => "#"} Все коллекции
+  %a.sub-menu-link.black{:href => "#"} Центр обручальных колец
+  %a.sub-menu-link.black{:href => "#"} Ювелирный дискаунтер
+.content-shadow.mb12
+.page-margin.content-margin
+  - @collections.each do |collection|
+    = render 'list_item', collection: collection

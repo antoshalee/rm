@@ -1,0 +1,20 @@
+.goods-grid-hdr
+  %h2.goods-grid-h
+    %a.black.dot-link.pointer.hsb-link{"data-hsb-block" => "ubremix"}= collection.title
+  .f14.i= collection.price
+  #ubremix.hsb-container
+    .hsb-content
+      .alt-font.text-mini.text-bt-mr-cllp.text-width.bc.mt14
+        %p
+          != collection.description
+.goods-grid-cnt.alt-font
+  - collection.collection_items.each_slice(5) do |slice|
+    .goods-grid
+      - slice.each do |item|
+        .goods-grid-item.goods-grid-item-toview{"data-url" => "#{item.image.url}"}
+          .goods-grid-i-cnt
+            %img.goods-grid-i{:alt => "Изделие", :src => "#{item.image.thumb.url}"}/
+          .goods-grid-text.goods-grid-text-zoom-pad
+            %div Артикул: #{item.article}
+            %div Вес #{item.weight}
+            %span.ico.zoom-ico.goods-grid-text-zoom-ico

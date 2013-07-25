@@ -638,6 +638,7 @@ remix.DynamicImage = function () {
 
 // ссылка на большое фото изделия
 remix.GoodsGridFullViewLink = function(p) {
+  console.log('here')
 
   var GoodsGridFullViewLink = this,
       jqNode = p.jqNode, // jq объект ссылки-блока
