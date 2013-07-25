@@ -1,5 +1,7 @@
 Remix::Application.routes.draw do
 
+  get "wholesale" => "wholesale#index"
+
   get "subscribe" => "subscriptions#new"
   post "subscribe" => "subscriptions#create", as: :subscriptions
 

@@ -1,0 +1,228 @@
+%h1.page-h-anim.txa-c Оптовый отдел
+/ sub-menu
+.sub-menu.alt-font
+  %a.sub-menu-link.sub-menu-link-select.black{:href => "#"} Об отделе
+  %a.sub-menu-link.black{:href => "#"} Новости и мероприятия
+  %a.sub-menu-link.black{:href => "#"} Каталог продукции
+/ end sub-menu
+.content-shadow.mb12
+/ page-margin content-margin
+.page-margin.content-margin.ns
+  / nl-content-col
+  .nl-content-col.text.lb
+    .h-article Оптовый отдел
+    %p.nl-mb
+      Ювелирный дом «Ремикс» предлагает широкий ассортимент продукции из золота и серебра собственного производства и других ведущих производителей России.
+      %br/
+      Высокое качество, конкурентоспособные цены, изготовление изделий из давальческого сырья, льготные условия работы для постоянных партнеров — наши составляющие успеха. Мы ценим наших клиентов и приглашаем к сотрудничеству новых.
+    %h2 Поставщики
+    / scbl
+    .scbl
+      / nl-fixcol-cnt
+      .scbl-cnt.ns
+        = render partial: 'supplier', collection: @suppliers
+    .gem-sep.gem-sep-linen.nl-mb
+      %span.ico.gem-sep-ico
+    / nl-mb
+    .nl-mb
+      %h2.mb32 Благодарственные письма
+      .ns.txa-c
+        .col3.lb
+          .ib
+            .deco-frame.dark-brown-bkg
+              .deco-frame-i-brd
+                .deco-frame-i-shd
+                  %img.img-b{:alt => "", :src => "/i/temp/lttr/lttr1.jpg"}/
+            .deco-frame-title.letter-title.alt-font
+              ООО «Аквамарин»
+        .col3.lb
+          .deco-frame
+            .deco-frame-i-brd
+              .deco-frame-i-shd
+                %img.img-b{:alt => "", :src => "/i/temp/lttr/lttr2.jpg"}/
+          .deco-frame-title.letter-title.alt-font
+            Красносельский ювелирный завод «Диамант»
+        .col3.lb
+          .deco-frame
+            .deco-frame-i-brd
+              .deco-frame-i-shd
+                %img.img-b{:alt => "", :src => "/i/temp/lttr/lttr3.jpg"}/
+          .deco-frame-title.letter-title.alt-font
+            РЮС «Алмаз» г. Иркутск
+    / end nl-mb
+    .gem-sep.gem-sep-linen.nl-mb
+      %span.ico.gem-sep-ico
+    / text
+    .nl-mb
+      %h2 География
+      %p
+        У нас крупная сеть распространения ювелирных изделий Мы стремимся расширять свою сеть распространения ювелирных изделий по городам. Ниже представлены основные города, в которые поставляется наша продукция на сегодняшний день.
+      / nl-4col-cnt
+      .nl-4col-cnt.ns.mt26.text-mini.alt-font
+        / nl-4col
+        .nl-4col.lb
+          %span.b Красноярский край
+          %br/
+          Назарово
+          %br/
+          Ужур
+          %br/
+          Лесосибирск
+          %br/
+          Северо-Енисейск
+          %br/
+          Енисейск
+          %br/
+          Канск
+          %br/
+          Ачинск
+          %br/
+          Козулька
+          %br/
+          Боготол
+          %br/
+          Новоселово
+          %br/
+          Богучаны
+          %br/
+          Шарыпово
+        / end nl-4col
+        / nl-4col
+        .nl-4col.lb
+          Зеленогорск
+          %br/
+          Железногорск
+          %br/
+          Дивногорск
+          %br/
+          %br/
+          %span.b Иркутская область
+          %br/
+          Иркутск
+          %br/
+          Тайшет
+          %br/
+          Саянск
+          %br/
+          Ангарск
+          %br/
+          Братск
+          %br/
+          Зима
+          %br/
+          Нижнеудинск
+          %br/
+          Усолье-Сибирское
+        / end nl-4col
+        / nl-4col
+        .nl-4col.lb
+          Устидимск
+          %br/
+          Желеногорск-Илимский
+          %br/
+          Киренск
+          %br/
+          %br/
+          %span.b Республика Хакасия
+          %br/
+          Абакан
+          %br/
+          Саяногорск
+          %br/
+          Черногорск
+          %br/
+          Шира
+          %br/
+          Аскиз
+          %br/
+          Абаза
+          %br/
+          %br/
+          %span.b Республика Тыва
+        / end nl-4col
+        / nl-4col
+        .nl-4col.lb
+          %span.b Кемеровская область
+          %br/
+          Кемерово
+          %br/
+          Анджеросунденск
+          %br/
+          Новокузнецк
+          %br/
+          Прокольевск
+          %br/
+          %br/
+          %span.b Хабаровский край
+          %br/
+          Хабаровск
+          %br/
+          Поронайск
+          %br/
+          %br/
+          %span.b Примроский край
+          %br/
+          Владивосток
+          %br/
+          Артём
+        / end nl-4col
+      / end nl-4col-cnt
+    / end text
+  / end nl-content-col
+  / nl-aside-col
+  .nl-aside-col.lb
+    %h2.aside-hdr.tb-brd.gold-brd.alt-font.gold
+      Наши менеджеры
+    / human-item
+    .human-item.txa-c
+      .human-i-cnt
+        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr1.jpg"}/
+      .human-name
+        Леонова Ирина Юрьевна
+      .human-title.alt-font
+        руководитель оптового отдела
+        %br/
+        +7 (391) 227-84-01
+        %br/
+        %a{:href => "mailto:lia@af-remix.ru"} lia@af-remix.ru
+    / end human-item
+    / human-item
+    .human-item.txa-c
+      .human-i-cnt
+        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr2.jpg"}/
+      .human-name
+        Чакова Светлана Николаевна
+      .human-title.alt-font
+        старший менеджер оптового отдела
+        %br/
+        +7 (391) 227-84-01
+        %br/
+        %a{:href => "mailto:lsnc@af-remix.ru"} snc@af-remix.ru
+    / end human-item
+    / human-item
+    .human-item.txa-c
+      .human-i-cnt
+        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr3.jpg"}/
+      .human-name
+        Мамонтова Елена Геннадьевна
+      .human-title.alt-font
+        менеджер оптового отдела
+        %br/
+        +7 (391) 227-84-01
+        %br/
+        %a{:href => "mailto:meg@af-remix.ru"} meg@af-remix.ru
+    / end human-item
+    / human-item
+    .human-item.txa-c
+      .human-i-cnt
+        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr4.jpg"}/
+      .human-name
+        Козлова Юлия Владимировна
+      .human-title.alt-font
+        менеджер оптового отдела
+        %br/
+        +7 (391) 227-84-01
+        %br/
+        %a{:href => "mailto:jk@af-remix.ru"} jk@af-remix.ru
+    / end human-item
+  / end nl-aside-col
