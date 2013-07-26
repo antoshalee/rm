@@ -1843,34 +1843,27 @@ remix.feedBackForm = function () {
   var feedBackSuccess = $('<div class="feedback-form-success ib ml20 na">Спасибо! Ваш отзыв принят.</div>');
   $('#feedback-form-sbmt-cnt').append(feedBackSuccess);
 
+    // произошла успешная отправка формы с подтверждением от сервера
+  feedBackForm.on('ajax:success', function() {
+    feedBackSuccess.removeClass('na'); // показать сообщение об отправке отзыва
+  })
+
 	// валидация формы подписки на электронную версию
 	var validator = feedBackForm.validate({
 
      rules: {
-       feedbackName: {required: true}, // имя и фамилия
-       feedbackEmail: {required: true, email: true}, // электронная почта
-       feedbackMessage: {required: true} // текст отзыва
+       "feedback[name]": {required: true}, // имя и фамилия
+       "feedback[email]": {required: true, email: true}, // электронная почта
+       "feedback[text]": {required: true} // текст отзыва
      },
 
      messages: {
-       feedbackName: 'Не указано имя',
-       feedbackEmail: 'Неправильный адрес электронной почты',
-       feedbackMessage: 'Нет отзыва'
+       "feedback[name]": 'Не указано имя',
+       "feedback[email]": 'Неправильный адрес электронной почты',
+       "feedback[text]": 'Нет отзыва'
      },
 
      errorClass: 'f-error', // css-класс сообщений об ошибках
-
-     // запретить срабатывание валидации при вводе данных в поле
-     onkeyup:function(){
-     },
-
-      submitHandler: function(form) {
-      if (validator.valid()) {
-        feedBackSuccess.removeClass('na'); // показать сообщение об отправке отзыва
-        //form.submit();
-      }
-
-     }
 
 	 });
 
