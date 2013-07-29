@@ -1,7 +1,8 @@
 class OffersController < ApplicationController
   def index
-    @main_offer = Offer.main.first
-    @offers = Offer.common
+    base = (params[:tag].present? ? Offer.tagged_with(params[:tag]) : Offer)
+    @main_offer = base.main.first
+    @offers = base.common
   end
 
   def show

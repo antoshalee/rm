@@ -18,7 +18,11 @@ Remix::Application.routes.draw do
   resources :articles, only: [:index, :show]
   resources :albums, only: [:index, :show]
   resources :collections, only: [:index]
-  resources :offers, only: [:index, :show]
+  resources :offers, only: [:index, :show] do
+    collection do
+      get 'tag/:tag', action: :index, as: :tag
+    end
+  end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
