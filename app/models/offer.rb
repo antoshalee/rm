@@ -1,6 +1,7 @@
 class Offer < ActiveRecord::Base
-  attr_accessible :date_start, :date_finish, :lead, :content, :title, :image, :is_main
+  attr_accessible :date_start, :date_finish, :lead, :content, :title, :image, :is_main, :tag_list
   mount_uploader :image, OfferImageUploader
+  acts_as_taggable
 
   after_initialize :set_default_values
   after_commit :on_after_commit_handler

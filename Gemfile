@@ -46,5 +46,7 @@ gem 'capistrano'
 gem 'rvm-capistrano'
 gem 'figaro'
 gem 'delayed_job_active_record'
+gem 'acts-as-taggable-on'
+gem 'rails3-jquery-autocomplete'
 
 gem "mocha", :group => :test

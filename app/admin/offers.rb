@@ -17,6 +17,7 @@ ActiveAdmin.register Offer do
       f.input :lead, :input_html => {rows: 4}
       f.input :content, as: :ckeditor
       f.input :image
+      f.input :tag_list
     end
 
     f.buttons
@@ -29,6 +30,7 @@ ActiveAdmin.register Offer do
       row :date_finish
       row :lead
       row :content
+      row :tag_list
       row :image do |a|
         image_tag a.image.url
       end

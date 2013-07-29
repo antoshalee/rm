@@ -20,3 +20,4 @@ ru:
         date_start: 'Дата начала'
         date_finish: 'Дата завершения'
         is_main: 'Главная?'
+        tag_list: 'Теги'

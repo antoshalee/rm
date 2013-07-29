@@ -50,6 +50,8 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.4.1)
+      rails (>= 3, < 5)
     acts_as_list (0.2.0)
       activerecord (>= 3.0)
     addressable (2.3.5)
@@ -193,6 +195,8 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails3-jquery-autocomplete (1.0.11)
+      rails (~> 3.0)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -259,6 +263,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin (~> 0.6.0)
   activeadmin-sortable
+  acts-as-taggable-on
   acts_as_list
   aws-sdk
   capistrano
@@ -281,6 +286,7 @@ DEPENDENCIES
   nifty-generators
   pg
   rails (= 3.2.13)
+  rails3-jquery-autocomplete
   rb-readline (~> 0.4.2)
   rmagick (~> 2.13.2)
   russian
