@@ -3473,24 +3473,24 @@ cf:after {
 
 @font-face {
     font-family: 'Playfair Display';
-    src: url('/fonts/playfairdisplay-regular.woff') format('woff'),
-         url('/fonts/playfairdisplay-regular.ttf') format('truetype');
+    src: url('/assets/playfairdisplay-regular.woff') format('woff'),
+         url('/assets/playfairdisplay-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Playfair Display';
-    src: url('/fonts/playfairdisplay-bold.woff') format('woff'),
-         url('/fonts/playfairdisplay-bold.ttf') format('truetype');
+    src: url('/assets/playfairdisplay-bold.woff') format('woff'),
+         url('/assets/playfairdisplay-bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Playfair Display';
-    src: url('/fonts/playfairdisplay-italic.woff') format('woff'),
-         url('/fonts/playfairdisplay-italic.ttf') format('truetype');
+    src: url('/assets/playfairdisplay-italic.woff') format('woff'),
+         url('/assets/playfairdisplay-italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
