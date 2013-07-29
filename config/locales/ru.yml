@@ -6,3 +6,17 @@ ru:
         few: 'Новости'
         many: 'Новостей'
         other: 'Новости'
+      offer:
+        one: 'Акция'
+        few: 'Акции'
+        many: 'Акция'
+        other: 'Акции'
+    attributes:
+      offer:
+        title: 'Заголовок'
+        lead: 'Вводный текст'
+        content: 'Полный текст'
+        image: 'Изображение'
+        date_start: 'Дата начала'
+        date_finish: 'Дата завершения'
+        is_main: 'Главная?'

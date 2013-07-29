@@ -1,6 +1,7 @@
 class OffersController < ApplicationController
   def index
-    @offers = Offer.all
+    @main_offer = Offer.main.first
+    @offers = Offer.common
   end
 
   def show

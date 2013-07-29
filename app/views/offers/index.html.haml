@@ -10,21 +10,21 @@
 .page-margin.content-margin.ns
   / nl-content-col
   .nl-content-col.lb
-    / nl-top-message
-    .nl-top-message
-      %a.black.onhoverlink.block{:href => "/pages/action.html"}
-      %h2.nl-top-mes-pad
-        «
-        %span.onhoverlink-signal.thin-link> Выиграй свадебное путешествие в Париж
-        »
-      .nl-date.nl-top-mes-pad Срок проведения: с 1.01.2013–10.05.2013
-      .nl-i-cnt.onhover-op
-        %img.img-b{:alt => "", :src => "/i/temp/nlpic1.jpg"}/
-      .text.nl-top-mes-pad
-        %p
-          С 1 марта 2012 года стартовала акция «Выиграй свадебное путешествие в Париж» среди пар, купивших обручальные кольца в сети ювелирных салонов «Ремикс». Розыгрыш состоится 28 сентября 2012 года на телеканале СТС-Прима в программе «Детали»
-      .f16
-        %a.thin-link{:href => "/pages/action.html"} Читать условия акции
+    - if @main_offer
+      .nl-top-message
+        %a.black.onhoverlink.block{:href => "/pages/action.html"}
+        %h2.nl-top-mes-pad
+          «
+          %span.onhoverlink-signal.thin-link>= @main_offer.title
+          »
+        .nl-date.nl-top-mes-pad Срок проведения: с #{l(@main_offer.date_start)}–#{l(@main_offer.date_finish)}
+        .nl-i-cnt.onhover-op
+          = image_tag @main_offer.image.url, class: 'img-b'
+        .text.nl-top-mes-pad
+          %p
+            = @main_offer.lead
+        .f16
+          %a.thin-link{:href => "/pages/action.html"} Читать условия акции
     - lines_count = (@offers.length+1)/2
     - @offers.each_slice(2).with_index do |slice, slice_index|
       .nl-2col-cnt.nl-mb.ns
