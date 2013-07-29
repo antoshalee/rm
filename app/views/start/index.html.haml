@@ -8,12 +8,6 @@
               .intro-text-va-m
                 != banner.text
             %img.intro-slider-i{:alt => "", :src => banner.image.url}/
-      / %div
-      /   %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-02.jpg"}/
-      / %div
-      /   %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-03.jpg"}/
-      / %div
-      /   %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-04.jpg"}/
 .page-margin
   .main-menu-margin
     .sp-previews
@@ -44,37 +38,7 @@
       / end sp-pview-col
       .sp-pview-gap
       / sp-pview-col-mid
-      .sp-pview-col-mid.sp-promos-bkg
-        / sp-promos
-        .sp-promos
-          .sp-shdr.rbrown.hr-txt
-            %span.hr-txt-in.gem-sep-rbrown Акция
-          / start-actions
-          #sp-promos-slides.sp-promos-slides
-            .slider-content
-              %a.sp-promos-link.onhoverlink{:href => "/pages/actions.html"}
-              .sp-promos-hdr
-                «
-                %span.onhoverlink-signal.white.thin-link> Моя греческая свадьба
-                »
-              .sp-promos-i-cnt
-                %img.sp-promos-i{:alt => "", :src => "/i/temp/actions-slider/greek.jpg"}/
-              %a.sp-promos-link.onhoverlink{:href => "/pages/actions.html"}
-              .sp-promos-hdr
-                «
-                %span.onhoverlink-signal.white.thin-link> Моя римская свадьба
-                »
-              .sp-promos-i-cnt
-                %img.sp-promos-i{:alt => "", :src => "/i/temp/actions-slider/rome.jpg"}/
-              %a.sp-promos-link.onhoverlink{:href => "/pages/actions.html"}
-              .sp-promos-hdr
-                «
-                %span.onhoverlink-signal.white.thin-link> Моя египетская свадьба
-                »
-              .sp-promos-i-cnt
-                %img.sp-promos-i{:alt => "", :src => "/i/temp/actions-slider/egypt.jpg"}/
-          / end start-actions
-        / end sp-promos
+      = render 'offers_slider'
       / end sp-pview-col-mid
       .sp-pview-gap
       / sp-pview-col
