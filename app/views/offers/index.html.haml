@@ -24,7 +24,7 @@
           %p
             = @main_offer.lead
         .f16
-          %a.thin-link{:href => "/pages/action.html"} Читать условия акции
+          = link_to 'Читать условия акции', @main_offer, class: 'thin-link'
     - lines_count = (@offers.length+1)/2
     - @offers.each_slice(2).with_index do |slice, slice_index|
       .nl-2col-cnt.nl-mb.ns
@@ -41,7 +41,7 @@
             .text
               %p= offer.lead
             .f16
-              %a.thin-link{:href => "/pages/action.html"} Читать условия акции
+            = link_to 'Читать условия акции', offer, class: 'thin-link'
       - if slice_index < (lines_count-1)
         .gem-sep.gem-sep-linen.nl-mb
           %span.ico.gem-sep-ico
