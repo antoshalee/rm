@@ -11,6 +11,10 @@ ru:
         few: 'Акции'
         many: 'Акция'
         other: 'Акции'
+      banner:
+        one: 'Банер'
+        few: 'Банера'
+        other: 'Банеры'
     attributes:
       offer:
         title: 'Заголовок'
@@ -21,3 +25,6 @@ ru:
         date_finish: 'Дата завершения'
         is_main: 'Главная?'
         tag_list: 'Теги'
+      banner:
+        image: 'Изображение'
+        text: 'Текст'

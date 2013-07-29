@@ -1,22 +1,19 @@
 .page-margin
   .intro-slider.intro-slider-offset.main-menu-margin.wideslider
     .slider-content
-      %div
-        .relpos.ovh
-          .intro-text
-            .intro-text-va-m
-              Добро пожаловать
-              %br>/
-              на сайт Ювелирного
-              %br>/
-              дома «Ремикс»
-          %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-01.jpg"}/
-      %div
-        %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-02.jpg"}/
-      %div
-        %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-03.jpg"}/
-      %div
-        %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-04.jpg"}/
+      - @banners.each do |banner|
+        %div
+          .relpos.ovh
+            .intro-text
+              .intro-text-va-m
+                != banner.text
+            %img.intro-slider-i{:alt => "", :src => banner.image.url}/
+      / %div
+      /   %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-02.jpg"}/
+      / %div
+      /   %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-03.jpg"}/
+      / %div
+      /   %img.intro-slider-i{:alt => "", :src => "/i/temp/intro-slider/intro-slider-i-04.jpg"}/
 .page-margin
   .main-menu-margin
     .sp-previews
