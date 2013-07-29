@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    models:
+      article:
+        one: 'Новость'
+        few: 'Новости'
+        many: 'Новостей'
+        other: 'Новости'

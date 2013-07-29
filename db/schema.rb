@@ -13,17 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130725121034) do
 
-  create_table "actions", :force => true do |t|
-    t.string   "title"
-    t.date     "date_start"
-    t.date     "date_finish"
-    t.text     "lead"
-    t.text     "content"
-    t.string   "image"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
     t.string   "resource_type", :null => false
@@ -109,6 +98,17 @@ ActiveRecord::Schema.define(:version => 20130725121034) do
     t.text     "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "offers", :force => true do |t|
+    t.string   "title"
+    t.date     "date_start"
+    t.date     "date_finish"
+    t.text     "lead"
+    t.text     "content"
+    t.string   "image"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "subscriptions", :force => true do |t|

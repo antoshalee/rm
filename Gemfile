@@ -33,7 +33,7 @@ gem 'fog', '~> 1.7.0'
 gem 'aws-sdk'
 gem 'unicorn'
 # gem 'mini_magick'
-gem "rmagick"
+gem "rmagick", '~> 2.13.2'
 gem 'haml'
 gem 'russian'
 gem 'globalize3'

@@ -1,0 +1,85 @@
+%h1.txa-c.page-h-anim Акции и скидки
+/ sub-menu
+.sub-menu.alt-font
+  %a.sub-menu-link.sub-menu-link-select.black{:href => "#"} Все акции и скидки
+  %a.sub-menu-link.black{:href => "#"} Ювелирный дом
+  %a.sub-menu-link.black{:href => "#"} Сеть магазинов «Ремикс»
+/ end sub-menu
+.content-shadow.mb12
+/ page-margin content-margin
+.page-margin.content-margin.ns
+  / nl-content-col
+  .nl-content-col.lb
+    / nl-top-message
+    .nl-top-message
+      %a.black.onhoverlink.block{:href => "/pages/action.html"}
+      %h2.nl-top-mes-pad
+        «
+        %span.onhoverlink-signal.thin-link> Выиграй свадебное путешествие в Париж
+        »
+      .nl-date.nl-top-mes-pad Срок проведения: с 1.01.2013–10.05.2013
+      .nl-i-cnt.onhover-op
+        %img.img-b{:alt => "", :src => "/i/temp/nlpic1.jpg"}/
+      .text.nl-top-mes-pad
+        %p
+          С 1 марта 2012 года стартовала акция «Выиграй свадебное путешествие в Париж» среди пар, купивших обручальные кольца в сети ювелирных салонов «Ремикс». Розыгрыш состоится 28 сентября 2012 года на телеканале СТС-Прима в программе «Детали»
+      .f16
+        %a.thin-link{:href => "/pages/action.html"} Читать условия акции
+    - lines_count = (@offers.length+1)/2
+    - @offers.each_slice(2).with_index do |slice, slice_index|
+      .nl-2col-cnt.nl-mb.ns
+        - slice.each do |offer|
+          .nl-2col.lb
+            %a.black.onhoverlink.block{:href => "/pages/action.html"}
+            .nl-i-cnt.onhover-op
+              = image_tag offer.image.url, class: 'img-b'
+            %h2
+              «
+              %span.thin-link.onhoverlink-signal>= offer.title
+              »
+            .nl-date-mini Срок проведения: с #{l(offer.date_start)}–#{l(offer.date_finish)}
+            .text
+              %p= offer.lead
+            .f16
+              %a.thin-link{:href => "/pages/action.html"} Читать условия акции
+      - if slice_index < (lines_count-1)
+        .gem-sep.gem-sep-linen.nl-mb
+          %span.ico.gem-sep-ico
+
+  / nl-aside-col
+  .nl-aside-col.lb
+    %h2.aside-hdr.tb-brd.gold-brd.alt-font
+      %a.thin-link.gold{:href => "#"} Cкидки
+    .nl-aside-item.nl-aside-item-brd
+      %a.onhoverlink.block.black{:href => "#"}
+      .onhover-op
+        %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/action2.jpg"}/
+      %h3
+        %span.onhoverlink-signal.thin-link Подарочные карты
+      .text-mini.alt-font.onhoverlink-signal
+        Дисконтная система ювелирного Дома «Ремикс», разработана специально для Вашей выгоды, удобства и индивидуальности!
+    .nl-aside-item.nl-aside-item-brd.onhoverlink.block.black
+      %a.onhoverlink.block.black{:href => "#"}
+      .onhover-op
+        %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/action1.jpg"}/
+      %h3
+        %span.onhoverlink-signal.thin-link 20% скидка именинникам
+      .text-mini.alt-font.onhoverlink-signal
+        Скидка 20% предоставляется при покупке украшения в месяц Вашего рождения. и индивидуальности!
+    .nl-aside-item.nl-aside-item-brd
+      %a.onhoverlink.block.black{:href => "#"}
+      .onhover-op
+        %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/action3.jpg"}/
+      %h3
+        %span.onhoverlink-signal.thin-link Дисконтаня система
+      .text-mini.alt-font.onhoverlink-signal
+        Дисконтная система ювелирного Дома «Ремикс», разработана специально для Вашей выгоды, удобства и индивидуальности!
+    .nl-aside-item.nl-aside-item-brd
+      %a.onhoverlink.block.black{:href => "#"}
+      .onhover-op
+        %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/action4.jpg"}/
+      %h3
+        %span.onhoverlink-signal.thin-link Владельцам банкосвских карт
+      .text-mini.alt-font.onhoverlink-signal
+        Скидка 20% предоставляется при покупке украшения в месяц Вашего рождения. и индивидуальности!
+  / end nl-aside-col

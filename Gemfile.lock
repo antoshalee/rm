@@ -282,7 +282,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.13)
   rb-readline (~> 0.4.2)
-  rmagick
+  rmagick (~> 2.13.2)
   russian
   rvm-capistrano
   sass-rails (~> 3.2.3)
