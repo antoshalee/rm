@@ -12,29 +12,7 @@
   .main-menu-margin
     .sp-previews
       / sp-pview-col
-      .sp-pview-col.sp-news-brd
-        / news preview
-        .sp-news
-          .sp-shdr.gold.hr-txt
-            %span.hr-txt-in.gem-sep-gold Новости
-          .relpos
-            #sp-news
-              - @last_articles.each do |article|
-                .w100pc.fl
-                  .sp-news-date= l(article.created_at, format: '%d.%m.%Y')
-                  .sp-news-txt
-                    .sp-news-txt-in
-                      = link_to article, class: %w(black thin-link) do
-                        = article.lead
-            / end sp-news
-            #sp-news-left.sp-news-left
-            #sp-news-right.sp-news-right
-          / red relpos
-          .gem-sep.gem-sep-gold.sp-news-gem-sep
-            %span.ico.gem-sep-ico
-          .sp-news-all-link
-            = link_to 'Все новости', articles_path, class: %w(thin-link black)
-        / end news preview
+      = render 'articles_slider'
       / end sp-pview-col
       .sp-pview-gap
       / sp-pview-col-mid
