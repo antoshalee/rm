@@ -64,6 +64,7 @@ module Remix
     config.assets.precompile += %w[active_admin.js
         admin_frontend.js
         remix-ie.css
+        additional.css
         ckeditor/plugins/mediaembed/plugin.js]
   end
 end
