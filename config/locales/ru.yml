@@ -12,6 +12,12 @@ ru:
         few: 'Новости'
         many: 'Новостей'
         other: 'Новости'
+      collection:
+        one: 'Коллекция'
+        other: 'Коллекции'
+      collection_item:
+        one: 'Украшение'
+        other: 'Украшения'
       offer:
         one: 'Акция'
         few: 'Акции'
@@ -36,6 +42,15 @@ ru:
         content: 'Полный текст'
         image: 'Изображение'
         created_at: 'Создана'
+      collection:
+        title: 'Название'
+        price: 'Цена'
+        description: 'Описание'
+        note: 'Примечание'
+      collection_item:
+        image: 'Изображение'
+        article: 'Артикул'
+        weight: 'Вес'
       feedback:
         name: 'Имя'
         email: 'Электронная почта'
