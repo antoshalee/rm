@@ -1,8 +1,8 @@
 %h1.txa-c.page-h-anim Коллекции
 .sub-menu.alt-font
-  %a.sub-menu-link.sub-menu-link-select.black{:href => "#"} Все коллекции
-  %a.sub-menu-link.black{:href => "#"} Центр обручальных колец
-  %a.sub-menu-link.black{:href => "#"} Ювелирный дискаунтер
+  %a.sub-menu-link.black{:href => collections_path, class: (params[:tag].present? ? nil : 'sub-menu-link-select')} Все коллекции
+  - Collection.tag_counts.each do |tag|
+    %a.sub-menu-link.black{href: tag_collections_path(tag.name), class: (params[:tag]==tag.name ? 'sub-menu-link-select' : nil)}= tag.name
 .content-shadow.mb12
 .page-margin.content-margin
   - @collections.each do |collection|

@@ -15,6 +15,7 @@ ActiveAdmin.register Collection do
       f.input :price
       f.input :description
       f.input :note, hint: 'Это поле будет отображаться в виде ленточки(например, со ссылкой на акцию)'
+      f.input :tag_list
     end
 
     f.has_many :collection_items do |item|
@@ -34,6 +35,7 @@ ActiveAdmin.register Collection do
       row :price
       row :description
       row :note
+      row :tag_list
     end
     panel("Украшения") do
       table_for(collection.collection_items) do

@@ -17,7 +17,11 @@ Remix::Application.routes.draw do
 
   resources :articles, only: [:index, :show]
   resources :albums, only: [:index, :show]
-  resources :collections, only: [:index]
+  resources :collections, only: [:index] do
+    collection do
+      get 'tag/:tag', action: :index, as: :tag
+    end
+  end
   resources :offers, only: [:index, :show] do
     collection do
       get 'tag/:tag', action: :index, as: :tag

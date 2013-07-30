@@ -47,6 +47,7 @@ ru:
         price: 'Цена'
         description: 'Описание'
         note: 'Примечание'
+        tag_list: 'Теги'
       collection_item:
         image: 'Изображение'
         article: 'Артикул'

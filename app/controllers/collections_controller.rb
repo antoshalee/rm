@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController
   def index
-    @collections = Collection.all
+    @collections = (params[:tag].present? ? Collection.tagged_with(params[:tag]) : Collection.all)
   end
 
   def show
