@@ -16,6 +16,11 @@ ru:
         few: 'Банера'
         other: 'Банеры'
     attributes:
+      article:
+        title: 'Заголовок'
+        lead: 'Вводный текст'
+        content: 'Полный текст'
+        image: 'Изображение'
       offer:
         title: 'Заголовок'
         lead: 'Вводный текст'
