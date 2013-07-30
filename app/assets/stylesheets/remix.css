@@ -1683,9 +1683,9 @@ table:not([class]) tr:nth-child(even) {
 
 /*контейнер просмотра большой картники*/
 .goods-grid-item-full-view {
-  -moz-box-shadow: 0 5px 27px rgba(94,59,0,45);
-  -weblit-box-shadow: 0 5px 27px rgba(94,59,0,45);
-  box-shadow: 0 5px 27px rgba(94,59,0,45);
+  -moz-box-shadow: 0 5px 27px rgba(94,59,0,0.45);
+  -weblit-box-shadow: 0 5px 27px rgba(94,59,0,0.45);
+  box-shadow: 0 5px 27px rgba(94,59,0,0.45);
   /*cursor: pointer;*/
   position: absolute;
   z-index: 199;
