@@ -21,6 +21,9 @@ ru:
         one: 'Банер'
         few: 'Банера'
         other: 'Банеры'
+      feedback:
+        one: 'Отзыв'
+        other: 'Отзывы'
     attributes:
       album:
         title: 'Заголовок'
@@ -33,6 +36,11 @@ ru:
         content: 'Полный текст'
         image: 'Изображение'
         created_at: 'Создана'
+      feedback:
+        name: 'Имя'
+        email: 'Электронная почта'
+        text: 'Текст'
+        created_at: 'Дата создания'
       offer:
         title: 'Заголовок'
         lead: 'Вводный текст'
