@@ -8,8 +8,10 @@
     %meta{:content => "width=1024, user-scalable=yes", :name => "viewport"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %link{:href => "/assets/remix.css", :media => "screen,tv,projection,print", :rel => "stylesheet", :type => "text/css"}/
+    = stylesheet_link_tag :additional
     /[if lt IE 8] <link href="/assets/remix-ie.css" rel="stylesheet" media="screen,tv,projection,print" />
     = javascript_include_tag :application
+    = yield :javascripts
     %link{:href => "/assets/remix-img-src.png", :rel => "image_src"}/
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
   %body.body-bkg

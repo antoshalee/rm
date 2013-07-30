@@ -3,5 +3,10 @@
     = link_to article.title, article, class: %w(black thin-link)
   .nl-date= l(article.created_at, format: '%d.%m.%Y')
   != article.lead
-  %div
-    %img{:alt => "", :src => "/i/temp/socbtns.png"}/
+  .social_container
+    .social_vk{style: 'display: inline-block'}
+      :javascript
+        document.write(VK.Share.button(false,{type: "round", text: "Поделиться"}));
+    .social_vk{style: 'display: inline-block'}
+      %iframe{:allowtransparency => "true", :frameborder => "0", :scrolling => "no", :src => "//www.facebook.com/plugins/like.php?href=#{article_url(article)}&send=false&layout=button_count&width=450&show_faces=false&font&colorscheme=light&action=like&height=21", :style => "border:none; overflow:hidden; width:200px; height:21px;"}
+    / %img{:alt => "", :src => "/i/temp/socbtns.png"}/

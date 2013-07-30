@@ -1,0 +1,17 @@
+/*
+Additional css-rules not included in base markup supplied by frontend-developer.
+*/
+
+.social_container {
+	display: inline-block;
+	margin-top: 20px;
+	}
+
+.social_container table {
+	margin: 0 0;
+	}
+
+.social_container tr, .social_container td {
+	padding:0 0;
+	margin: 0 0;
+	}
