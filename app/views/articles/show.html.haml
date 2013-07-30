@@ -2,18 +2,21 @@
   = javascript_include_tag "http://vkontakte.ru/js/api/share.js?9", charset: 'windows-1251'
 %h1.txa-c.page-h-anim Новости
 .content-shadow.mb12
-/ page-margin content-margin
 .page-margin.content-margin.ns
-  .nl-content-col.lb
-    - @articles.each_with_index do |article, i|
-      = render 'list_item', article: article
-      - unless i==(@articles.length-1)
-        .gem-sep.gem-sep-linen.nl-mb
-          %span.ico.gem-sep-ico
+  .nl-content-col.text.lb
+    %h2= @article.title
+    .nl-date= l(@article.created_at, format: '%d.%m.%Y')
+    != @article.content
+    = render 'social_block', article: @article
+    .txa-c.nl-mb
+      .dissolve-accent.dissolve-accent-gold
+        = link_to 'Вернуться к новостям', articles_path, class: 'thin-link'
 
-  .nl-aside-col.lb
+  / end nl-content-col text
+  / nl-aside-col
+  -#.nl-aside-col.lb
     %h2.aside-hdr.tb-brd.gold-brd.alt-font
-      %a.thin-link.gold{:href => "#"} Акции и скидки
+      %a.thin-link.gold{:href => "/pages/actions.html"} Другие акции
     .nl-aside-item.nl-aside-item-brd
       %a.onhoverlink.block.black{:href => "#"}
       %h3.h-article.mb14
@@ -34,4 +37,3 @@
         %img.img-b.mb8{:alt => "", :src => "/i/temp/nlpic3.jpg"}/
       .text-mini.alt-font.onhoverlink-signal
         С 3 декабря до 15 января в Ювелирном доме "Ремикс" действует акция "Скидка года"! Кроме этого, каждый покупатель обязательно...
-  / end nl-aside-col
