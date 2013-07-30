@@ -1,6 +1,12 @@
 ru:
   activerecord:
     models:
+      album:
+        one: 'Альбом'
+        other: 'Альбомы'
+      album_item:
+        one: 'Фотографию'
+        other: 'Фотографии'
       article:
         one: 'Новость'
         few: 'Новости'
@@ -16,6 +22,11 @@ ru:
         few: 'Банера'
         other: 'Банеры'
     attributes:
+      album:
+        title: 'Заголовок'
+        content: 'Текст'
+      album_item:
+        image: 'Файл'
       article:
         title: 'Заголовок'
         lead: 'Вводный текст'
