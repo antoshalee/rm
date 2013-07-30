@@ -37,36 +37,10 @@
     %a.gold.thin-link{:href => albums_path} Фото и мероприятия
   .page-margin.txa-c
     .photo-grid.photo-grid-pad
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/702.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/702.jpg"}/
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/703.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/703.jpg"}/
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/704.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/704.jpg"}/
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/705.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/705.jpg"}/
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/706.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/706.jpg"}/
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/707.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/707.jpg"}/
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/708.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/708.jpg"}/
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/709.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/709.jpg"}/
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/710.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/710.jpg"}/
-      .ph-g-item
-        %a.ph-g-i-l{:href => "/i/temp/photo-gallery-001/711.jpg", :title => "Встреча участниц фестиваля невест «На крыльях ангелов любви»"}
-          %img.ph-g-i{:alt => "", :src => "/i/temp/photo-gallery-001-sm/711.jpg"}/
+      - @last_album.album_items.each do |item|
+        .ph-g-item
+          %a.ph-g-i-l{:href => item.image.url, :title => @last_album.title}
+            %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
 .sp-map-cnt
   .sp-address-on-map
     .sp-address.page-margin
