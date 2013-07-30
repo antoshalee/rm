@@ -1684,10 +1684,10 @@ remix.mapOnStartPage = function (p) {
     });
 */
 
-	// var script = document.createElement("script");
- //  script.type = "text/javascript";
- //  script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyBH4bzI04oEMmNmzLR-5uQ4nt082WZN5FE&sensor=false&callback=remixMapOnStartPageInit";
- //  document.body.appendChild(script);
+	var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=remixMapOnStartPageInit";
+  document.body.appendChild(script);
 
 
 };
