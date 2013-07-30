@@ -11,17 +11,11 @@
 .page-margin
   .main-menu-margin
     .sp-previews
-      / sp-pview-col
       = render 'articles_slider'
-      / end sp-pview-col
       .sp-pview-gap
-      / sp-pview-col-mid
       = render 'offers_slider'
-      / end sp-pview-col-mid
       .sp-pview-gap
-      / sp-pview-col
       .sp-pview-col.s-black-bkg
-        / sp-mag
         .sp-mag
           .sp-shdr.rdgray.hr-txt
             %span.hr-txt-in.gem-sep-rdgray Журнал
@@ -32,8 +26,6 @@
               %img.sp-mag-i{:alt => "", :src => "/i/temp/mag.jpg"}/
           .sp-mag-arc-link
             %a.white.thin-link{:href => "#"} Архив журнала
-        / end sp-mag
-      / end sp-pview-col
 .page-margin
   = render 'feedback'
 :javascript
