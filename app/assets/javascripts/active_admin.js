@@ -2,3 +2,4 @@
 //= require jquery.ui.tabs
 //= require activeadmin-sortable
 //= require autocomplete-rails
+//= require jquery.Jcrop
