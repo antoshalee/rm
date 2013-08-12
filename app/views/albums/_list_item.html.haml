@@ -4,8 +4,8 @@
   .nl-date= l(album.created_at, format: '%d.%m.%Y')
   %p
     = first_paragraph album.content
-    %a.dot-link.white.pointer.hsb-link.hsb-link-hided{"data-hsb-block" => "nedauvmod"} Читать далее...
-  #nedauvmod.hsb-container
+    %a.dot-link.white.pointer.hsb-link.hsb-link-hided{"data-hsb-block" => "album#{album.id}"} Читать далее...
+  .hsb-container{id: "album#{album.id}"}
     .hsb-content
       = rest_paragraphs album.content
 #photo-grid-02.photo-grid.photo-grid-minimized

@@ -1427,7 +1427,6 @@ remix.heightSlideBlockLinks = function (p) {
   };
 
   var links = container.find('a.hsb-link');
-
   links.each(function(){
 
     var link = $(this);

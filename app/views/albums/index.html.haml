@@ -13,11 +13,8 @@
     .photo-shadow-gold
   / page-margin
   .page-margin.content-margin
-    - @albums.each_with_index do |album, i|
-      = render 'list_item', album: album
-      - unless i==(@albums.length-1)
-        .gem-sep.gem-sep-gray20.mb16
-          %span.ico.gem-sep-ico
+    #albums_container
+      = render 'list'
 
     .ph-showmore
       %a.btn.btn-big.btn-big-gold.btn-big-gold-drksh.ph-showmore-btn Показать ещё

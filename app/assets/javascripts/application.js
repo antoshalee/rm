@@ -19,3 +19,4 @@
 //= require jquery.bxslider.min
 //= require jquery.validate.min
 //= require remix
+//= require albums
