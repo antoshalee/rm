@@ -48,5 +48,6 @@ gem 'figaro'
 gem 'delayed_job_active_record'
 gem 'acts-as-taggable-on'
 gem 'rails3-jquery-autocomplete'
+gem 'truncate_html'
 
 gem "mocha", :group => :test

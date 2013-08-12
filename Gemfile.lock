@@ -243,6 +243,7 @@ GEM
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
+    truncate_html (0.5.5)
     tzinfo (0.3.37)
     uglifier (2.1.2)
       execjs (>= 0.3.0)
@@ -295,6 +296,7 @@ DEPENDENCIES
   simple_form
   therubyracer
   thin
+  truncate_html
   uglifier (>= 1.0.3)
   unicorn
   wysihtml5-rails

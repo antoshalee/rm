@@ -12,7 +12,7 @@ ActiveAdmin.register Album do
   form :html => { :enctype=> 'multipart/form-data'} do |f|
     f.inputs do
       f.input :title
-      f.input :content
+      f.input :content, as: :ckeditor
     end
 
     f.has_many :album_items do |album_item|
