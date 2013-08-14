@@ -13,6 +13,7 @@ ActiveAdmin.register Album do
     f.inputs do
       f.input :title
       f.input :content, as: :ckeditor
+      f.input :tag_list, hint: tag_links(Album)
     end
 
     f.has_many :album_items do |album_item|
@@ -28,6 +29,7 @@ ActiveAdmin.register Album do
     attributes_table do
       row :title
       row :content
+      row :tag_list
     end
     panel("Фотографии") do
       table_for(album.album_items) do

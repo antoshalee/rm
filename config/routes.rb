@@ -16,7 +16,11 @@ Remix::Application.routes.draw do
   root to: 'start#index'
 
   resources :articles, only: [:index, :show]
-  resources :albums, only: [:index, :show]
+  resources :albums, only: [:index, :show]do
+    collection do
+      get 'tag/:tag', action: :index, as: :tag
+    end
+  end
   resources :collections, only: [:index] do
     collection do
       get 'tag/:tag', action: :index, as: :tag
