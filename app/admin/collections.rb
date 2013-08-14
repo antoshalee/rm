@@ -15,7 +15,7 @@ ActiveAdmin.register Collection do
       f.input :price
       f.input :description
       f.input :note, hint: 'Это поле будет отображаться в виде ленточки(например, со ссылкой на акцию)'
-      f.input :tag_list
+      f.input :tag_list, hint: tag_links(Collection)
     end
 
     f.has_many :collection_items do |item|
