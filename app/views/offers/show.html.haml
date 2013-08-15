@@ -1,9 +1,9 @@
 %h1.txa-c.page-h-anim Акции и скидки
 / sub-menu
 .sub-menu.alt-font
-  %a.sub-menu-link.black{:href => "/pages/actions.html"} Все акции и скидки
-  %a.sub-menu-link.black{:href => "#"} Ювелирный дом
-  %a.sub-menu-link.black{:href => "#"} Сеть магазинов «Ремикс»
+  %a.sub-menu-link.black{href: offers_path} Все акции и скидки
+  - Offer.tag_counts.each do |tag|
+    %a.sub-menu-link.black{href: tag_offers_path(tag.name)}= tag.name
 / end sub-menu
 .content-shadow.mb12
 / page-margin content-margin
