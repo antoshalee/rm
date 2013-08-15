@@ -125,7 +125,9 @@ ActiveRecord::Schema.define(:version => 20130815133111) do
   end
 
   create_table "magazines", :force => true do |t|
-    t.string   "code"
+    t.string   "url"
+    t.string   "embedId"
+    t.string   "documentId"
     t.text     "lead"
     t.string   "title"
     t.integer  "position"

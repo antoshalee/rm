@@ -4,5 +4,6 @@ class StartController < ApplicationController
     @banners = Banner.order('position')
     @offers = Offer.limit(3)
     @last_album = Album.order('id').last
+    @last_magazine = Magazine.order('position desc').first
   end
 end
