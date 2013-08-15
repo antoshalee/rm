@@ -7,6 +7,9 @@ ru:
       album:
         one: 'Альбом'
         other: 'Альбомы'
+      magazine:
+        one: 'Журнал'
+        other: 'Журналы'
       album_item:
         one: 'Фотографию'
         other: 'Фотографии'
@@ -65,6 +68,10 @@ ru:
         email: 'Электронная почта'
         text: 'Текст'
         created_at: 'Дата создания'
+      magazine:
+        title: 'Заголовок'
+        lead: 'Вступительный текст'
+        code: 'Код ISSUU'
       offer:
         title: 'Заголовок'
         lead: 'Вводный текст'

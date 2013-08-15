@@ -6,6 +6,8 @@ end
 
 Remix::Application.routes.draw do
 
+  get "magazines/index"
+
   get "pages/show"
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -33,6 +35,7 @@ Remix::Application.routes.draw do
       get 'tag/:tag', action: :index, as: :tag
     end
   end
+  resources :magazines, only: :index
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

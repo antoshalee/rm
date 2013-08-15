@@ -1,0 +1,73 @@
+- content_for :javascripts do
+  = javascript_include_tag "//e.issuu.com/embed.js", async: true
+.h-section.page-h-anim.txa-c О компании
+.sub-menu.alt-font
+  %a.sub-menu-link.black{:href => "/pages/news.html"} Новости
+  %h1.rst.inline
+    %a.sub-menu-link.sub-menu-link-select.black Журнал
+  %a.sub-menu-link.black{:href => "/pages/edu-center.html"} Ювелирная фабрика
+  %a.sub-menu-link.black{:href => "/pages/contact.html"} Контактная информация
+.content-shadow.mb12
+.page-margin.content-margin.ns
+  .nl-content-col.lb
+    - @magazines.each_with_index do |m,i|
+      .text.nl-mb
+        %h2= m.title
+        %p= m.lead
+      .issuuembed{"data-configid" => m.code, :style => "width: 100%; height: 525px;"}
+      - unless i==(@magazines.length-1)
+        .gem-sep.gem-sep-linen.nl-mb
+          %span.ico.gem-sep-ico
+  .nl-aside-col.lb
+    %h2.aside-hdr.tb-brd.gold-brd.alt-font.gold
+      %a.thin-link.gold{:href => "/pages/magazine-subscribe.html"} Подписка
+    %a.nl-aside-item.nl-aside-item-brd.onhoverlink.block.nb{:href => "/pages/magazine-subscribe.html"}
+    .onhover-op
+      %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/magsubscr.jpg"}/
+    .h-item
+      %span.onhoverlink-signal.black.thin-link Свежий номер лично в руки!
+    %h2.aside-hdr.tb-brd.gold-brd.alt-font.gold
+      Команда
+    .human-item.txa-c
+      .human-i-cnt
+        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr1.jpg"}/
+      .human-name
+        Леонова Ирина Юрьевна
+      .human-title.alt-font
+        руководитель оптового отдела
+        %br/
+        +7 (391) 227-84-01
+        %br/
+        %a{:href => "mailto:lia@af-remix.ru"} lia@af-remix.ru
+    .human-item.txa-c
+      .human-i-cnt
+        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr2.jpg"}/
+      .human-name
+        Чакова Светлана Николаевна
+      .human-title.alt-font
+        старший менеджер оптового отдела
+        %br/
+        +7 (391) 227-84-01
+        %br/
+        %a{:href => "mailto:lsnc@af-remix.ru"} snc@af-remix.ru
+    .human-item.txa-c
+      .human-i-cnt
+        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr3.jpg"}/
+      .human-name
+        Мамонтова Елена Геннадьевна
+      .human-title.alt-font
+        менеджер оптового отдела
+        %br/
+        +7 (391) 227-84-01
+        %br/
+        %a{:href => "mailto:meg@af-remix.ru"} meg@af-remix.ru
+    .human-item.txa-c
+      .human-name
+        Адрес редакции и издателя
+      .human-title.alt-font
+        660049, г. Красноярск,
+        ул. Перенсона, 23а
+        %br/
+        Горячая линия:
+        (391) 227-54-41, 227-06-27,
+        %a{:href => "mailto:meg@af-remix.ru"} ivan@af-remix.ru
