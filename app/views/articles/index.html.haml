@@ -13,25 +13,5 @@
 
   .nl-aside-col.lb
     %h2.aside-hdr.tb-brd.gold-brd.alt-font
-      %a.thin-link.gold{:href => "#"} Акции и скидки
-    .nl-aside-item.nl-aside-item-brd
-      %a.onhoverlink.block.black{:href => "#"}
-      %h3.h-article.mb14
-        «
-        %span.onhoverlink-signal.thin-link> А вдруг удача
-        »
-      .onhover-op
-        %img.img-b.mb8{:alt => "", :src => "/i/temp/nlpic2.jpg"}/
-      .text-mini.alt-font.onhoverlink-signal
-        С 3 декабря до 15 января в Ювелирном доме "Ремикс" действует акция "Скидка года"! Кроме этого, каждый покупатель обязательно...
-    .nl-aside-item.nl-aside-item-brd
-      %a.onhoverlink.block.black{:href => "#"}
-      %h3.h-article.mb14
-        «
-        %span.onhoverlink-signal.thin-link> Выиграй свадебное путешествие в Париж
-        »
-      .onhover-op
-        %img.img-b.mb8{:alt => "", :src => "/i/temp/nlpic3.jpg"}/
-      .text-mini.alt-font.onhoverlink-signal
-        С 3 декабря до 15 января в Ювелирном доме "Ремикс" действует акция "Скидка года"! Кроме этого, каждый покупатель обязательно...
-  / end nl-aside-col
+      %a.thin-link.gold{:href => offers_path} Акции и скидки
+    = render 'sidebars/offers', offers:  Offer.order('created_at desc').first(2)

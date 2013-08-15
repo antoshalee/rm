@@ -36,6 +36,9 @@ ru:
       feedback:
         one: 'Отзыв'
         other: 'Отзывы'
+      supplier:
+        one: 'Поставщика'
+        other: 'Поставщики'
     attributes:
       page:
         title: 'Название'
@@ -85,3 +88,7 @@ ru:
       banner:
         image: 'Изображение'
         text: 'Текст'
+      supplier:
+        title: 'Название'
+        description: 'Описание'
+        image: 'Изображение'
