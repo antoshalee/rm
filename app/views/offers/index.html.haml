@@ -15,7 +15,7 @@
         %a.black.onhoverlink.block{:href => "/pages/action.html"}
         %h2.nl-top-mes-pad
           «
-          %span.onhoverlink-signal.thin-link>= @main_offer.title
+          %a.onhoverlink-signal.thin-link{href: offer_path(@main_offer)}>= @main_offer.title
           »
         .nl-date.nl-top-mes-pad Срок проведения: с #{l(@main_offer.date_start)}–#{l(@main_offer.date_finish)}
         .nl-i-cnt.onhover-op
@@ -35,13 +35,13 @@
               = image_tag offer.image.url, class: 'img-b'
             %h2
               «
-              %span.thin-link.onhoverlink-signal>= offer.title
+              %a.thin-link.onhoverlink-signal{href: offer_path(offer)}>= offer.title
               »
             .nl-date-mini Срок проведения: с #{l(offer.date_start)}–#{l(offer.date_finish)}
             .text
               %p= offer.lead
             .f16
-            = link_to 'Читать условия акции', offer, class: 'thin-link'
+              = link_to 'Читать условия акции', offer, class: 'thin-link'
       - if slice_index < (lines_count-1)
         .gem-sep.gem-sep-linen.nl-mb
           %span.ico.gem-sep-ico
