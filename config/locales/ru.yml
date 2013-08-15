@@ -1,6 +1,9 @@
 ru:
   activerecord:
     models:
+      page:
+        one: 'Страницу'
+        other: 'Страницы'
       album:
         one: 'Альбом'
         other: 'Альбомы'
@@ -31,6 +34,10 @@ ru:
         one: 'Отзыв'
         other: 'Отзывы'
     attributes:
+      page:
+        title: 'Название'
+        content: 'Текст'
+        url: 'Адрес'
       album:
         title: 'Заголовок'
         content: 'Текст'

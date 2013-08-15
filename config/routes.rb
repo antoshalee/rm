@@ -6,6 +6,8 @@ end
 
 Remix::Application.routes.draw do
 
+  get "pages/show"
+
   mount Ckeditor::Engine => '/ckeditor'
 
   get "wholesale" => "wholesale#index"
@@ -35,5 +37,6 @@ Remix::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  get '/:url' => 'pages#show', :constraints => { :url => /.*/ }
 
 end

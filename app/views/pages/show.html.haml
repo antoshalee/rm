@@ -1,0 +1,25 @@
+%h1.txa-c.page-h-anim= @page.title
+.content-shadow.mb12
+/ page-margin content-margin
+.page-margin.content-margin.ns
+  / nl-content-col
+  .nl-content-col.text.lb
+    != @page.content
+  .nl-aside-col.lb
+    .nl-aside-item.nl-aside-item-brd
+      %a.onhoverlink.block.black{:href => "#"}
+      %h3.h-article.mb14
+        %span.onhoverlink-signal.thin-link Сувенирная продукция
+      .onhover-op
+        %img.img-b.mb8{:alt => "", :src => "/i/temp/nlpic9.jpg"}/
+      .text-mini.alt-font.onhoverlink-signal
+        На третьем этаже вы найдете ювелирные украшения премиум сегмента со специальной вип-комнатой. Здесь же расположен Центр обручальных колец.
+    %h2 Контактная информация
+    .text-mini.alt-font
+      %p
+        По вопросам сотрудничества обращайтесь к Екатерине Ивановой по телефону:
+        %br/
+        + 7 (391) 211-01-20
+        %br/
+        %a.black{:href => "mailto:info@af-remix.ru"} info@af-remix.ru
+  / end nl-aside-col
