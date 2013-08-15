@@ -18,6 +18,8 @@ ActiveAdmin.register Offer do
       f.input :content, as: :ckeditor
       f.input :image
       f.input :tag_list
+      f.input :is_main
+      f.input :discount
     end
 
     f.buttons
@@ -36,6 +38,9 @@ ActiveAdmin.register Offer do
       end
       row :is_main do |item|
         item.is_main? ? 'Да' : 'Нет'
+      end
+      row :discount do |item|
+        item.discount? ? 'Да' : 'Нет'
       end
     end
   end

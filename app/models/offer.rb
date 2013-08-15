@@ -1,5 +1,6 @@
 class Offer < ActiveRecord::Base
-  attr_accessible :date_start, :date_finish, :lead, :content, :title, :image, :is_main, :tag_list
+  attr_accessible :date_start, :date_finish, :lead, :content, :title,
+    :image, :is_main, :tag_list, :discount
   mount_uploader :image, OfferImageUploader
   acts_as_taggable
 
@@ -13,6 +14,14 @@ class Offer < ActiveRecord::Base
   # not main
   def self.common
     where(is_main: false)
+  end
+
+  def self.discount
+    where(discount: true)
+  end
+
+  def self.not_discount
+    where(discount: false)
   end
 
 private

@@ -74,6 +74,7 @@ ru:
         date_finish: 'Дата завершения'
         is_main: 'Главная?'
         tag_list: 'Теги'
+        discount: 'Акция-скидка?'
       banner:
         image: 'Изображение'
         text: 'Текст'

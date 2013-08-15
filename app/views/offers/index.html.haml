@@ -50,36 +50,11 @@
   .nl-aside-col.lb
     %h2.aside-hdr.tb-brd.gold-brd.alt-font
       %a.thin-link.gold{:href => "#"} Cкидки
-    .nl-aside-item.nl-aside-item-brd
-      %a.onhoverlink.block.black{:href => "#"}
-      .onhover-op
-        %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/action2.jpg"}/
-      %h3
-        %span.onhoverlink-signal.thin-link Подарочные карты
-      .text-mini.alt-font.onhoverlink-signal
-        Дисконтная система ювелирного Дома «Ремикс», разработана специально для Вашей выгоды, удобства и индивидуальности!
-    .nl-aside-item.nl-aside-item-brd.onhoverlink.block.black
-      %a.onhoverlink.block.black{:href => "#"}
-      .onhover-op
-        %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/action1.jpg"}/
-      %h3
-        %span.onhoverlink-signal.thin-link 20% скидка именинникам
-      .text-mini.alt-font.onhoverlink-signal
-        Скидка 20% предоставляется при покупке украшения в месяц Вашего рождения. и индивидуальности!
-    .nl-aside-item.nl-aside-item-brd
-      %a.onhoverlink.block.black{:href => "#"}
-      .onhover-op
-        %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/action3.jpg"}/
-      %h3
-        %span.onhoverlink-signal.thin-link Дисконтаня система
-      .text-mini.alt-font.onhoverlink-signal
-        Дисконтная система ювелирного Дома «Ремикс», разработана специально для Вашей выгоды, удобства и индивидуальности!
-    .nl-aside-item.nl-aside-item-brd
-      %a.onhoverlink.block.black{:href => "#"}
-      .onhover-op
-        %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/action4.jpg"}/
-      %h3
-        %span.onhoverlink-signal.thin-link Владельцам банкосвских карт
-      .text-mini.alt-font.onhoverlink-signal
-        Скидка 20% предоставляется при покупке украшения в месяц Вашего рождения. и индивидуальности!
-  / end nl-aside-col
+    - @discounts.each do |d|
+      .nl-aside-item.nl-aside-item-brd
+        %a.onhoverlink.block.black{:href => offer_path(d)}
+          .onhover-op
+            %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => d.image.aside}/
+          %h3
+            %span.onhoverlink-signal.thin-link= d.title
+          .text-mini.alt-font.onhoverlink-signal= d.lead
