@@ -1,4 +1,11 @@
 ActiveAdmin.register Page do
+  config.clear_sidebar_sections!
+
+  index do
+    column :title
+    column :url
+    default_actions
+  end
 
   form do |f|
     f.inputs do
