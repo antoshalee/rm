@@ -74,7 +74,7 @@ ru:
       magazine:
         title: 'Заголовок'
         lead: 'Вступительный текст'
-        code: 'Код ISSUU'
+        url: 'Ссылка ISSUU'
       offer:
         title: 'Заголовок'
         lead: 'Вводный текст'
