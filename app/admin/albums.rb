@@ -21,6 +21,7 @@ ActiveAdmin.register Album do
         album_item.input :_destroy, :as => :boolean, :required => false, :label => 'Удалить'
       end
       album_item.input :image, :as => :file, :hint => (album_item.object.new_record? ? nil : album_item.template.image_tag(album_item.object.image.thumb.url))
+      album_item.input :description, :as => :string
     end
     f.buttons
   end
@@ -31,12 +32,16 @@ ActiveAdmin.register Album do
       row :content
       row :tag_list
     end
+
     panel("Фотографии") do
       table_for(album.album_items) do
-        column "" do |item|
+        column "Фотография" do |item|
           if item.image?
             image_tag(item.image.thumb.url)
           end
+        end
+        column "Описание" do |item|
+          item.description
         end
       end
     end

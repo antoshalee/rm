@@ -53,6 +53,7 @@ ru:
         tag_list: 'Теги'
       album_item:
         image: 'Файл'
+        description: 'Описание'
       article:
         title: 'Заголовок'
         lead: 'Вводный текст'

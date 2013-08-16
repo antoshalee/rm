@@ -12,7 +12,7 @@
   .hsb-content
     - album.album_items.each do |item|
       .ph-g-item
-        %a.ph-g-i-l{:href => item.image.url, :title => ""}
+        %a.ph-g-i-l{:href => item.image.url, :title => item.description}
           %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
 .mb16
   %a.onhoverlink.f16.pointer.js-phb-tggl.white{"data-gallery-id" => "photo-grid-02"}
