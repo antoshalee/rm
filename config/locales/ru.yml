@@ -36,6 +36,9 @@ ru:
       feedback:
         one: 'Отзыв'
         other: 'Отзывы'
+      subscription:
+        one: 'Подписка'
+        other: 'Подписки'
       supplier:
         one: 'Поставщика'
         other: 'Поставщики'
