@@ -24,7 +24,7 @@ ActiveAdmin.register Collection do
       end
       item.input :image, :as => :file, :hint => (item.object.new_record? ? nil : item.template.image_tag(item.object.image.thumb.url))
       item.input :article
-      item.input :weight
+      item.input :price
     end
     f.buttons
   end
@@ -43,8 +43,8 @@ ActiveAdmin.register Collection do
         column "Артикул" do |item|
           item.article
         end
-        column "Вес" do |item|
-          item.weight
+        column "Цена" do |item|
+          item.price
         end
         column "Фотография" do |item|
           if item.image?

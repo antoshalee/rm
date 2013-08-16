@@ -69,6 +69,7 @@ ru:
         image: 'Изображение'
         article: 'Артикул'
         weight: 'Вес'
+        price: 'Цена'
       feedback:
         name: 'Имя'
         email: 'Электронная почта'
