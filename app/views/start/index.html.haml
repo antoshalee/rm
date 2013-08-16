@@ -15,17 +15,7 @@
       .sp-pview-gap
       = render 'offers_slider'
       .sp-pview-gap
-      .sp-pview-col.s-black-bkg
-        .sp-mag
-          .sp-shdr.rdgray.hr-txt
-            %span.hr-txt-in.gem-sep-rdgray Журнал
-          .sp-mag-cur-link
-            %a.white.thin-link{:href => magazines_path}= @last_magazine.title
-          .sp-mag-i-cnt
-            %a.sp-mag-i-shd{:href => magazines_path}
-              %img.sp-mag-i{:alt => "", :src => "http://image.issuu.com/#{@last_magazine.documentId}/jpg/page_1_thumb_large.jpg"}/
-          .sp-mag-arc-link
-            %a.white.thin-link{:href => magazines_path} Архив журнала
+      = render 'last_magazine'
 .page-margin
   = render 'feedback'
 :javascript
