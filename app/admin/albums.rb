@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 ActiveAdmin.register Album do
   config.clear_sidebar_sections!
+  menu priority: 0
 
   index do
     column :id

@@ -1,6 +1,6 @@
 # encoding: utf-8
 ActiveAdmin.register Magazine do
-  menu parent: "Журналы"
+  menu parent: "Журналы", priority: 10
   config.clear_sidebar_sections!
   config.sort_order = 'position_desc' # assumes you are using 'position' for your acts_as_list column
   config.paginate   = false # optional; drag-and-drop across pages is not supported

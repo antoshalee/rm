@@ -1,5 +1,6 @@
 ActiveAdmin.register Article do
   config.clear_sidebar_sections!
+  menu prority: 1
 
   form :html => { :enctype=> 'multipart/form-data'} do |f|
     f.inputs do

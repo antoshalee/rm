@@ -1,6 +1,7 @@
 ActiveAdmin.register Feedback do
   config.clear_sidebar_sections!
   actions :all, :except => [:new, :edit]
+  menu priority: 8
 
   index do
     column :name

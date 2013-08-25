@@ -1,5 +1,6 @@
 ActiveAdmin.register Page do
   config.clear_sidebar_sections!
+  menu priority: 6
 
   index do
     column :title

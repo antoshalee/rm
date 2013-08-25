@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 ActiveAdmin.register Collection do
   config.clear_sidebar_sections!
+  menu priority: 4
 
   index do
     column :id

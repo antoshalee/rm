@@ -2,6 +2,7 @@ ActiveAdmin.register Banner do
   config.clear_sidebar_sections!
   config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
   config.paginate   = false # optional; drag-and-drop across pages is not supported
+  menu priority: 2
 
   sortable
 

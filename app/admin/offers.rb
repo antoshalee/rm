@@ -1,6 +1,8 @@
 # encoding: utf-8
 ActiveAdmin.register Offer do
   config.clear_sidebar_sections!
+  menu priority: 5
+
   index do
     column :title
     column :date_start
