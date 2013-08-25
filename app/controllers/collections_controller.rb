@@ -1,6 +1,7 @@
 class CollectionsController < ApplicationController
   def index
-    @collections = (params[:tag].present? ? Collection.tagged_with(params[:tag]) : Collection.all)
+    @collections = Collection.order('position asc')
+    @collections = @collections.tagged_with(params[:tag]) if params[:tag].present?
   end
 
   def show

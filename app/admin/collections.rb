@@ -1,9 +1,14 @@
 # -*- encoding : utf-8 -*-
 ActiveAdmin.register Collection do
   config.clear_sidebar_sections!
+  config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
+  config.paginate   = false
   menu priority: 4
 
+  sortable
+
   index do
+    sortable_handle_column
     column :id
     column :title
     column :created_at
