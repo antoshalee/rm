@@ -30,9 +30,9 @@ ru:
         many: 'Акция'
         other: 'Акции'
       banner:
-        one: 'Банер'
-        few: 'Банера'
-        other: 'Банеры'
+        one: 'Баннер'
+        few: 'Баннера'
+        other: 'Баннеры'
       feedback:
         one: 'Отзыв'
         other: 'Отзывы'
