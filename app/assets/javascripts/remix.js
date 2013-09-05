@@ -94,19 +94,24 @@ remix.eventTargetAction = function (p) {
         callback = p.callback;
 
     var contextClick = function (e) {
-
-        var elem = false;
-
-        if (e.target.className.indexOf(elementToActionClass) >= 0) {
-            elem = $(e.target);
-        } else
-            if (matchClass && e.target.className.indexOf(matchClass) >= 0) {
-            elem = $(e.target).closest('.' + elementToActionClass);
-        }
-
-        if (elem) {
-            callback(elem);
-        }
+			
+			var elem = false;
+			var evTarget = e.target;
+			var target = $(evTarget);
+				
+			if ((matchClass && evTarget.className.indexOf(matchClass) >= 0) || (elementToActionClass && evTarget.className.indexOf(elementToActionClass) >= 0)) {
+				
+				if (target.hasClass(elementToActionClass)) {
+					elem = target;
+				} else {
+					elem = target.closest('.' + elementToActionClass);
+				}
+				
+			};
+			
+			if (elem) {
+				callback(elem);
+			};
 
     };
 
@@ -170,6 +175,7 @@ remix.blockAccentSwitcher = function (p) {
 remix.simpleBlockSwitch = function (p) {
 
 	var simpleBlockSwitch = this,
+			swithcer = p.swithcer, // jq-объект переключатель вида блока
 			blocks = p.blocks; // переключаемые блоки
 
 	// флаг — блоки показаны
@@ -190,13 +196,32 @@ remix.simpleBlockSwitch = function (p) {
 	// показать блок
 	var showBlock = function (block) {
 		block.removeClass('na');
+		simpleBlockSwitch.showed = true;
+		if (p.afterShow) { p.afterShow(block); };
 	};
 
 	// скрыть блок
 	var hideBlock = function(block) {
 		block.addClass('na');
+		simpleBlockSwitch.showed = false;
 	};
+	
+	// переключить отображение блока
+	var toggle = function (block) {
 
+			if (!simpleBlockSwitch.showed) {
+				showBlock(block);
+			} else {
+				hideBlock(block);
+			}
+
+	};	
+	
+	// пройтись по блокам и переключить
+	var toggleBlocks = function () {
+			iterate(toggle);
+	};	
+	
 	// показать блоки
 	simpleBlockSwitch.show = function () {
 		iterateBlocks(blocks,showBlock);
@@ -208,7 +233,13 @@ remix.simpleBlockSwitch = function (p) {
 		iterateBlocks(blocks,hideBlock);
 		simpleBlockSwitch.showed = false;
 	};
-
+	
+	// Назначить событие переключения отображения блока
+	if (swithcer) {
+		swithcer.bind('click', toggleBlocks);
+	};
+	
+	
 };
 
 
@@ -842,6 +873,49 @@ remix.GoodsGridFullViewsManager = function (p) {
 
 };
 // end remix.GoodsGridFullViewsManager
+
+// фильтры списка лотов
+// простые выпадающие списки
+remix.simpleDropDowns = function (p) {
+	
+	var context = p.context;
+	
+	if (context.length <=0) {
+		return;
+	};
+  
+  var lastelem = false;
+  
+	var toggle = function (elem) {
+
+    var cnt = elem.next();
+        
+    if (cnt.is(':visible')) {
+      
+      cnt.stop().fadeOut(250,function(){lastelem = false;});
+      
+    } else {
+      
+      if (lastelem && lastelem.is(':visible')) {
+        lastelem.hide();
+      }; 
+      
+      cnt.stop().fadeIn(250,function(){lastelem = cnt;});      
+    }
+    
+		
+	};
+	
+	var sddevt = new remix.eventTargetAction({
+		context:context,
+		matchClass: 'drop-down-btn',
+		elementToActionClass: 'drop-down-btn',
+		callback: toggle
+	});
+	
+	
+};
+// end remix.SimpleDropDowns
 
 // обертка для палагина "magnificPopupGallery" фотогалерей
 remix.magnificPopupGallery = function (p) {
@@ -1863,9 +1937,21 @@ remix.feedBackForm = function () {
      },
 
      errorClass: 'f-error', // css-класс сообщений об ошибках
-
-	 });
-
+     
+     // запретить срабатывание валидации при вводе данных в поле
+     onkeyup:function(){
+     },
+     
+      submitHandler: function(form) {
+      if (validator.valid()) {
+        feedBackSuccess.removeClass('na'); // показать сообщение об отправке отзыва
+        //form.submit();
+      }
+      
+     }     
+	 
+	 });  
+  
   var onOpen = function () {
     feedBackForm.addClass('nl-top-message-off-shadow');
     feedbackFormPreCnt.slideUp();
@@ -1937,16 +2023,81 @@ remix.aboutDropDown = function () {
 			cnt.fadeToggle(250);
 		});
 	};
+    
 
 
+  
+};
+// remix.aboutDropDown
+
+/**
+ * Example: inputPlaceholder( document.getElementById('my_input_element') )
+ * @param {Element} input
+ * @param {String} [color='#AAA']
+ * @return {Element} input
+ */
+remix.inputPlaceholder = function (input, color) {
+
+	if (!input) return null;
+
+	// Do nothing if placeholder supported by the browser (Webkit, Firefox 3.7)
+	if (input.placeholder && 'placeholder' in document.createElement(input.tagName)) return input;
+
+	color = color || '#AAA';
+	var default_color = input.style.color;
+	var placeholder = input.getAttribute('placeholder');
+
+	if (input.value === '' || input.value == placeholder) {
+		input.value = placeholder;
+		input.style.color = color;
+		input.setAttribute('data-placeholder-visible', 'true');
+	}
+
+	var add_event = /*@cc_on'attachEvent'||@*/'addEventListener';
+
+	input[add_event](/*@cc_on'on'+@*/'focus', function(){
+	 input.style.color = default_color;
+	 if (input.getAttribute('data-placeholder-visible')) {
+		 input.setAttribute('data-placeholder-visible', '');
+		 input.value = '';
+	 }
+	}, false);
+
+	input[add_event](/*@cc_on'on'+@*/'blur', function(){
+		if (input.value === '') {
+			input.setAttribute('data-placeholder-visible', 'true');
+			input.value = placeholder;
+			input.style.color = color;
+		} else {
+			input.style.color = default_color;
+			input.setAttribute('data-placeholder-visible', '');
+		}
+	}, false);
+
+	input.form && input.form[add_event](/*@cc_on'on'+@*/'submit', function(){
+		if (input.getAttribute('data-placeholder-visible')) {
+			input.value = '';
+		}
+	}, false);
+
+	return input;
+}
 
 
+// эмуляция input placeholder
+remix.inputPlaceHolders = function () {
+	
+	if (!('placeholder' in document.createElement('input'))) {
+		$('input[placeholder], textarea[placeholder]').each(function(){
+			remix.inputPlaceholder($(this)[0]);
+		});
+		}
 };
 // remix.aboutDropDown
 
 // document ready
 $(function() {
-
+  
   var doc = $(document);
 
   // выпадающий список "о компании"
@@ -1967,6 +2118,8 @@ $(function() {
   remix.magnificPopupGalleryOnPage({container:doc});
   // прилипающее верхнее меню
   remix.stickyTopMenu();
+	// эмуляция input placeholder
+	remix.inputPlaceHolders();
 	// прокрутка новостей на главной
 	remix.startNewsScroll();
   // карта на стартовой странице
