@@ -5,7 +5,7 @@
 /*-- basic --*/
 
 html {
-  font: .625em/1.5 'Playfair Display', Times, 'Times New Roman', serif;
+  font: 10px/1.5 'Playfair Display', Times, 'Times New Roman', serif;   
 }
 
 html, body {
@@ -115,6 +115,11 @@ body {
   line-height: normal;
   margin: 0;
   padding: 0;
+}
+
+
+.base-font {
+  font-family: 'Playfair Display', Times, 'Times New Roman', serif
 }
 
 /* дополнительный шрифт */
@@ -375,6 +380,232 @@ table:not([class]) tr:nth-child(even) {
 
 /*-- end load indicators --*/
 
+/*-- forms --*/
+
+/* forms scaffolding */
+
+.form-in-mw {
+	max-width: 85%;
+}
+
+/*контенйер строк форм*/
+.f-row-cnt {
+	margin-top: -22px;
+}
+
+/*строка формы */
+.f-row {
+	margin-top: 22px;
+}
+
+/*секция кнопки отправки формы*/
+.f-submit-sect-line {
+	border-top: 1px solid;
+	margin-bottom: 10px;
+	padding-top: 22px;
+}
+
+/*колонки расположения полей формы*/
+
+/*колонка ширкого поля*/
+.f-wfield-col {
+	width: 55%;
+}
+
+/*колонка узкого поля*/
+.f-sfield-col {
+	width: 35%;
+}
+
+/*левый отступ между колонками*/
+.f-wsfield-lgap {
+	margin-left: 10%;
+}
+
+/*правый отступ между колонками*/
+.f-wsfield-rgap {
+	margin-right: 10%;
+}
+
+/*две колонки*/
+
+.f-2col-cnt {
+  margin-left: -4.5%;
+}
+
+.f-2col {
+  margin-left: 4.5%;
+  width: 45.5%;
+}
+
+/* end forms scaffolding */
+
+
+/* forms elements */
+
+/*контейнер метки над полем*/
+.f-lbl-top-c {
+	margin-bottom: 4px;
+}
+
+/*метки полей*/
+.f-lbl {
+	font-size: 14px;
+}
+
+/*текстовые поля*/
+.f-t-field {
+	background: #f8f8f8;
+	background: rgba(255,255,255,1);
+	border: 1px solid #aaa;
+	/*border-color: rgba(255,255,255,0);*/
+	-moz-box-shadow: 
+		inset 0 4px 4px -4px rgba(0,0,0,.33), /*верхняя*/
+		inset 0 -3px 2px -3px rgba(0,0,0,.15), /*нижняя*/
+		inset 3px 0 3px -3px rgba(0,0,0,.18), /*левая*/
+		inset -3px 0 3px -3px rgba(0,0,0,.18); /*правая*/	
+	-webkit-box-shadow: 
+		inset 0 4px 4px -4px rgba(0,0,0,.33), /*верхняя*/
+		inset 0 -3px 2px -3px rgba(0,0,0,.15), /*нижняя*/
+		inset 3px 0 3px -3px rgba(0,0,0,.18), /*левая*/
+		inset -3px 0 3px -3px rgba(0,0,0,.18); /*правая*/		
+	box-shadow: 
+		inset 0 4px 4px -4px rgba(0,0,0,.33), /*верхняя*/
+		inset 0 -3px 2px -3px rgba(0,0,0,.15), /*нижняя*/
+		inset 3px 0 3px -3px rgba(0,0,0,.18), /*левая*/
+		inset -3px 0 3px -3px rgba(0,0,0,.18); /*правая*/
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 32px;
+  font-family: Tahoma, Geneva, sans-serif;
+	font-size: 15px;
+	line-height: 1;
+	padding: 2px 8px 2px 8px;
+}
+
+.f-t-field:hover, .f-t-field:focus {
+	background: #fcfbf5;
+	border: 1px solid #ccae62;
+	/*border-color: rgba(255,255,255,0);*/
+}
+
+.f-t-area {
+  padding-top: 8px;
+  height: 120px;
+}
+
+/*описание поля*/
+.f-remark {
+	color: #808080;
+	font-size: 11px;
+	line-height: 1.4;
+}
+
+/*описание под полем*/
+.f-t-field-remark {
+	margin-top: 3px;
+}
+
+label.f-error {
+	color: red;
+	font-size: 11px;
+}
+
+/*блок для размещения кнопки закрыть (крестика)*/
+.f-close-cross-pad {
+  /*min-height: 23px;*/
+  padding-right: 35px;
+  position: relative;
+}
+
+.f-close-cross {
+  right: 0;
+  position: absolute;
+  top: 0;
+}
+
+.f-close-cross:hover {
+  background-position: 0 -375px;
+  cursor: pointer;
+}
+
+/* end forms elements */
+
+/* форма обртаной связи */
+/* feedback form */
+
+.feedback-form-hsb {
+  margin-top: 42px;
+}
+
+.feedback-form {
+  margin: 0 auto 38px auto;
+  width: 708px;
+}
+
+.feedback-form-hdr {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 48px;
+}
+
+/* сообщение об отправке отзыва */
+.feedback-form-success {
+  border: 2px solid #65a5fc;
+  border-radius: 6px;
+  color: #65a5fc;
+  font-size: 17px;
+  line-height: 1;
+  padding: 10px 18px 12px 18px;
+}
+
+
+/*блок приглашения формы*/
+.feedback-form-pre {
+  line-height: 1;
+  margin: 0 auto -12px auto;
+  position: relative;
+  text-align: center;
+  width: 708px;
+  z-index: 1;
+}
+
+/*кнопка показа формы*/
+.feedback-form-open {
+  border: 1px solid #f27733;
+  border-radius: 3px;  
+  color: #f27733;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+  padding: 7px 16px 10px 16px;
+  
+  -moz-transition: border-color .5s ease 0s;
+  -o-transition: border-color .5s ease 0s;
+  -webkit-transition: border-color .5s ease 0s;
+  transition: border-color .5s ease 0s;
+  
+}
+
+.feedback-form-open .dot-link {
+   border-color: #f27733;
+}
+
+.feedback-form-open:hover {
+  border-color: #61a9f5;
+  color: #61a9f5;
+}
+
+.feedback-form-open:hover .dot-link {
+   border-color: #61a9f5;
+}
+
+/* end feedback form */
+
+/*-- end forms --*/
+
 /* логотип */
 /*-- site logo --*/
 
@@ -549,7 +780,7 @@ table:not([class]) tr:nth-child(even) {
 
 .top-nav-wrp {
   position: relative;
-  z-index: 100;
+  z-index: 105;
 }
 
 .top-nav {
@@ -1357,6 +1588,127 @@ table:not([class]) tr:nth-child(even) {
 
 /*-- end buttons --*/
 
+/* выпадающие элементы (списки) */
+/*-- drop-downs --*/
+
+/*кнопка со стрелочкой вниз*/
+.drop-down-btn {
+	background-color: #fff;
+	border: 1px solid #c6c6c6;
+	
+	-moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;  
+	
+	cursor: pointer;
+	display: block;
+  font-size: 15px;
+  line-height: 1.3;
+  outline: none;
+	padding: 4px 28px 5px 10px;
+  position: relative;
+  text-align: left; 	
+	
+	-moz-transition:  background-color 150ms ease-in 0s;
+	-o-transition:  background-color 150ms ease-in 0s;
+	-webkit-transition: background-color 150ms ease-in 0s;
+	transition: background-color 150ms ease-in 0s;
+	
+	z-index: 2;
+	
+}
+
+.drop-down-btn:hover {
+	background-color: #f7efd0;
+	border-color: #c7bf9d;
+}
+
+/*внутренний блок кнопки для размещения и обрезки выходящего за пределы контента*/
+.drop-down-btn-of {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+}
+
+/*длинный контейнер для размещения текста без переносов*/
+.drop-down-btn-long {
+	display: block;
+	width: 800%;
+}
+
+/*стрелочка вниз*/
+.drop-down-btn-arr {
+	background: url(/i/s.png) -58px 0 no-repeat;
+	display: block;
+	height: 6px;
+	position: absolute;
+	right: 8px;
+	top: .85em;
+	width: 11px;
+}
+
+.drop-down-btn:hover .drop-down-btn-arr {
+	background-position: -58px -8px;
+}
+
+/*обёртка для кнопки и выпадающего списка*/
+.drop-down-list-out {
+	position: relative;
+	z-index: 1;
+}
+
+/*обёртка выпадающего списка*/
+.drop-down-list-in {
+	position: absolute;
+	width: 100%;
+}
+
+/*блок тени под кнопкой и списком*/
+.drop-down-list-shadow {
+	box-shadow: 0 2px 8px rgba(0,0,0,.3);
+	height: 100%;
+	left: 0;
+	padding: 30px 0 0 0;
+	position: absolute;
+	top: -30px;
+	width: 100%;
+	z-index: 1;
+}
+
+/*список*/
+.drop-down-list-cnt {
+	background-color: #fff;
+	border: solid #c6c6c6;
+	border-width: 0 1px 1px 1px;
+	list-style: none;
+	margin: 0;
+	padding: 2px 10px 4px 10px;
+	position: relative;
+	z-index: 100;
+}
+
+/*элемент спсика*/
+.ddl-item {
+	font-size: 15px;
+	display: block;
+	line-height: 1.2;
+	margin: 0;
+	padding: 4px 0;
+}
+
+/*ссылка в списке*/
+.ddl-i-l,.ddl-i-l:link,.ddl-i-l:visited {
+	color: #000;
+}
+
+.ddl-i-l:hover {
+	color: #6392cf;
+}
+
+
+/*-- end drop-downs --*/
+
 /*-- end forms --*/
 
 /* Информационные страницы */
@@ -1738,6 +2090,61 @@ table:not([class]) tr:nth-child(even) {
 }
 
 /*-- end goods grid (collections) --*/
+
+/* фильтры и поиск товаров */
+/*-- goods filters and search --*/
+
+.goods-filter-search-cnt {
+	margin-bottom: 28px;
+	padding-right: 20%;
+	position: relative;
+}
+
+.goods-filter-cnt {
+	margin-left: -5%;
+}
+
+.goods-filter-col {
+	margin-left: 5%;
+	width: 22%;
+}
+
+.goods-search-cnt {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 20%;
+}
+
+.goods-search-from {
+	position: relative;
+}
+
+.goods-search-inp {
+	padding-right: 34px;
+	width: 100%;
+}
+
+.goods-search-sbmt {
+	background: url(/i/s.png) -33px -284px no-repeat;
+	border: 0;
+	cursor: pointer;
+	display: block;
+	height: 34px;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 32px;
+}
+
+.goods-search-sbmt:hover {
+	background-position: -33px -320px;
+}
+
+
+
+/*-- end goods filters and search --*/
 
 /* Элементы фотогалереий */
 /*-- photo elements --*/
@@ -2959,6 +3366,11 @@ a.white:hover .dot-link
 /*reddish-gray*/
 .rdgray {
   color: #69615b;
+}
+
+/*red*/
+.red {
+  color: #ff0000;
 }
 
 /* цвета ссылок*/
