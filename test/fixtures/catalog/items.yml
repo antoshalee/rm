@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  article: MyString
+  weight: MyString
+  metal: MyString
+  category: 
+  insert: 
+
+two:
+  article: MyString
+  weight: MyString
+  metal: MyString
+  category: 
+  insert: 

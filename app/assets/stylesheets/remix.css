@@ -5,7 +5,7 @@
 /*-- basic --*/
 
 html {
-  font: 10px/1.5 'Playfair Display', Times, 'Times New Roman', serif;   
+  font: 10px/1.5 'Playfair Display', Times, 'Times New Roman', serif;
 }
 
 html, body {
@@ -459,17 +459,17 @@ table:not([class]) tr:nth-child(even) {
 	background: rgba(255,255,255,1);
 	border: 1px solid #aaa;
 	/*border-color: rgba(255,255,255,0);*/
-	-moz-box-shadow: 
+	-moz-box-shadow:
 		inset 0 4px 4px -4px rgba(0,0,0,.33), /*верхняя*/
 		inset 0 -3px 2px -3px rgba(0,0,0,.15), /*нижняя*/
 		inset 3px 0 3px -3px rgba(0,0,0,.18), /*левая*/
-		inset -3px 0 3px -3px rgba(0,0,0,.18); /*правая*/	
-	-webkit-box-shadow: 
+		inset -3px 0 3px -3px rgba(0,0,0,.18); /*правая*/
+	-webkit-box-shadow:
 		inset 0 4px 4px -4px rgba(0,0,0,.33), /*верхняя*/
 		inset 0 -3px 2px -3px rgba(0,0,0,.15), /*нижняя*/
 		inset 3px 0 3px -3px rgba(0,0,0,.18), /*левая*/
-		inset -3px 0 3px -3px rgba(0,0,0,.18); /*правая*/		
-	box-shadow: 
+		inset -3px 0 3px -3px rgba(0,0,0,.18); /*правая*/
+	box-shadow:
 		inset 0 4px 4px -4px rgba(0,0,0,.33), /*верхняя*/
 		inset 0 -3px 2px -3px rgba(0,0,0,.15), /*нижняя*/
 		inset 3px 0 3px -3px rgba(0,0,0,.18), /*левая*/
@@ -574,19 +574,19 @@ label.f-error {
 /*кнопка показа формы*/
 .feedback-form-open {
   border: 1px solid #f27733;
-  border-radius: 3px;  
+  border-radius: 3px;
   color: #f27733;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
   line-height: 1;
   padding: 7px 16px 10px 16px;
-  
+
   -moz-transition: border-color .5s ease 0s;
   -o-transition: border-color .5s ease 0s;
   -webkit-transition: border-color .5s ease 0s;
   transition: border-color .5s ease 0s;
-  
+
 }
 
 .feedback-form-open .dot-link {
@@ -1595,12 +1595,12 @@ label.f-error {
 .drop-down-btn {
 	background-color: #fff;
 	border: 1px solid #c6c6c6;
-	
+
 	-moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;  
-	
+  box-sizing: border-box;
+
 	cursor: pointer;
 	display: block;
   font-size: 15px;
@@ -1608,15 +1608,15 @@ label.f-error {
   outline: none;
 	padding: 4px 28px 5px 10px;
   position: relative;
-  text-align: left; 	
-	
+  text-align: left;
+
 	-moz-transition:  background-color 150ms ease-in 0s;
 	-o-transition:  background-color 150ms ease-in 0s;
 	-webkit-transition: background-color 150ms ease-in 0s;
 	transition: background-color 150ms ease-in 0s;
-	
+
 	z-index: 2;
-	
+
 }
 
 .drop-down-btn:hover {
@@ -1639,7 +1639,7 @@ label.f-error {
 
 /*стрелочка вниз*/
 .drop-down-btn-arr {
-	background: url(/i/s.png) -58px 0 no-repeat;
+	background: url(/assets/s.png) -58px 0 no-repeat;
 	display: block;
 	height: 6px;
 	position: absolute;
@@ -2126,7 +2126,7 @@ label.f-error {
 }
 
 .goods-search-sbmt {
-	background: url(/i/s.png) -33px -284px no-repeat;
+	background: url(/assets/s.png) -33px -284px no-repeat;
 	border: 0;
 	cursor: pointer;
 	display: block;

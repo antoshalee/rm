@@ -14,7 +14,7 @@
     = yield :javascripts
     %link{:href => "/assets/remix-img-src.png", :rel => "image_src"}/
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
-  %body.body-bkg
+  %body.body-bkg{id: @body_id}
     .page-wrp.page-width
       .page-cntt
         .redblueshadow.top-nav-mar

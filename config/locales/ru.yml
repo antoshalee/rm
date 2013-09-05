@@ -2,8 +2,22 @@ ru:
   subscriptions:
     paper: 'Бумажная'
     digital: 'Электронная'
+  catalog:
+    metals:
+      gold: 'Золото'
+      silver: 'Серебро'
   activerecord:
     models:
+      catalog/item:
+        one: 'Украшение'
+        other: 'Украшения'
+      catalog/category:
+        one: 'Категорию'
+        many: 'Категорий'
+        other: 'Категории'
+      catalog/insert:
+        one: 'Вид вставки'
+        other: 'Виды вставок'
       page:
         one: 'Страницу'
         other: 'Страницы'
@@ -107,3 +121,15 @@ ru:
         phone: 'Телефон'
         address: 'Адрес'
         created_at: 'Дата создания'
+      catalog/insert:
+        name: 'Название'
+      catalog/category:
+        name: 'Название'
+      catalog/item:
+        category: 'Категория'
+        metal: 'Металл'
+        insert: 'Вставка'
+        article: 'Артикул'
+        created_at: 'Дата создания'
+        weight: 'Вес'
+        image: 'Изображение'

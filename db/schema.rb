@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130816010229) do
+ActiveRecord::Schema.define(:version => 20130905145245) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -79,6 +79,36 @@ ActiveRecord::Schema.define(:version => 20130816010229) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "catalog_categories", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "catalog_inserts", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "catalog_items", :force => true do |t|
+    t.string   "article",     :null => false
+    t.decimal  "weight",      :null => false
+    t.string   "metal",       :null => false
+    t.string   "image"
+    t.integer  "category_id", :null => false
+    t.integer  "insert_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "catalog_items", ["article"], :name => "index_catalog_items_on_article"
+  add_index "catalog_items", ["category_id"], :name => "index_catalog_items_on_category_id"
+  add_index "catalog_items", ["insert_id"], :name => "index_catalog_items_on_insert_id"
+  add_index "catalog_items", ["metal"], :name => "index_catalog_items_on_metal"
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false

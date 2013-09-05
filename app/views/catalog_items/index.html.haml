@@ -1,0 +1,76 @@
+%h1.txa-c.page-h-anim Коллекции
+.sub-menu.alt-font
+  %a.sub-menu-link.sub-menu-link-select.black{:href => "#"} Все коллекции
+  %a.sub-menu-link.black{:href => "#"} Центр обручальных колец
+  %a.sub-menu-link.black{:href => "#"} Ювелирный дискаунтер
+.content-shadow.mb12
+.page-margin.content-margin
+  .goods-filter-search-cnt
+    #goods-filter-cnt.goods-filter-cnt.ns
+      .goods-filter-col.lb
+        .drop-down-list-out
+          .drop-down-btn.alt-font
+            .drop-down-btn-of
+              .drop-down-btn-long
+                Вся продукция
+            %span.drop-down-btn-arr
+          .drop-down-list-in.na
+            %ul.drop-down-list-cnt.alt-font
+              %li.ddl-item
+                %a.ddl-i-l{:href => "#"} Вся продукция
+              - @categories.each do |cat|
+                %li.ddl-item
+                  %a.ddl-i-l{:href => "#"}= cat.name
+            .drop-down-list-shadow
+      .goods-filter-col.lb
+        .drop-down-list-out
+          .drop-down-btn.alt-font
+            .drop-down-btn-of
+              .drop-down-btn-long
+                Все металлы
+            %span.drop-down-btn-arr
+          .drop-down-list-in.na
+            %ul.drop-down-list-cnt.alt-font
+              %li.ddl-item
+                %a.ddl-i-l{:href => "#"} Все металлы
+              - Catalog::Item::METALS.each do |metal|
+                %li.ddl-item
+                  %a.ddl-i-l{:href => "#"}= t("catalog.metals.#{metal}")
+            .drop-down-list-shadow
+      .goods-filter-col.lb
+        .drop-down-list-out
+          .drop-down-btn.alt-font
+            .drop-down-btn-of
+              .drop-down-btn-long
+                Все вставки
+            %span.drop-down-btn-arr
+          .drop-down-list-in.na
+            %ul.drop-down-list-cnt.alt-font
+              %li.ddl-item
+                %a.ddl-i-l{:href => "#"} Все вставки
+              - @inserts.each do |ins|
+                %li.ddl-item
+                  %a.ddl-i-l{:href => "#"}= ins.name
+            .drop-down-list-shadow
+    :javascript
+      remix.simpleDropDowns({
+        context:$('#goods-filter-cnt')
+      });
+    .goods-search-cnt
+      %form.goods-search-from
+        %input.f-t-field.goods-search-inp{:placeholder => "Поиск по артикулу", :type => "text"}/
+        %input.goods-search-sbmt{:type => "submit", :value => ""}/
+  .cf
+    %h2.ib Поиск: артикул 9945643
+    %a.fr.f14.alt-font.ib.mt7{:href => "#"} Отменить поиск по артикулу
+  .goods-grid-cnt.alt-font
+    - @items.each_slice(5) do |slice|
+      .goods-grid
+        - slice.each do |item|
+          .goods-grid-item.goods-grid-item-toview{"data-url" => item.image.url}
+            .goods-grid-i-cnt
+              %img.goods-grid-i{:alt => "Изделие", :src => item.image.thumb}/
+            .goods-grid-text.goods-grid-text-zoom-pad
+              %div Артикул: #{item.article}
+              %div Вес #{item.weight}
+              %span.ico.zoom-ico.goods-grid-text-zoom-ico
