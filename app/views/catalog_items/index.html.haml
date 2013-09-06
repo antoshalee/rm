@@ -22,7 +22,6 @@
           .drop-down-btn.alt-font
             .drop-down-btn-of
               .drop-down-btn-long
-
               = selected_metal.present? ? t("catalog.metals.#{selected_metal}") : "Все металлы"
             %span.drop-down-btn-arr
           .drop-down-list-in.na
@@ -53,12 +52,13 @@
         context:$('#goods-filter-cnt')
       });
     .goods-search-cnt
-      %form.goods-search-from
-        %input.f-t-field.goods-search-inp{:placeholder => "Поиск по артикулу", :type => "text"}/
+      %form.goods-search-from{method: 'get', action: '/catalog'}
+        %input.f-t-field.goods-search-inp{:placeholder => "Поиск по артикулу", :type => "text", :name => "article"}/
         %input.goods-search-sbmt{:type => "submit", :value => ""}/
-  .cf
-    %h2.ib Поиск: артикул 9945643
-    %a.fr.f14.alt-font.ib.mt7{:href => "#"} Отменить поиск по артикулу
+  - if params[:article]
+    .cf
+      %h2.ib Поиск: артикул #{params[:article]}
+      %a.fr.f14.alt-font.ib.mt7{:href => "/catalog"} Отменить поиск по артикулу
   .goods-grid-cnt.alt-font
     - @items.each_slice(5) do |slice|
       .goods-grid

@@ -4,6 +4,7 @@ class CatalogItemsController < ApplicationController
   has_scope :by_insert, as: :insert
   has_scope :by_category, as: :category
   has_scope :by_metal, as: :metal
+  has_scope :by_article, as: :article
 
   def index
     @items = apply_scopes(Catalog::Item).order("id asc").page(params[:page]).per(10)

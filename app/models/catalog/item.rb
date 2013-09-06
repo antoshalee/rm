@@ -21,4 +21,8 @@ class Catalog::Item < ActiveRecord::Base
   def self.by_metal metal
     where(metal: metal)
   end
+
+  def self.by_article article
+  	where(article: article)
+  end
 end
