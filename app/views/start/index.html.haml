@@ -30,7 +30,7 @@
       .photo-grid.photo-grid-pad
         - @last_album.album_items.each do |item|
           .ph-g-item
-            %a.ph-g-i-l{:href => item.image.url, :title => @last_album.title}
+            %a.ph-g-i-l{:href => item.image.fullscreen.url, :title => @last_album.title}
               %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
 .sp-map-cnt
   .sp-address-on-map
