@@ -9,4 +9,16 @@ class Catalog::Item < ActiveRecord::Base
   validates :image, presence: true
 
   mount_uploader :image, CatalogItemImageUploader
+
+  def self.by_insert insert
+    where(insert_id: insert)
+  end
+
+  def self.by_category category
+    where(category_id: category)
+  end
+
+  def self.by_metal metal
+    where(metal: metal)
+  end
 end

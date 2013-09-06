@@ -7,45 +7,46 @@
           .drop-down-btn.alt-font
             .drop-down-btn-of
               .drop-down-btn-long
-                Вся продукция
+                = selected_category.present? ? selected_category.name : "Вся продукция"
             %span.drop-down-btn-arr
           .drop-down-list-in.na
             %ul.drop-down-list-cnt.alt-font
               %li.ddl-item
-                %a.ddl-i-l{:href => "#"} Вся продукция
+                %a.ddl-i-l{href: current_catalog_path_except(:category)} Вся продукция
               - @categories.each do |cat|
                 %li.ddl-item
-                  %a.ddl-i-l{:href => "#"}= cat.name
+                  %a.ddl-i-l{href: current_catalog_path_with(category: cat.id)}= cat.name
             .drop-down-list-shadow
       .goods-filter-col.lb
         .drop-down-list-out
           .drop-down-btn.alt-font
             .drop-down-btn-of
               .drop-down-btn-long
-                Все металлы
+
+              = selected_metal.present? ? t("catalog.metals.#{selected_metal}") : "Все металлы"
             %span.drop-down-btn-arr
           .drop-down-list-in.na
             %ul.drop-down-list-cnt.alt-font
               %li.ddl-item
-                %a.ddl-i-l{:href => "#"} Все металлы
+                %a.ddl-i-l{href: current_catalog_path_except(:metal)} Все металлы
               - Catalog::Item::METALS.each do |metal|
                 %li.ddl-item
-                  %a.ddl-i-l{:href => "#"}= t("catalog.metals.#{metal}")
+                  %a.ddl-i-l{href: current_catalog_path_with(metal: metal)}= t("catalog.metals.#{metal}")
             .drop-down-list-shadow
       .goods-filter-col.lb
         .drop-down-list-out
           .drop-down-btn.alt-font
             .drop-down-btn-of
               .drop-down-btn-long
-                Все вставки
+                = selected_insert.present? ? selected_insert.name : "Все вставки"
             %span.drop-down-btn-arr
           .drop-down-list-in.na
             %ul.drop-down-list-cnt.alt-font
               %li.ddl-item
-                %a.ddl-i-l{:href => "#"} Все вставки
+                %a.ddl-i-l{href: current_catalog_path_except(:insert)} Все вставки
               - @inserts.each do |ins|
                 %li.ddl-item
-                  %a.ddl-i-l{:href => "#"}= ins.name
+                  %a.ddl-i-l{:href => current_catalog_path_with(insert: ins.id)}= ins.name
             .drop-down-list-shadow
     :javascript
       remix.simpleDropDowns({

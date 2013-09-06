@@ -279,6 +279,7 @@ DEPENDENCIES
   formtastic
   globalize3
   haml
+  has_scope
   jquery-rails (= 2.2.1)
   jquery-ui-rails
   kaminari
