@@ -1,0 +1,8 @@
+- c = params[:controller]
+%h1.page-h-anim.txa-c Оптовый отдел
+.sub-menu.alt-font
+  / %a.sub-menu-link.black{href: "/wholesale", class: (c == "wholesale" ? "sub-menu-link-select" : nil)} Об отделе
+  = submenu_link_active_if (c == "wholesale"), "Об отделе", "/wholesale"
+  %a.sub-menu-link.black{:href => "#"} Новости и мероприятия
+  = submenu_link_active_if (c == "catalog_items"), "Каталог продукции", "/catalog"
+.content-shadow.mb12

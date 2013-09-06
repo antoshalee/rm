@@ -9,4 +9,10 @@ module ApplicationHelper
     nodeset.shift
     raw nodeset.to_html
   end
+
+  def submenu_link_active_if condition, text, path
+    css_classes = %w(black sub-menu-link)
+    css_classes << "sub-menu-link-select" if condition
+    link_to text, path, class: css_classes
+  end
 end
