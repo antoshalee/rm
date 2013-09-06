@@ -9,7 +9,7 @@ CKEDITOR.editorConfig = function( config ) {
         ['Cut','Copy','Paste','PasteText','PasteFromWord'],
         ['Undo','Redo','-','SelectAll','RemoveFormat'],
 
-        ['Bold','Italic','Underline'], ['NumberedList','BulletedList','-','Blockquote'],
+        ['Bold','Italic','Underline', 'Format'], ['NumberedList','BulletedList','-','Blockquote'],
        	['Link','Unlink','Anchor'], ['Image', 'Attachment', 'MediaEmbed']
 
     ];
