@@ -21,6 +21,9 @@ ru:
       page:
         one: 'Страницу'
         other: 'Страницы'
+      sidebar_item:
+        one: 'Сайдбар-блок'
+        other: 'Сайдбар-блоки'
       album:
         one: 'Альбом'
         other: 'Фото и мероприятия'
@@ -66,6 +69,9 @@ ru:
         url: 'Адрес'
         created_at: 'Дата создания'
         updated_at: 'Дата последнего обновления'
+      sidebar_item:
+        title: 'Заголовок'
+        text: 'Текст'
       album:
         title: 'Заголовок'
         content: 'Текст'

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.register Page do
   config.clear_sidebar_sections!
   menu priority: 6
@@ -14,7 +15,13 @@ ActiveAdmin.register Page do
       f.input :url
       f.input :content, as: :ckeditor
     end
-
+    f.has_many :sidebar_items do |sidebar_item|
+      unless sidebar_item.object.new_record?
+        sidebar_item.input :_destroy, :as => :boolean, :required => false, :label => 'Удалить'
+      end
+      sidebar_item.input :title
+      sidebar_item.input :text, as: :ckeditor
+    end
     f.buttons
   end
 
