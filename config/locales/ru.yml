@@ -61,9 +61,11 @@ ru:
         other: 'Поставщики'
     attributes:
       page:
-        title: 'Название'
+        title: 'Заголовок'
         content: 'Текст'
         url: 'Адрес'
+        created_at: 'Дата создания'
+        updated_at: 'Дата последнего обновления'
       album:
         title: 'Заголовок'
         content: 'Текст'

@@ -18,4 +18,16 @@ ActiveAdmin.register Page do
     f.buttons
   end
 
+  show do |item|
+    attributes_table do
+      row :title
+      row :url
+      row :content do |page|
+        raw page.content
+      end
+      row :created_at
+      row :updated_at
+    end
+  end
+
 end
