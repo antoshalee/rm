@@ -1,4 +1,13 @@
 ru:
+  devise:
+    failure:
+      admin_user:
+        not_found_in_database: 'Неверный логин/пароль'
+        invalid: 'Неверный логин/пароль'
+        unauthenticated: 'Войдите в систему'
+    sessions:
+      admin_user:
+        signed_in: 'Вы успешно вошли'
   subscriptions:
     paper: 'Бумажная'
     digital: 'Электронная'
