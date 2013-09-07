@@ -20,3 +20,4 @@
 //= require jquery.validate.min
 //= require remix
 //= require albums
+//= require card
