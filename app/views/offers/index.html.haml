@@ -30,9 +30,9 @@
       .nl-2col-cnt.nl-mb.ns
         - slice.each do |offer|
           .nl-2col.lb
-            %a.black.onhoverlink.block{:href => "/pages/action.html"}
-            .nl-i-cnt.onhover-op
-              = image_tag offer.image.url, class: 'img-b'
+            %a.black.onhoverlink.block{:href => offer_path(offer)}
+              .nl-i-cnt.onhover-opz
+                = image_tag offer.image.url, class: 'img-b'
             %h2
               «
               %a.thin-link.onhoverlink-signal{href: offer_path(offer)}>= offer.title
