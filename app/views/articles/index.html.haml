@@ -1,6 +1,7 @@
 - content_for :javascripts do
   = javascript_include_tag "http://vkontakte.ru/js/api/share.js?9", charset: 'windows-1251'
-%h1.txa-c.page-h-anim Новости
+.h-section.page-h-anim.txa-c О компании
+= render 'shared/submenus/about'
 .content-shadow.mb12
 / page-margin content-margin
 .page-margin.content-margin.ns

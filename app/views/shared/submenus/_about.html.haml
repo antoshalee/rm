@@ -1,0 +1,12 @@
+:ruby
+  items = [[articles_path, 'Новости'],
+  [magazines_path, 'Журнал'],
+  ["#", 'Ювелирная фабрика'],
+  ["/contacts", 'Контактная информация']]
+.sub-menu.alt-font
+  - items.each do |item|
+    - if current_page?(item[0])
+      %h1.rst.inline
+        %a.sub-menu-link.sub-menu-link-select.black= item[1]
+    - else
+      %a.sub-menu-link.black{:href => item[0]}= item[1]

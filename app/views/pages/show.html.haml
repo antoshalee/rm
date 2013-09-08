@@ -1,4 +1,8 @@
-%h1.txa-c.page-h-anim= @page.title
+- if current_page?('/about')
+  %h1.txa-c.page-h-anim О компании
+  = render 'shared/submenus/about'
+- else
+  %h1.txa-c.page-h-anim= @page.title
 .content-shadow.mb12
 .page-margin.content-margin.ns
   .nl-content-col.text.lb
