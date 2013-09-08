@@ -20,6 +20,21 @@ Remix::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    :address => ENV['SMTP_SERVER'],
+    :port => 25,
+    :authentication => :login,
+    :user_name => ENV['SMTP_LOGIN'],
+    :password => ENV['SMTP_PASSWORD']
+  }
+
+  config.action_mailer.default_url_options = {
+    :host => ENV['SITE_HOST']
+  }
+
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

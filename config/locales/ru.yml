@@ -8,6 +8,10 @@ ru:
     sessions:
       admin_user:
         signed_in: 'Вы успешно вошли'
+  active_admin:
+    scopes:
+      all: 'Все'
+      confirmed: 'Подтвержденные'
   subscriptions:
     paper: 'Бумажная'
     digital: 'Электронная'
@@ -138,6 +142,7 @@ ru:
         phone: 'Телефон'
         address: 'Адрес'
         created_at: 'Дата создания'
+        confirmed?: 'Подтверждено?'
       catalog/insert:
         name: 'Название'
       catalog/category:

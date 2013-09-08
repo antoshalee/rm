@@ -51,5 +51,6 @@ gem 'acts-as-taggable-on'
 gem 'rails3-jquery-autocomplete'
 gem 'truncate_html'
 gem 'has_scope'
+gem 'figaro'
 
 gem "mocha", :group => :test

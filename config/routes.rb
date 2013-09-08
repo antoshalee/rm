@@ -13,6 +13,7 @@ Remix::Application.routes.draw do
   get "wholesale" => "wholesale#index"
   get "catalog" => "catalog_items#index"
   get "subscribe" => "subscriptions#new"
+  get "subscribe_confirmation" => "subscriptions#confirm"
   get "card" => "card#index"
   get "card/check" => "card#check"
 
