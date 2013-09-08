@@ -26,7 +26,7 @@ ActiveAdmin.register Offer do
       f.input :content, as: :ckeditor
       f.input :image
       f.input :tag_list
-      f.input :is_main
+      f.input :is_main, label: t("activerecord.attributes.offer.is_main") + " (если галочка выставлена, данная акция будет отображаться самой большой на странице акций)"
       f.input :discount
     end
 
