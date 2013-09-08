@@ -2,10 +2,16 @@ ActiveAdmin.register Article do
   config.clear_sidebar_sections!
   menu prority: 1
 
+  index do
+    column :id
+    column :title
+    column :created_at
+    default_actions
+  end
+
   form :html => { :enctype=> 'multipart/form-data'} do |f|
     f.inputs do
       f.input :title
-      f.input :lead, :input_html => {rows: 4}
       f.input :content, as: :ckeditor
       f.input :image
     end
@@ -19,7 +25,6 @@ ActiveAdmin.register Article do
       row :image do |article|
         image_tag article.image.url, width: 100
       end
-      row :lead
       row :content do |article|
         raw article.content
       end

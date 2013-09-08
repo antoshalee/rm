@@ -10,7 +10,7 @@
             .sp-news-txt
               .sp-news-txt-in
                 = link_to article, class: %w(black thin-link) do
-                  = truncate(article.lead, length: 100, separator: ' ')
+                  = truncate(article.title, length: 100, separator: ' ')
       #sp-news-left.sp-news-left
       #sp-news-right.sp-news-right
     .gem-sep.gem-sep-gold.sp-news-gem-sep
