@@ -54,7 +54,7 @@ ru:
         one: 'Украшение'
         other: 'Украшения'
       offer:
-        one: 'Акция'
+        one: 'Акцию'
         few: 'Акции'
         many: 'Акция'
         other: 'Акции'
@@ -123,7 +123,7 @@ ru:
         date_finish: 'Дата завершения'
         is_main: 'Главная?'
         tag_list: 'Теги'
-        discount: 'Акция-скидка?'
+        discount: 'Постоянная акция?'
       banner:
         image: 'Изображение'
         text: 'Текст'

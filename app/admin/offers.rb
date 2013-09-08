@@ -1,13 +1,19 @@
 # encoding: utf-8
 ActiveAdmin.register Offer do
-  config.clear_sidebar_sections!
+  # config.clear_sidebar_sections!
   menu priority: 5
+  filter :discount
 
   index do
     column :title
     column :date_start
     column :date_finish
-    column :is_main
+    column :is_main do |offer|
+      offer.is_main? ? 'Да' : 'Нет'
+    end
+    column :discount do |offer|
+      offer.discount? ? 'Да' : 'Нет'
+    end
     default_actions
   end
 
@@ -33,7 +39,9 @@ ActiveAdmin.register Offer do
       row :date_start
       row :date_finish
       row :lead
-      row :content
+      row :content do |offer|
+        raw offer.content
+      end
       row :tag_list
       row :image do |a|
         image_tag a.image.url
