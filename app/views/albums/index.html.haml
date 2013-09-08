@@ -1,24 +1,17 @@
 %h1.page-h-anim.txa-c Фото и мероприятия
-/ sub-menu
 .sub-menu.alt-font
   %a.sub-menu-link.black{:href => albums_path, class: (params[:tag].present? ? nil : 'sub-menu-link-select')} Все мероприятия
   - Album.tag_counts.each do |tag|
     %a.sub-menu-link.black{href: tag_albums_path(tag.name), class: (params[:tag]==tag.name ? 'sub-menu-link-select' : nil)}= tag.name
-/ end sub-menu
-/ photo-bkg
 .photo-bkg
   .photo-shadow-bkg
     .photo-shadow-top-ptrn
     .photo-shadow-gold
-  / page-margin
   .page-margin.content-margin
     #albums_container
       = render 'list'
-
     .ph-showmore
       %a.btn.btn-big.btn-big-gold.btn-big-gold-drksh.ph-showmore-btn Показать ещё
       .ph-showmore-hr-txt.hr-txt.f16
         %span.hr-txt-in.gem-sep-gold
           %span.ph-showmore-sub-place.btn.btn-big
-  / end page-margin
-/ end photo-bkg
