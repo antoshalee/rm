@@ -1,0 +1,4 @@
+.sub-menu.alt-font
+  %a.sub-menu-link.black{href: offers_path, class: (current_page?(offers_path) ? 'sub-menu-link-select' : nil)} Все акции и скидки
+  - Offer.tag_counts.each do |tag|
+    %a.sub-menu-link.black{href: tag_offers_path(tag.name), class: (params[:tag]==tag.name ? 'sub-menu-link-select' : nil)}= tag.name

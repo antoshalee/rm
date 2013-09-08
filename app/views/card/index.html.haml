@@ -1,16 +1,12 @@
 .h-section.page-h-anim.txa-c Акции и скидки
-.sub-menu.alt-font
-  %a.sub-menu-link.black{:href => "#"} Все акции и скидки
-  %a.sub-menu-link.black{:href => "#"} Ювелирный дом
-  %a.sub-menu-link.black{:href => "#"} Сеть магазинов «Ремикс»
-  %a.sub-menu-link.sub-menu-link-select.black{:href => "#"} Дисконтная система
+= render 'offers/header'
 .content-shadow.mb12
 .page-margin.content-margin.ns
   .nl-content-col.lb
     .text.text-width.nl-mb
       %h1.rst.h-article Дисконтная система
       .nl-article-menu.alt-font
-        %a.nl-am-l.gray50{:href => "/pages/actions.html"} Акции и скидки
+        %a.nl-am-l.gray50{:href => offers_path} Акции и скидки
         %a.nl-am-l.gray50 Дисконтная система
       %p
         Начиная с 2007 года вопрос «где в Красноярске можно найти самый большой выбор элегантный классических и необычных дизайнерских украшений», перестал быть актуальным. Ведь именно в это время в самом сердце города свои двери открыл Ювелирный Дом «Ремикс».
@@ -20,7 +16,7 @@
       .f-lbl.mb10 Номер вашей карты
       .mb16
         %input.f-t-field{:type => "text", name: :number}/
-        %span.red.f18.base-font.ml20#check_card_result Ваша скидка 7%
+        %span.red.f18.base-font.ml20#check_card_result
       %input.btn.btn-big.btn-big-gold{:type => "submit", :value => "Узнать"}/
     :javascript
       remix.magsubscribeform();

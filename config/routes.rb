@@ -14,7 +14,7 @@ Remix::Application.routes.draw do
   get "catalog" => "catalog_items#index"
   get "subscribe" => "subscriptions#new"
   get "subscribe_confirmation" => "subscriptions#confirm"
-  get "card" => "card#index"
+  get "discount" => "card#index"
   get "card/check" => "card#check"
 
   post "subscribe" => "subscriptions#create", as: :subscriptions

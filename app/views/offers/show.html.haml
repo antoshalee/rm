@@ -1,10 +1,5 @@
 %h1.txa-c.page-h-anim Акции и скидки
-/ sub-menu
-.sub-menu.alt-font
-  %a.sub-menu-link.black{href: offers_path} Все акции и скидки
-  - Offer.tag_counts.each do |tag|
-    %a.sub-menu-link.black{href: tag_offers_path(tag.name)}= tag.name
-/ end sub-menu
+= render 'header'
 .content-shadow.mb12
 / page-margin content-margin
 .page-margin.content-margin.ns

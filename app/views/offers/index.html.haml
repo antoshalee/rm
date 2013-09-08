@@ -1,9 +1,6 @@
 %h1.txa-c.page-h-anim Акции и скидки
 / sub-menu
-.sub-menu.alt-font
-  %a.sub-menu-link.black{href: offers_path, class: (params[:tag].present? ? nil : 'sub-menu-link-select')} Все акции и скидки
-  - Offer.tag_counts.each do |tag|
-    %a.sub-menu-link.black{href: tag_offers_path(tag.name), class: (params[:tag]==tag.name ? 'sub-menu-link-select' : nil)}= tag.name
+= render 'header'
 / end sub-menu
 .content-shadow.mb12
 / page-margin content-margin
@@ -50,11 +47,4 @@
   .nl-aside-col.lb
     %h2.aside-hdr.tb-brd.gold-brd.alt-font
       %a.thin-link.gold{:href => "#"} Постоянные акции
-    - @discounts.each do |d|
-      .nl-aside-item.nl-aside-item-brd
-        %a.onhoverlink.block.black{:href => offer_path(d)}
-          .onhover-op
-            %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => d.image.aside}/
-          %h3
-            %span.onhoverlink-signal.thin-link= d.title
-          .text-mini.alt-font.onhoverlink-signal= d.lead
+    = render 'sidebars/offers', offers:  Offer.order('created_at desc').where(discount: true)
