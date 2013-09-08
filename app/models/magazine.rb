@@ -3,6 +3,7 @@ class Magazine < ActiveRecord::Base
   attr_accessible :url, :lead, :position, :title
   acts_as_list
 
+  before_validation :sanitize_url
   before_validation :grub_codes_from_remote_page
 
   private
@@ -18,5 +19,9 @@ class Magazine < ActiveRecord::Base
     end
   rescue
     self.errors.add(:url, "Не получилось получить системные данные по этому адресу")
+  end
+
+  def sanitize_url
+    self.url = "http://#{self.url}" unless self.url.match /^http/
   end
 end
