@@ -1,20 +1,25 @@
+- whole_content ||= false
 .text.text-width.white
   %h2.gold
     = link_to album.title, album, class: %w(gold thin-link)
   .nl-date= l(album.created_at, format: '%d.%m.%Y')
-  %p
-    = first_paragraph album.content
-    %a.dot-link.white.pointer.hsb-link.hsb-link-hided{"data-hsb-block" => "album#{album.id}"} Читать далее...
-  .hsb-container{id: "album#{album.id}"}
-    .hsb-content
-      = rest_paragraphs album.content
-#photo-grid-02.photo-grid.photo-grid-minimized
+  - unless whole_content
+    %p
+      = first_paragraph album.content
+      %a.dot-link.white.pointer.hsb-link.hsb-link-hided{"data-hsb-block" => "album#{album.id}"} Читать далее...
+    .hsb-container{id: "album#{album.id}"}
+      .hsb-content
+        = rest_paragraphs album.content
+  - else
+    %p
+      != album.content
+.photo-grid.photo-grid-minimized{id: "photo-grid-#{album.id}"}
   .hsb-content
     - album.album_items.each do |item|
       .ph-g-item
         %a.ph-g-i-l{:href => item.image.fullscreen.url, :title => item.description}
           %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
 .mb16
-  %a.onhoverlink.f16.pointer.js-phb-tggl.white{"data-gallery-id" => "photo-grid-02"}
+  %a.onhoverlink.f16.pointer.js-phb-tggl.white{"data-gallery-id" =>"photo-grid-#{album.id}"}
     %span.ico.show-photo-ico.mr4.js-btgl-icon
     %span.dot-link.onhoverlink-signal.js-btgl-txt Смотреть все фото
