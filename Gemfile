@@ -16,6 +16,7 @@ group :development do
   gem 'letter_opener'
   gem 'nifty-generators'
   gem 'rb-readline', '~> 0.4.2'
+  gem 'pry-rescue'
 end
 
 # one more WYSIWYG. Use for frontend

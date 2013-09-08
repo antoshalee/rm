@@ -80,6 +80,7 @@ GEM
     client_side_validations-simple_form (2.1.0)
       client_side_validations (~> 3.2.5)
       simple_form (~> 2.1.0)
+    coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -133,6 +134,7 @@ GEM
     inherited_resources (1.4.0)
       has_scope (~> 0.5.0)
       responders (~> 0.9)
+    interception (0.3)
     journey (1.0.4)
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
@@ -159,6 +161,7 @@ GEM
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
     metaclass (0.0.1)
+    method_source (0.8.2)
     mime-types (1.23)
     mocha (0.13.3)
       metaclass (~> 0.0.1)
@@ -180,6 +183,13 @@ GEM
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-rescue (1.1.1)
+      interception (>= 0.3)
+      pry
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -226,6 +236,7 @@ GEM
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    slop (3.4.6)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -287,6 +298,7 @@ DEPENDENCIES
   mocha
   nifty-generators
   pg
+  pry-rescue
   rails (= 3.2.13)
   rails3-jquery-autocomplete
   rb-readline (~> 0.4.2)
