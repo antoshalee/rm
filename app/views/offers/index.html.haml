@@ -19,7 +19,7 @@
           »
         .nl-date.nl-top-mes-pad Срок проведения: с #{l(@main_offer.date_start)}–#{l(@main_offer.date_finish)}
         .nl-i-cnt.onhover-op
-          = image_tag @main_offer.image.url, class: 'img-b'
+          = image_tag @main_offer.image.main, class: 'img-b'
         .text.nl-top-mes-pad
           %p
             = @main_offer.lead
@@ -32,7 +32,7 @@
           .nl-2col.lb
             %a.black.onhoverlink.block{:href => offer_path(offer)}
               .nl-i-cnt.onhover-opz
-                = image_tag offer.image.url, class: 'img-b'
+                = image_tag offer.image.main, class: 'img-b'
             %h2
               «
               %a.thin-link.onhoverlink-signal{href: offer_path(offer)}>= offer.title
