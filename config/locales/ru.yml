@@ -75,6 +75,9 @@ ru:
       supplier:
         one: 'Поставщика'
         other: 'Поставщики'
+      card:
+        one: 'Карту'
+        other: 'Дисконтные карты'
     attributes:
       page:
         title: 'Заголовок'
@@ -155,3 +158,6 @@ ru:
         created_at: 'Дата создания'
         weight: 'Вес'
         image: 'Изображение'
+      card:
+        number: 'Номер'
+        discount: 'Размер скидки'
