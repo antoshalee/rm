@@ -1,21 +1,11 @@
 %h1.txa-c.page-h-anim= @page.title
 .content-shadow.mb12
-/ page-margin content-margin
 .page-margin.content-margin.ns
-  / nl-content-col
   .nl-content-col.text.lb
     != @page.content
   .nl-aside-col.lb
-    / .nl-aside-item.nl-aside-item-brd
-    /   %a.onhoverlink.block.black{:href => "#"}
-    /   %h3.h-article.mb14
-    /     %span.onhoverlink-signal.thin-link Сувенирная продукция
-    /   .onhover-op
-    /     %img.img-b.mb8{:alt => "", :src => "/i/temp/nlpic9.jpg"}/
-    /   .text-mini.alt-font.onhoverlink-signal
-    /     На третьем этаже вы найдете ювелирные украшения премиум сегмента со специальной вип-комнатой. Здесь же расположен Центр обручальных колец.
-    - @page.sidebar_items.each do |sidebar_item|
-      != sidebar_item.text
-
-/
-  / end nl-aside-col
+    - @page.sidebar_items.each_with_index do |sidebar_item, ind|
+      - classes = %w(nl-aside-item nl-aside-item-user-content)
+      - classes << 'nl-aside-item-brd' unless ind == (@page.sidebar_items.length - 1)
+      %div{class: classes}
+        != sidebar_item.text

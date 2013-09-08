@@ -1883,6 +1883,65 @@ label.f-error {
   margin-bottom: 24px;
 }
 
+/* блоки в правой колонке с пользовательским контентом */
+.nl-aside-item-user-content h1 {
+  border-style: solid;
+  border-width: 1px 0;
+  padding: .5em 0 .6em 0;
+  border-color: #dab14e;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 16px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: normal;
+  color: #ccae62;
+}
+
+.nl-aside-item-user-content h1 a {
+  color: #ccae62 !important;
+  border-bottom-color: rgba(218,177,78,.5);
+}
+.nl-aside-item-user-content h2,
+.nl-aside-item-user-content h3,
+.nl-aside-item-user-content h4,
+.nl-aside-item-user-content h5,
+.nl-aside-item-user-content h6 {
+  font-family: 'Playfair Display', Times, 'Times New Roman', serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 .4em 0;
+}
+.nl-aside-item-user-content p {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  word-spacing: 0;
+  color: #000;
+  margin-bottom: 0;
+}
+
+.nl-aside-item-user-content a {
+  color: #000 !important;
+  text-decoration: none;
+  border-bottom: 1px rgba(0,0,0,.2) solid;
+}
+
+.nl-aside-item-user-content img{
+  margin-bottom:0;
+}
+
+.nl-aside-item-user-content a:hover {
+  -moz-transition: color 0.35s ease 0s, border-bottom-color 0.35s ease 0s;
+  -webkit-transition: color 0.35s ease 0s, border-bottom-color 0.35s ease 0s;
+  -o-transition: color 0.35s ease 0s, border-bottom-color 0.35s ease 0s;
+  transition: color 0.35s ease 0s, border-bottom-color 0.35s ease 0s;
+  color: #e46600 !important;
+  border-bottom-color: rgba(228,102,0,.3);
+}
+
 .nl-aside-item-brd {
 	border-bottom: 1px solid #c7c7c7;
 	padding-bottom: 14px;

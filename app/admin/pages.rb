@@ -19,8 +19,7 @@ ActiveAdmin.register Page do
       unless sidebar_item.object.new_record?
         sidebar_item.input :_destroy, :as => :boolean, :required => false, :label => 'Удалить'
       end
-      sidebar_item.input :title
-      sidebar_item.input :text, as: :ckeditor
+      sidebar_item.input :text, as: :ckeditor, hint: 'Для того чтобы вставить заголовок золотого цвета, используйте формат Heading1'
     end
     f.buttons
   end

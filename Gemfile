@@ -16,6 +16,7 @@ group :development do
   gem 'letter_opener'
   gem 'nifty-generators'
   gem 'rb-readline', '~> 0.4.2'
+  gem 'pry-rails'
   gem 'pry-rescue'
 end
 
@@ -26,7 +27,6 @@ gem 'acts_as_list'
 
 gem 'jquery-rails', '2.2.1'
 gem 'ckeditor', git: 'git://github.com/antoshalee/ckeditor.git'
-
 gem 'activeadmin', '~> 0.6.0'
 gem 'activeadmin-sortable'
 gem 'carrierwave', '~> 0.8.0'
