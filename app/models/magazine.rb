@@ -1,10 +1,14 @@
 # encoding: utf-8
 class Magazine < ActiveRecord::Base
-  attr_accessible :url, :lead, :position, :title
   acts_as_list
+  attr_accessible :url, :lead, :position, :title
 
   before_validation :sanitize_url
   before_validation :grub_codes_from_remote_page
+
+  def link_to_cover_img
+    "http://image.issuu.com/#{self.documentId}/jpg/page_1_thumb_large.jpg"
+  end
 
   private
 

@@ -37,7 +37,7 @@ Remix::Application.routes.draw do
       get 'tag/:tag', action: :index, as: :tag
     end
   end
-  resources :magazines, only: :index
+  resources :magazines, only: [:index, :show]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

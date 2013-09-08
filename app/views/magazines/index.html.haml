@@ -1,5 +1,4 @@
-- content_for :javascripts do
-  = javascript_include_tag "//e.issuu.com/embed.js", async: true
+
 .h-section.page-h-anim.txa-c О компании
 .sub-menu.alt-font
   %a.sub-menu-link.black{:href => articles_path} Новости
@@ -8,66 +7,44 @@
   %a.sub-menu-link.black{:href => "/pages/edu-center.html"} Ювелирная фабрика
   %a.sub-menu-link.black{:href => "/pages/contact.html"} Контактная информация
 .content-shadow.mb12
+/ end sub-menu
+.content-shadow.mb12
+/ page-margin content-margin
 .page-margin.content-margin.ns
+  / nl-content-col
   .nl-content-col.lb
-    - @magazines.each_with_index do |m,i|
-      .text.nl-mb
-        %h2= m.title
-        %p= m.lead
-      .issuuembed{"data-configid" => m.embedId, :style => "width: 100%; height: 525px;"}
-      - unless i==(@magazines.length-1)
+    - if @main_magazine
+      .nl-top-message
+        %a.black.onhoverlink.block{:href => "/pages/action.html"}
+        %h2.nl-top-mes-pad
+          «
+          %a.onhoverlink-signal.thin-link{href: magazine_path(@main_magazine)}>= @main_magazine.title
+          »
+        .nl-i-cnt.onhover-op
+          = image_tag @main_magazine.link_to_cover_img, class: 'img-b'
+        .text.nl-top-mes-pad
+          %p
+            = @main_magazine.lead
+        .f16
+          = link_to 'Читать журнал', @main_magazine, class: 'thin-link'
+    - lines_count = (@magazines.length+1)/2
+    - @magazines.each_slice(2).with_index do |slice, slice_index|
+      .nl-2col-cnt.nl-mb.ns
+        - slice.each do |magazine|
+          .nl-2col.lb
+            %a.black.onhoverlink.block{:href => magazine_path(magazine)}
+              .nl-i-cnt.onhover-opz
+                = image_tag magazine.link_to_cover_img, class: 'img-b'
+            %h2
+              «
+              %a.thin-link.onhoverlink-signal{href: magazine_path(magazine)}>= magazine.title
+              »
+            .text
+              %p= magazine.lead
+            .f16
+              = link_to 'Читать журнал', magazine, class: 'thin-link'
+      - if slice_index < (lines_count-1)
         .gem-sep.gem-sep-linen.nl-mb
           %span.ico.gem-sep-ico
-  .nl-aside-col.lb
-    %h2.aside-hdr.tb-brd.gold-brd.alt-font.gold
-      %a.thin-link.gold{:href => "/subscribe"} Подписка
-    %a.nl-aside-item.nl-aside-item-brd.onhoverlink.block.nb{:href => "/pages/magazine-subscribe.html"}
-    .onhover-op
-      %img.img-b.nl-aside-item-img.mb2{:alt => "", :src => "/i/temp/magsubscr.jpg"}/
-    .h-item
-      %span.onhoverlink-signal.black.thin-link Свежий номер лично в руки!
-    %h2.aside-hdr.tb-brd.gold-brd.alt-font.gold
-      Команда
-    .human-item.txa-c
-      .human-i-cnt
-        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr1.jpg"}/
-      .human-name
-        Леонова Ирина Юрьевна
-      .human-title.alt-font
-        руководитель оптового отдела
-        %br/
-        +7 (391) 227-84-01
-        %br/
-        %a{:href => "mailto:lia@af-remix.ru"} lia@af-remix.ru
-    .human-item.txa-c
-      .human-i-cnt
-        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr2.jpg"}/
-      .human-name
-        Чакова Светлана Николаевна
-      .human-title.alt-font
-        старший менеджер оптового отдела
-        %br/
-        +7 (391) 227-84-01
-        %br/
-        %a{:href => "mailto:lsnc@af-remix.ru"} snc@af-remix.ru
-    .human-item.txa-c
-      .human-i-cnt
-        %img.img-b.bc{:alt => "", :src => "/i/temp/mngr/mngr3.jpg"}/
-      .human-name
-        Мамонтова Елена Геннадьевна
-      .human-title.alt-font
-        менеджер оптового отдела
-        %br/
-        +7 (391) 227-84-01
-        %br/
-        %a{:href => "mailto:meg@af-remix.ru"} meg@af-remix.ru
-    .human-item.txa-c
-      .human-name
-        Адрес редакции и издателя
-      .human-title.alt-font
-        660049, г. Красноярск,
-        ул. Перенсона, 23а
-        %br/
-        Горячая линия:
-        (391) 227-54-41, 227-06-27,
-        %a{:href => "mailto:meg@af-remix.ru"} ivan@af-remix.ru
+
+  = render 'aside'
