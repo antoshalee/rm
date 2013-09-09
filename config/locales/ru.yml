@@ -19,6 +19,13 @@ ru:
     metals:
       gold: 'Золото'
       silver: 'Серебро'
+  letters:
+    colors:
+      white: 'Белый'
+      black: 'Черный'
+      brown: 'Коричневый'
+      bistre: 'Бистр'
+      gray: 'Серый'
   activerecord:
     models:
       catalog/item:
@@ -75,6 +82,9 @@ ru:
       supplier:
         one: 'Поставщика'
         other: 'Поставщики'
+      letter:
+        one: 'Благодарственное письмо'
+        other: 'Благодарственные письма'
       card:
         one: 'Карту'
         other: 'Дисконтные карты'
@@ -138,6 +148,10 @@ ru:
         title: 'Название'
         description: 'Описание'
         image: 'Изображение'
+      letter:
+        title: 'Заголовок'
+        image: 'Изображение'
+        color: 'Цвет рамки'
       subscription:
         name: 'Имя'
         kind: 'Тип'

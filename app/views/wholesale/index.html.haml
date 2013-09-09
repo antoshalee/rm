@@ -19,28 +19,29 @@
     .nl-mb
       %h2.mb32 Благодарственные письма
       .ns.txa-c
-        .col3.lb
-          .ib
-            .deco-frame.dark-brown-bkg
-              .deco-frame-i-brd
-                .deco-frame-i-shd
-                  %img.img-b{:alt => "", :src => "/i/temp/lttr/lttr1.jpg"}/
-            .deco-frame-title.letter-title.alt-font
-              ООО «Аквамарин»
-        .col3.lb
-          .deco-frame
-            .deco-frame-i-brd
-              .deco-frame-i-shd
-                %img.img-b{:alt => "", :src => "/i/temp/lttr/lttr2.jpg"}/
-          .deco-frame-title.letter-title.alt-font
-            Красносельский ювелирный завод «Диамант»
-        .col3.lb
-          .deco-frame
-            .deco-frame-i-brd
-              .deco-frame-i-shd
-                %img.img-b{:alt => "", :src => "/i/temp/lttr/lttr3.jpg"}/
-          .deco-frame-title.letter-title.alt-font
-            РЮС «Алмаз» г. Иркутск
+        - @letters.each do |letter|
+          .col3.lb
+            .ib
+              .deco-frame{class: get_brd_css_class_by_letter_color(letter.color)}
+                .deco-frame-i-brd
+                  .deco-frame-i-shd
+                    %img.img-b{:alt => "", :src => letter.image.main}/
+              .deco-frame-title.letter-title.alt-font
+                ООО «Аквамарин»
+        / .col3.lb
+        /   .deco-frame
+        /     .deco-frame-i-brd
+        /       .deco-frame-i-shd
+        /         %img.img-b{:alt => "", :src => "/i/temp/lttr/lttr2.jpg"}/
+        /   .deco-frame-title.letter-title.alt-font
+        /     Красносельский ювелирный завод «Диамант»
+        / .col3.lb
+        /   .deco-frame
+        /     .deco-frame-i-brd
+        /       .deco-frame-i-shd
+        /         %img.img-b{:alt => "", :src => "/i/temp/lttr/lttr3.jpg"}/
+        /   .deco-frame-title.letter-title.alt-font
+        /     РЮС «Алмаз» г. Иркутск
     / end nl-mb
     .gem-sep.gem-sep-linen.nl-mb
       %span.ico.gem-sep-ico
