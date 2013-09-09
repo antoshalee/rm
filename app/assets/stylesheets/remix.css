@@ -563,11 +563,13 @@ label.f-error {
 
 /*блок приглашения формы*/
 .feedback-form-pre {
+  border-top: 1px solid #d2b874;
   line-height: 1;
   margin: 0 auto -12px auto;
+  padding-top: 16px;
   position: relative;
   text-align: center;
-  width: 708px;
+  width: 686px;
   z-index: 1;
 }
 
@@ -1708,6 +1710,69 @@ label.f-error {
 
 
 /*-- end drop-downs --*/
+
+/*-- page navigator --*/
+
+.pager {
+	line-height: 1.1;
+	text-align: center;
+}
+
+.pager-in {
+	display: inline-block;
+	padding: 0 34px;
+	position: relative;
+}
+
+.pager-arrow {
+	font-size: 18px;
+	margin-top: -11px;
+	position: absolute;
+	top: 50%;
+}
+
+.pager-arrow:link,.pager-arrow:visited,
+.pager-link:link,.pager-link:visited {
+	color: #000;
+}
+
+.pager-arrow-disabled,
+.pager-arrow-disabled:link,
+.pager-arrow-disabled:visited,
+.pager-arrow-disabled:hover,
+.pager-arrow-disabled:active {
+	color: #aaa;
+	text-decoration: none;
+}
+
+.pager-arrow:hover,
+.pager-link:hover {
+	color: #e46600;
+}
+
+.pager-arrow-left {
+	left: 0;
+}
+
+.pager-arrow-right {
+	right: 0;
+}
+
+.pager-link {
+	display: inline-block;
+	font-size: 18px;
+	margin: 0 .15em;
+	padding: 0 .3em .12em .3em;
+}
+
+.pager-link-select {
+  background: #3e3229;
+  color: #f4c76b !important;
+  cursor: default;
+  text-decoration: none;
+}
+
+/*-- end page navigator --*/
 
 /*-- end forms --*/
 
