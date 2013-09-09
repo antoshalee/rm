@@ -946,15 +946,10 @@ remix.magnificPopupGallery = function (p) {
     // действие при смене фото
     change: function () {
 
-      // доступ к вызывающей ссылке
-      //console.log(this.currItem.el.attr('href'));
-
-      //var toShareCnt = this.contentContainer.find('div.mfp-title');
-
 			var toShareCnt = this.contentContainer;
 
       if (p.onChange) {
-          p.onChange({toShareCnt:toShareCnt});
+          p.onChange.call(this, {toShareCnt:toShareCnt});
         }
     }
 
@@ -978,6 +973,11 @@ remix.magnificPopupGalleryOnPage = function (p) {
   // при смене фото, вставить кнопки "поделиться" в блок описания фотографии
   var slideChange = function (p) {
 
+    var popupObject = this;
+    var urlToShare = $(popupObject.currItem.el).data("album-url");
+    if (!urlToShare) urlToShare = location.href;
+
+
 		if (!p.toShareCnt) {return;}
 
 			var buttonsCnt = p.toShareCnt.find('#photoShare');
@@ -991,15 +991,28 @@ remix.magnificPopupGalleryOnPage = function (p) {
 
     var buttonsHtml =
 			'<span class="f13 mr8 white">Поделиться:</span>'
-		+ '<a class="ib ophv va-m mr10" href="#"><span class="ico fb-ico20"></span></a>'
-    + '<a class="ib ophv va-m mr10" href="#"><span class="ico vk-ico20"></span></a>'
+    + '<span id="vk_btn_container" class="ophv" style="display: inline-block; position: relative; vertical-align: middle; margin-right: 10px"></span>'
+		+ '<a class="ib ophv va-m mr10" href="#" id="fb_share_btn"><span class="ico fb-ico20"></span></a>'
     + '<a class="ib ophv va-m" href="#"><span class="ico tw-ico20"></span></a>';
 
-		// '<div id="photoShare" class="mt6">'
-    //+ '<span class="f09 white mr10 mb8 ib">Поделиться:</span>'
-		// + '</div>';
 
 		buttonsCnt.html(buttonsHtml);
+
+    buttonsCnt.find('#vk_btn_container').html(VK.Share.button(urlToShare,
+      {type: 'custom', text: '<span class="ico vk-ico20"></span>'}));
+
+    p.toShareCnt.on('click', '#photoShare', function() {
+      return false;
+    });
+
+    p.toShareCnt.on('click', '#fb_share_btn', function(){
+      window.open(
+      'https://www.facebook.com/sharer/sharer.php?u=' +
+      encodeURIComponent(urlToShare),
+      'facebook-share-dialog',
+      'width=626,height=436');
+      return false;
+    })
 
 
   };

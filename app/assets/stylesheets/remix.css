@@ -2453,6 +2453,7 @@ label.f-error {
 	left: 0;
 	position: absolute;
 	top: 11px;
+  z-index: 1000;
 }
 
 /*показывать блок, когда фото згаружено*/
