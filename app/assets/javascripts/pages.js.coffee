@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
   # hack: decorate Youtube iframes
-  $('.nl-content-col.text.lb iframe').each ->
+  $('.pagecontent iframe').each ->
     $(this).wrap('<div class="img-place txa-c"><div class="deco-frame" /></div>')
