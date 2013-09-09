@@ -6,8 +6,6 @@ end
 
 Remix::Application.routes.draw do
 
-  get "card/index"
-
   mount Ckeditor::Engine => '/ckeditor'
 
   get "wholesale" => "wholesale#index"
@@ -16,6 +14,7 @@ Remix::Application.routes.draw do
   get "subscribe_confirmation" => "subscriptions#confirm"
   get "discount" => "card#index"
   get "card/check" => "card#check"
+  get "contacts" => "contacts#index"
 
   post "subscribe" => "subscriptions#create", as: :subscriptions
   post "feedback" => "feedbacks#create", as: :feedbacks, constraints: OnlyAjaxRequest.new
