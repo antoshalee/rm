@@ -1,12 +1,19 @@
 %h1.page-h-anim.txa-c Фото и мероприятия
 .sub-menu.alt-font
-  %a.sub-menu-link.black{:href => albums_path, class: (params[:tag].present? ? nil : 'sub-menu-link-select')} Все мероприятия
+  %a.sub-menu-link.black{:href => albums_path} Все мероприятия
   - Album.tag_counts.each do |tag|
-    %a.sub-menu-link.black{href: tag_albums_path(tag.name), class: (params[:tag]==tag.name ? 'sub-menu-link-select' : nil)}= tag.name
+    %a.sub-menu-link.black{href: tag_albums_path(tag.name)}= tag.name
 .photo-bkg
   .photo-shadow-bkg
     .photo-shadow-top-ptrn
     .photo-shadow-gold
   .page-margin.content-margin
-    #albums_container
-      = render 'list_item', album: @album, whole_content: true
+    .text.text-width.white
+      %h2.gold= @album.title
+      .nl-date= l(@album.created_at, format: '%d.%m.%Y')
+      != @album.content
+    .photo-grid
+      - @album.album_items.each do |item|
+        .ph-g-item
+          %a.ph-g-i-l{:href => item.image.fullscreen.url, :title => item.description}
+            %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
