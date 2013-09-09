@@ -70,3 +70,4 @@
               %div Артикул: #{item.article}
               %div Вес #{item.weight}
               %span.ico.zoom-ico.goods-grid-text-zoom-ico
+  = paginate @items, :outer_window => 3
