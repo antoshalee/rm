@@ -21,3 +21,4 @@
 //= require remix
 //= require albums
 //= require card
+//= require pages
