@@ -20,7 +20,7 @@ ActiveAdmin.register Collection do
       f.input :title
       f.input :price
       f.input :description
-      f.input :note, hint: 'Это поле будет отображаться в виде ленточки(например, со ссылкой на акцию)'
+      f.input :note, hint: 'Содержимое этого поля будет отображаться в виде ленточки(например, со ссылкой на акцию)'
       f.input :tag_list, hint: tag_links(Collection)
     end
 
@@ -59,5 +59,13 @@ ActiveAdmin.register Collection do
         end
       end
     end
+  end
+
+  sidebar 'Информация', only: [:new, :edit] do
+    div %q(Для того чтобы вставить в \"ленточку\" ссылку(например на акцию),
+      вам придется вставить это чистым html-кодом.)
+    div "Например:"
+    strong "Эта коллекция участвует в <a class=\"black thin-link\" href=\"/offers/1\">акции</a>"
+
   end
 end

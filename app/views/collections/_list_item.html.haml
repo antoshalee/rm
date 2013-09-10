@@ -18,3 +18,8 @@
             %div Артикул: #{item.article}
             %div Цена #{item.price}
             %span.ico.zoom-ico.goods-grid-text-zoom-ico
+
+- if collection.note.present?
+  .goods-grid-subtext.txa-c.f16
+    .dissolve-accent.dissolve-accent-gold
+      != collection.note
