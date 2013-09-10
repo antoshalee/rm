@@ -2,7 +2,8 @@
 %html#n
   %head
     %meta{:charset => "UTF-8"}/
-    %title Стартовая
+    %title
+      = content_for?(:title) ? (yield :title) : 'Ювелирный дом "Ремикс", Красноярск'
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "keywords"}/
     %meta{:content => "width=1024, user-scalable=yes", :name => "viewport"}/

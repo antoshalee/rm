@@ -1,4 +1,10 @@
 module ApplicationHelper
+  def title title
+    content_for :title do
+      h(title.to_s)
+    end
+  end
+
   def first_paragraph text
     raw Nokogiri::HTML.parse(text).css('p').first.to_html
   end
