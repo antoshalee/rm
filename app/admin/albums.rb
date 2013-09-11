@@ -30,7 +30,9 @@ ActiveAdmin.register Album do
   show do |album|
     attributes_table do
       row :title
-      row :content
+      row :content do |album|
+        raw album.content
+      end
       row :tag_list
     end
 
