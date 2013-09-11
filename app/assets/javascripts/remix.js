@@ -974,6 +974,7 @@ remix.magnificPopupGalleryOnPage = function (p) {
   var slideChange = function (p) {
 
     var popupObject = this;
+    console.log(popupObject)
     var urlToShare = $(popupObject.currItem.el).data("album-url");
     if (!urlToShare) urlToShare = location.href;
 
@@ -998,7 +999,8 @@ remix.magnificPopupGalleryOnPage = function (p) {
 
 		buttonsCnt.html(buttonsHtml);
 
-    buttonsCnt.find('#vk_btn_container').html(VK.Share.button(urlToShare,
+    buttonsCnt.find('#vk_btn_container').html(VK.Share.button(
+      {url: urlToShare, image: popupObject.currItem.src},
       {type: 'custom', text: '<span class="ico vk-ico20"></span>'}));
 
     p.toShareCnt.on('click', '#photoShare', function() {
