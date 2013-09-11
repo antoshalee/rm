@@ -990,11 +990,13 @@ remix.magnificPopupGalleryOnPage = function (p) {
 				buttonsCnt.empty();
 			}
 
+    twitterParams = "url=" + encodeURIComponent(urlToShare);
+
     var buttonsHtml =
 			'<span class="f13 mr8 white">Поделиться:</span>'
     + '<span id="vk_btn_container" class="ophv" style="display: inline-block; position: relative; vertical-align: middle; margin-right: 10px"></span>'
 		+ '<a class="ib ophv va-m mr10" href="#" id="fb_share_btn"><span class="ico fb-ico20"></span></a>'
-    + '<a class="ib ophv va-m" href="#"><span class="ico tw-ico20"></span></a>';
+    + '<a class="ib ophv va-m" href="https://twitter.com/share?' + twitterParams + '" target="_blank"><span class="ico tw-ico20"></span></a>';
 
 
 		buttonsCnt.html(buttonsHtml);
@@ -1003,9 +1005,9 @@ remix.magnificPopupGalleryOnPage = function (p) {
       {url: urlToShare, image: popupObject.currItem.src},
       {type: 'custom', text: '<span class="ico vk-ico20"></span>'}));
 
-    p.toShareCnt.on('click', '#photoShare', function() {
-      return false;
-    });
+    // p.toShareCnt.on('click', '#photoShare', function() {
+    //   return false;
+    // });
 
     p.toShareCnt.on('click', '#fb_share_btn', function(){
       window.open(
@@ -1015,6 +1017,8 @@ remix.magnificPopupGalleryOnPage = function (p) {
       'width=626,height=436');
       return false;
     })
+
+    // !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
 
   };
