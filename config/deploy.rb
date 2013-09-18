@@ -19,6 +19,7 @@ server "212.41.1.244", :app, :web, :db, :primary => true
 after "deploy:restart", "deploy:cleanup"
 require "bundler/capistrano"
 require "whenever/capistrano"
+set :whenever_command, "bundle exec whenever"
 
 before "deploy:assets:precompile" do
   run "ln -s #{shared_path}/application.yml #{release_path}/config/"
