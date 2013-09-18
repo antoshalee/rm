@@ -20,6 +20,10 @@ after "deploy:restart", "deploy:cleanup"
 require "bundler/capistrano"
 require "whenever/capistrano"
 
+before "deploy:assets:precompile" do
+  run "ln -s #{shared_path}/application.yml #{release_path}/config/"
+end
+
 namespace :deploy do
   task :restart do
     run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -USR2 `cat #{unicorn_pid}`; else cd #{deploy_to}/current && bundle exec unicorn_rails -c #{unicorn_conf} -E #{rails_env} -D; fi"
