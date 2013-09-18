@@ -52,5 +52,6 @@ gem 'rails3-jquery-autocomplete'
 gem 'truncate_html'
 gem 'has_scope'
 gem 'figaro'
+gem 'whenever'
 
 gem "mocha", :group => :test

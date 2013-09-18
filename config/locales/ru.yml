@@ -175,3 +175,4 @@ ru:
       card:
         number: 'Номер'
         discount: 'Размер скидки'
+        balance: 'Баланс'

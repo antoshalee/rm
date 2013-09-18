@@ -6,6 +6,7 @@ ActiveAdmin.register Card do
   index do
     selectable_column
     column :number
+    column :balance
     column :discount
     default_actions
   end

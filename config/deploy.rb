@@ -18,6 +18,7 @@ server "212.41.1.244", :app, :web, :db, :primary => true
 
 after "deploy:restart", "deploy:cleanup"
 require "bundler/capistrano"
+require "whenever/capistrano"
 
 namespace :deploy do
   task :restart do

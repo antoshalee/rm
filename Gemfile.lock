@@ -76,6 +76,7 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    chronic (0.6.7)
     client_side_validations (3.2.5)
     client_side_validations-simple_form (2.1.0)
       client_side_validations (~> 3.2.5)
@@ -268,6 +269,9 @@ GEM
     uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
+    whenever (0.7.3)
+      activesupport (>= 2.3.4)
+      chronic (~> 0.6.3)
     wysihtml5-rails (0.0.4)
       railties (>= 3.1.0)
 
@@ -315,4 +319,5 @@ DEPENDENCIES
   truncate_html
   uglifier (>= 1.0.3)
   unicorn
+  whenever
   wysihtml5-rails
