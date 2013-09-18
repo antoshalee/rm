@@ -22,7 +22,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: wwwremix
+  host: 192.168.2.203
+  username: wwwremix
+  password: remixhtvbrc
   pool: 5
   timeout: 5000
