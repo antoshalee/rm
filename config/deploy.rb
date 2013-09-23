@@ -9,6 +9,7 @@ set :user, "nginx"
 set :rails_env, "production"
 set :use_sudo, false
 set :keep_releases, 3
+set :shared_children, shared_children + %w{public/uploads}
 
 # === Unicorn ====
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
