@@ -5,9 +5,9 @@ class OnlyAjaxRequest
 end
 
 Remix::Application.routes.draw do
-
   mount Ckeditor::Engine => '/ckeditor'
 
+  get "store_addresses" => "stores#addresses"
   get "wholesale" => "wholesale#index"
   get "catalog" => "catalog_items#index"
   get "subscribe" => "subscriptions#new"
