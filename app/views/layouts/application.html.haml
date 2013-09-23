@@ -87,9 +87,7 @@
         = yield
     %footer.page-ftr.page-width
       .footer.s-black-bkg
-        / page-margin
         .page-margin
-          / bottom menu
           .bottom-menu.brd-bottom.gray20-brd.jst-layout
             %a.bottom-menu-link.pl0{:href => "/collections"} Коллекции
             %span.bottom-menu-sep
@@ -98,48 +96,8 @@
             %a.bottom-menu-link{:href => "/albums"} Фото и мероприятия
             %span.bottom-menu-sep
             %a.bottom-menu-link.pr0{:href => "/jewelry-fashion-week"} Неделя ювелирной моды
-          / end bottom menu
-          / site-nav
           .site-nav.alt-font.jst-layout
-            %ul.site-nav-col
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/about"} О компании
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/articles"} Новости
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => magazines_path} Журнал
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/jewelry-factory"} Ювелирная фабрика
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/design-studio"} Дизайн-студия
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/edu-center"} Учебный центр
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/souvenirs"} Сувенирная продукция
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/contacts"} Контактная информация
-            %ul.site-nav-col
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/wedding-rings-center"} Центр обручальных колец
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/wedding-photo-shoot"} Свадебная фотосессия
-            %ul.site-nav-col
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/jewelry-discounter"} Ювелирный дискаунтер
-            %ul.site-nav-col
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/stores"} Сеть магазинов
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/store_addresses"} Адреса магазинов
-            %ul.site-nav-col
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/companies"} Для компаний
-            %ul.site-nav-col
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/wholesale"} Оптовый отдел
-              %li.site-nav-item
-                %a.site-nav-link.white{:href => "/catalog"} Каталог продукции
-          / end site-nav
+            != variable :footer_menu
           .gem-sep.gem-sep-gray20.mb18.mt8
             %span.ico.gem-sep-ico
           / footer contcat

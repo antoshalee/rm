@@ -75,6 +75,9 @@ ru:
         few: 'Акции'
         many: 'Акция'
         other: 'Акции'
+      variable:
+        one: 'Переменная'
+        other: 'Переменные'
       banner:
         one: 'Баннер'
         few: 'Баннера'
@@ -186,3 +189,7 @@ ru:
         name: 'Название'
       contact:
         content: 'Текст'
+      variable:
+        key: 'Ключ'
+        label: 'Название'
+        value: 'Значение'
