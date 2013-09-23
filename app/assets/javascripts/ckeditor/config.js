@@ -80,4 +80,6 @@ CKEDITOR.editorConfig = function( config ) {
 	config.filebrowserUploadUrl = "/ckeditor/attachment_files";
 
 	config.jqueryOverrideVal = true;
+
+	config.allowedContent = true;
 };
