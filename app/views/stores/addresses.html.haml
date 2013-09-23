@@ -64,5 +64,5 @@
             %a.thin-link{href: "#"} Посмотреть на карте
   .nl-aside-col.lb
     %h2.aside-hdr.tb-brd.gold-brd.alt-font
-      %a.thin-link.gold{href: "#"} Акции и скидки
+      %a.thin-link.gold{href: "/offers"} Акции и скидки
     = render 'sidebars/offers', offers:  Offer.order('created_at desc').where(discount: true)
