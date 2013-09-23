@@ -1,6 +1,6 @@
 - with_first_separator ||= false
 = render 'separator' if with_first_separator
-- @albums.each_with_index do |album, i|
+- @albums.each_with_is_last do |album, is_last|
   = render 'list_item', album: album
-  - unless i==(@albums.length-1)
+  - unless is_last
     = render 'separator'

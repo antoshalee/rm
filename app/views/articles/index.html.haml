@@ -7,9 +7,9 @@
 / page-margin content-margin
 .page-margin.content-margin.ns
   .nl-content-col.lb
-    - @articles.each_with_index do |article, i|
+    - @articles.each_with_is_last do |article, is_last|
       = render 'list_item', article: article
-      - unless i==(@articles.length-1)
+      - unless is_last
         .gem-sep.gem-sep-linen.nl-mb
           %span.ico.gem-sep-ico
 
