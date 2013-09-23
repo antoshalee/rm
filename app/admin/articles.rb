@@ -1,6 +1,7 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.register Article do
   config.clear_sidebar_sections!
-  menu prority: 1
+  menu parent: "Текстовое содержимое"
 
   index do
     column :id

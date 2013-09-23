@@ -28,6 +28,12 @@ ru:
       gray: 'Серый'
   activerecord:
     models:
+      contact_group:
+        one: 'Контакт'
+        other: 'Контакты'
+      contact:
+        one: 'Запись'
+        other: 'Записи'
       catalog/item:
         one: 'Украшение'
         other: 'Украшения'
@@ -176,3 +182,7 @@ ru:
         number: 'Номер'
         discount: 'Размер скидки'
         balance: 'Баланс'
+      contact_group:
+        name: 'Название'
+      contact:
+        content: 'Текст'

@@ -1,7 +1,6 @@
 # encoding: utf-8
 ActiveAdmin.register Offer do
-  # config.clear_sidebar_sections!
-  menu priority: 5
+  menu parent: "Текстовое содержимое"
   filter :discount
 
   index do

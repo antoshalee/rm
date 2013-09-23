@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 ActiveAdmin.register Page do
   config.clear_sidebar_sections!
-  menu priority: 6
+  menu parent: "Текстовое содержимое"
 
   index do
     column :title
