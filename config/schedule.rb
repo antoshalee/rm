@@ -18,7 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+env :PATH, ENV['PATH']
 
-every 1.hour do
+every 1.minute do
   runner "DiscountImporter.scan"
 end
