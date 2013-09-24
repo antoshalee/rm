@@ -13,7 +13,7 @@ class DiscountImporter
         new_name = "#{full_name}process"
         File.rename(full_name, new_name)
         import new_name
-        File.delete(full_name)
+        File.delete(new_name)
       end
     end
 
