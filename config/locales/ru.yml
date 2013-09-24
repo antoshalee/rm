@@ -97,6 +97,10 @@ ru:
       card:
         one: 'Карту'
         other: 'Дисконтные карты'
+      wholesale_manager:
+        one: 'Менеджер'
+        many: 'Менеджеров'
+        other: 'Менеджеры'
     attributes:
       page:
         title: 'Заголовок'
@@ -161,6 +165,10 @@ ru:
         title: 'Заголовок'
         image: 'Изображение'
         color: 'Цвет рамки'
+      wholesale_manager:
+        name: 'Имя'
+        description: 'Описание'
+        image: 'Изображение'
       subscription:
         name: 'Имя'
         kind: 'Тип'

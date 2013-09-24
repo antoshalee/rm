@@ -152,56 +152,11 @@
   .nl-aside-col.lb
     %h2.aside-hdr.tb-brd.gold-brd.alt-font.gold
       Наши менеджеры
-    / human-item
-    .human-item.txa-c
-      .human-i-cnt
-        %img.img-b.bc{:alt => "", :src => "/assets/mngr/mngr1.jpg"}/
-      .human-name
-        Леонова Ирина Юрьевна
-      .human-title.alt-font
-        руководитель оптового отдела
-        %br/
-        +7 (391) 227-84-01
-        %br/
-        %a{:href => "mailto:lia@af-remix.ru"} lia@af-remix.ru
-    / end human-item
-    / human-item
-    .human-item.txa-c
-      .human-i-cnt
-        %img.img-b.bc{:alt => "", :src => "/assets/mngr/mngr2.jpg"}/
-      .human-name
-        Чакова Светлана Николаевна
-      .human-title.alt-font
-        старший менеджер оптового отдела
-        %br/
-        +7 (391) 227-84-01
-        %br/
-        %a{:href => "mailto:lsnc@af-remix.ru"} snc@af-remix.ru
-    / end human-item
-    / human-item
-    .human-item.txa-c
-      .human-i-cnt
-        %img.img-b.bc{:alt => "", :src => "/assets/mngr/mngr3.jpg"}/
-      .human-name
-        Мамонтова Елена Геннадьевна
-      .human-title.alt-font
-        менеджер оптового отдела
-        %br/
-        +7 (391) 227-84-01
-        %br/
-        %a{:href => "mailto:meg@af-remix.ru"} meg@af-remix.ru
-    / end human-item
-    / human-item
-    .human-item.txa-c
-      .human-i-cnt
-        %img.img-b.bc{:alt => "", :src => "/assets/mngr/mngr4.jpg"}/
-      .human-name
-        Козлова Юлия Владимировна
-      .human-title.alt-font
-        менеджер оптового отдела
-        %br/
-        +7 (391) 227-84-01
-        %br/
-        %a{:href => "mailto:jk@af-remix.ru"} jk@af-remix.ru
-    / end human-item
-  / end nl-aside-col
+    - @managers.each do |manager|
+      .human-item.txa-c
+        .human-i-cnt
+          %img.img-b.bc{:alt => "", :src => manager.image.url}/
+        .human-name
+          = manager.name
+        .human-title.alt-font
+          != manager.description

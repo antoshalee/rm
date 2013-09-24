@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130923103232) do
+ActiveRecord::Schema.define(:version => 20130924031235) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -301,5 +301,14 @@ ActiveRecord::Schema.define(:version => 20130923103232) do
   end
 
   add_index "variables", ["key"], :name => "index_variables_on_key"
+
+  create_table "wholesale_managers", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
+    t.integer  "position"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end
