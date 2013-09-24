@@ -15,6 +15,6 @@
   / end nl-content-col text
   / nl-aside-col
   .nl-aside-col.lb
-    %h2.aside-hdr.tb-brd.gold-brd.alt-font
-      %span.thin-link.gold Постоянные акции
+    %h2.aside-hdr.tb-brd.gold-brd.alt-font.gold
+      Постоянные акции
     = render 'sidebars/offers', offers:  Offer.order('created_at desc').where(discount: true)
