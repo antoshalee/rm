@@ -124,6 +124,7 @@ ru:
         content: 'Полный текст'
         image: 'Изображение'
         created_at: 'Создана'
+        published_at: 'Дата публикации'
       collection:
         title: 'Название'
         price: 'Цена'

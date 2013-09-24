@@ -2,11 +2,12 @@
 ActiveAdmin.register Article do
   config.clear_sidebar_sections!
   menu parent: "Текстовое содержимое"
+  config.sort_order = "published_at_desc"
 
   index do
     column :id
     column :title
-    column :created_at
+    column :published_at
     default_actions
   end
 
@@ -15,6 +16,7 @@ ActiveAdmin.register Article do
       f.input :title
       f.input :content, as: :ckeditor
       f.input :image
+      f.input :published_at
     end
 
     f.buttons
@@ -29,7 +31,7 @@ ActiveAdmin.register Article do
       row :content do |article|
         raw article.content
       end
-      row :created_at
+      row :published_at
     end
   end
 
