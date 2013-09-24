@@ -7,6 +7,7 @@
   / nl-content-col
   .nl-content-col.text.lb
     %h2= @offer.title
+    .nl-date-mini Срок проведения: с #{l(@offer.date_start)}–#{l(@offer.date_finish)}
     %img{:alt => "", :src => @offer.image.main}/
     != @offer.content
     .txa-c.nl-mb
