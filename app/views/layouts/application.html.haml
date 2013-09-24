@@ -22,47 +22,44 @@
           #top-nav.page-width
             .s-black-bkg.top-nav-wrp
               .top-nav.alt-font.jst-layout.page-margin
-                %ul.site-nav-col
-                  %li.site-nav-item
-                    .site-nav-link.top-nav-link.site-nav-link-pad
-                      %span.ib.relpos
-                        %a.white{:href => "/about"} О компании
-                        %span#about-drop-down-link.top-nav-link-arr-cnt
-                          %span.dd-barr-ico.ico
-                    %ul#about-drop-down-cnt.site-nav-col.top-nav-cnt.about-top-nav-cnt
-                      %li.site-nav-item
-                        %a.site-nav-link.site-nav-link-pad.white{:href => "/articles"} Новости
-                      %li.site-nav-item
-                        %a.site-nav-link.site-nav-link-pad.white{:href => magazines_path} Журнал
-                      %li.site-nav-item
-                        %a.site-nav-link.site-nav-link-pad.white{:href => "/jewelry-factory"} Ювелирная фабрика
-                      %li.site-nav-item
-                        %a.site-nav-link.site-nav-link-pad.white{:href => "/contacts"} Контактная информация
-                %ul.site-nav-col
-                  %li.site-nav-item
-                    %a.site-nav-link.top-nav-link.site-nav-link-pad.white{:href => "/wedding-rings-center"} Центр обручальных колец
-                %ul.site-nav-col
-                  %li.site-nav-item
-                    %a.site-nav-link.site-nav-link-pad.top-nav-link.white{:href => "/jewelry-discounter"} Ювелирный дискаунтер
-                %ul.site-nav-col
-                  %li.site-nav-item
-                    %a.site-nav-link.site-nav-link-pad.top-nav-link.white.txd-n{:href => "/stores"}
-                      %span.txd-u Сеть магазинов
-                %ul.site-nav-col
-                  %li.site-nav-item
-                    %a.site-nav-link.site-nav-link-pad.top-nav-link.white{:href => "/companies"} Для компаний
-                %ul.site-nav-col
-                  %li.site-nav-item
-                    %a.site-nav-link.top-nav-link.site-nav-link-pad.light-blue.txd-n{:href => "/wholesale"}
-                      %span.txd-u.f09.uc Оптовый отдел
-              / end top nav
-            / end s-black-bkg
+                != variable :top_menu
+                / %ul.site-nav-col
+                /   %li.site-nav-item
+                /     .site-nav-link.top-nav-link.site-nav-link-pad
+                /       %span.ib.relpos
+                /         %a.white{:href => "/about"} О компании
+                /         %span#about-drop-down-link.top-nav-link-arr-cnt
+                /           %span.dd-barr-ico.ico
+                /     %ul#about-drop-down-cnt.site-nav-col.top-nav-cnt.about-top-nav-cnt
+                /       %li.site-nav-item
+                /         %a.site-nav-link.site-nav-link-pad.white{:href => "/articles"} Новости
+                /       %li.site-nav-item
+                /         %a.site-nav-link.site-nav-link-pad.white{:href => magazines_path} Журнал
+                /       %li.site-nav-item
+                /         %a.site-nav-link.site-nav-link-pad.white{:href => "/jewelry-factory"} Ювелирная фабрика
+                /       %li.site-nav-item
+                /         %a.site-nav-link.site-nav-link-pad.white{:href => "/contacts"} Контактная информация
+                / %ul.site-nav-col
+                /   %li.site-nav-item
+                /     %a.site-nav-link.top-nav-link.site-nav-link-pad.white{:href => "/wedding-rings-center"} Центр обручальных колец
+                / %ul.site-nav-col
+                /   %li.site-nav-item
+                /     %a.site-nav-link.site-nav-link-pad.top-nav-link.white{:href => "/jewelry-discounter"} Ювелирный дискаунтер
+                / %ul.site-nav-col
+                /   %li.site-nav-item
+                /     %a.site-nav-link.site-nav-link-pad.top-nav-link.white.txd-n{:href => "/stores"}
+                /       %span.txd-u Сеть магазинов
+                / %ul.site-nav-col
+                /   %li.site-nav-item
+                /     %a.site-nav-link.site-nav-link-pad.top-nav-link.white{:href => "/companies"} Для компаний
+                / %ul.site-nav-col
+                /   %li.site-nav-item
+                /     %a.site-nav-link.top-nav-link.site-nav-link-pad.light-blue.txd-n{:href => "/wholesale"}
+                /       %span.txd-u.f09.uc Оптовый отдел
         .site-logo-header
           %a.site-logo.site-logo-full{:href => "/"}
             %span.site-logo-i-cnt
               %img.site-logo-i{:alt => "Ювелирный дом Ремикс", :src => "/assets/logo.png"}/
-        / end site logo header
-        / main-menu
         .main-menu.page-margin
           %nav.main-menu-content.jst-layout
             %a.main-menu-link{:href => "/collections"} Коллекции
@@ -100,7 +97,6 @@
             != variable :footer_menu
           .gem-sep.gem-sep-gray20.mb18.mt8
             %span.ico.gem-sep-ico
-          / footer contcat
           .footer-contact.alt-font.brd-bottom.gray20-brd
             %div г. Красноярск, ул. Перенсона, 23а
             %div +7 (391) 227-06-27, info@af-remix.ru
@@ -108,8 +104,6 @@
               %a.white{:href => "/contacts"} Контактная информация
             %a.footer-logo{:href => "/remix-pre"}
               %img.footer-logo-i{:alt => "Ремикс ювелирный дом", :src => "/assets/logo-footer.png"}/
-          / end footer contcat
-          / footer-end
           .footer-end.alt-font
             %span.abspos.t0.l0.mt2 © Ремикс. 2013
             Ювелирный дом «Ремикс» в соц. сетях
@@ -122,7 +116,3 @@
             %span.abspos.t0.r0.mt2
               Дизайн
               %a.white{:href => "http://to-mars.com/", :rel => "nofollow", :target => "_blank"} to-mars.com
-          / end footer-end
-        / end page-margin
-      / footer s-black-bkg
-    / end page-ftr
