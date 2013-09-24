@@ -6,35 +6,9 @@
 .page-margin.content-margin.ns
   .nl-content-col.text.lb
     %h2= @article.title
-    .nl-date= l(@article.published_at, format: '%d.%m.%Y')
+    .nl-date= @article.published_at
     != @article.content
     = render 'social_block', article: @article
     .txa-c.nl-mb
       .dissolve-accent.dissolve-accent-gold
         = link_to 'Вернуться к новостям', articles_path, class: 'thin-link'
-
-  / end nl-content-col text
-  / nl-aside-col
-  -#.nl-aside-col.lb
-    %h2.aside-hdr.tb-brd.gold-brd.alt-font
-      %a.thin-link.gold{:href => "/pages/actions.html"} Другие акции
-    .nl-aside-item.nl-aside-item-brd
-      %a.onhoverlink.block.black{:href => "#"}
-      %h3.h-article.mb14
-        «
-        %span.onhoverlink-signal.thin-link> А вдруг удача
-        »
-      .onhover-op
-        %img.img-b.mb8{:alt => "", :src => "/i/temp/nlpic2.jpg"}/
-      .text-mini.alt-font.onhoverlink-signal
-        С 3 декабря до 15 января в Ювелирном доме "Ремикс" действует акция "Скидка года"! Кроме этого, каждый покупатель обязательно...
-    .nl-aside-item.nl-aside-item-brd
-      %a.onhoverlink.block.black{:href => "#"}
-      %h3.h-article.mb14
-        «
-        %span.onhoverlink-signal.thin-link> Выиграй свадебное путешествие в Париж
-        »
-      .onhover-op
-        %img.img-b.mb8{:alt => "", :src => "/i/temp/nlpic3.jpg"}/
-      .text-mini.alt-font.onhoverlink-signal
-        С 3 декабря до 15 января в Ювелирном доме "Ремикс" действует акция "Скидка года"! Кроме этого, каждый покупатель обязательно...

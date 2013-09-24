@@ -100,6 +100,10 @@ GEM
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       warden (~> 1.2.3)
+    draper (1.2.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.25.3)
@@ -223,6 +227,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
+    request_store (1.0.5)
     responders (0.9.3)
       railties (~> 3.1)
     rmagick (2.13.2)
@@ -291,6 +296,7 @@ DEPENDENCIES
   client_side_validations-simple_form
   coffee-rails (~> 3.2.1)
   delayed_job_active_record
+  draper
   figaro
   fog (~> 1.7.0)
   formtastic

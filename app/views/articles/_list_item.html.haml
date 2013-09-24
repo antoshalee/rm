@@ -1,7 +1,7 @@
 .text.nl-mb
   %h2
     = link_to article.title, article, class: %w(black thin-link)
-  .nl-date= l(article.published_at, format: '%d.%m.%Y')
+  .nl-date= article.published_at
   = image_tag article.image.fullscreen if article.image.present?
   != truncate_html(article.content, length: 300)
   = render 'social_block', article: article
