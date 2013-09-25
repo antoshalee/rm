@@ -5,7 +5,6 @@
   %a#feedback-form-pre-open-link.feedback-form-open
     %span.dot-link Оставить отзыв
 #feedback-form-hsb.feedback-form-hsb.hsb-container
-  / %form#feedback-form.nl-top-message.feedback-form
   = form_for Feedback.new, html: {class: %w(nl-top-message feedback-form), id: 'feedback-form'}, remote: true do |f|
     .f-close-cross-pad.txa-c.feedback-form-hdr
       Мы стремимся к совершенству, поэтому нам важно знать ваше мнение о нашей работе.
@@ -16,18 +15,15 @@
           .f-lbl-top-c
             %label.f-lbl{:for => "feedbackName"} Ваше имя
           = f.text_field :name, class: %w(f-t-field w100pc)
-          / %input#feedbackName.f-t-field.w100pc{:name => "feedbackName", :type => "text"}/
           .f-remark.f-t-field-remark Например, Иван Петров
         .f-2col.lb
           .f-lbl-top-c
             %label.f-lbl{:for => "feedbackEmail"} Ваша электронная почта
           = f.text_field :email, class: %w(f-t-field w100pc)
-          / %input#feedbackEmail.f-t-field.w100pc{:name => "feedbackEmail", :type => "text"}/
           .f-remark.f-t-field-remark Например, itsme@myemail.ru
       .f-row
         .f-lbl-top-c
           %label.f-lbl{:for => "feedbackMessage"} Отзыв
         = f.text_area :text, class: %w(f-t-field f-t-area w100pc)
-        / %textarea#feedbackmessage.f-t-field.f-t-area.w100pc{:name => "feedbackMessage"}
       #feedback-form-sbmt-cnt.f-row
         %input.btn.btn-big.btn-big-gold{:type => "submit", :value => "Отправить"}/
