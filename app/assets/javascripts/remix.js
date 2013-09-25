@@ -732,7 +732,7 @@ remix.GoodsGridFullViewsManager = function (p) {
   // блок с ссылками «поделиться»
 	var shareCnt = $('<div class="goods-grid-item-full-view-share" />');
 
-  fullImageCnt.append(fullImage,closeCnt,shareCnt);
+  fullImageCnt.append(fullImage,closeCnt);
 
   // объект для подгрузки картинок
   var dynamicImage = new remix.DynamicImage();
