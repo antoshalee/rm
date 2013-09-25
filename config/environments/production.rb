@@ -25,9 +25,10 @@ Remix::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => ENV['SMTP_SERVER'],
     :port => ENV['SMTP_PORT'],
-    :authentication => :login,
+    :authentication => 'plain',
     :user_name => ENV['SMTP_LOGIN'],
-    :password => ENV['SMTP_PASSWORD']
+    :password => ENV['SMTP_PASSWORD'],
+    enable_starttls_auto: true
   }
 
   config.action_mailer.default_url_options = {
