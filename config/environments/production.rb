@@ -24,7 +24,7 @@ Remix::Application.configure do
 
   config.action_mailer.smtp_settings = {
     :address => ENV['SMTP_SERVER'],
-    :port => 25,
+    :port => ENV['SMTP_PORT'],
     :authentication => :login,
     :user_name => ENV['SMTP_LOGIN'],
     :password => ENV['SMTP_PASSWORD']
