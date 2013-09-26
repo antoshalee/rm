@@ -7,8 +7,8 @@
             .intro-text
               .intro-text-va-m
                 != banner.text
-            %a{href: "http://yandex.ru", style: "display: block; width: 100%; height: auto"}
-              %img.intro-slider-i{:alt => "", :src => banner.image.url}/
+            /%a{href: "http://yandex.ru", style: "display: block; width: 100%; height: auto"}
+            %img.intro-slider-i{:alt => "", :src => banner.image.url}/
 .page-margin
   .main-menu-margin
     .sp-previews
@@ -31,8 +31,8 @@
       .photo-grid.photo-grid-pad
         - @last_album.album_items.each do |item|
           .ph-g-item
-            /%a.ph-g-i-l{:href => item.image.fullscreen.url, :title => @last_album.title}
-            %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
+            %a.ph-g-i-l{:href => item.image.fullscreen.url, :title => @last_album.title}
+              %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
 .sp-map-cnt
   .sp-address-on-map
     .sp-address.page-margin
