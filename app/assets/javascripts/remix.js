@@ -1964,7 +1964,7 @@ remix.feedBackForm = function () {
       submitHandler: function(form) {
       if (validator.valid()) {
         feedBackSuccess.removeClass('na'); // показать сообщение об отправке отзыва
-        //form.submit();
+        form.trigger('submit.rails');
       }
 
      }
