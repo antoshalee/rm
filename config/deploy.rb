@@ -18,6 +18,7 @@ set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 server "188.225.35.32", :app, :web, :db, :primary => true
 
 after "deploy:restart", "deploy:cleanup"
+require "rvm/capistrano"
 require "bundler/capistrano"
 require "whenever/capistrano"
 set :whenever_command, "bundle exec whenever"
