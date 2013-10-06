@@ -2,10 +2,10 @@ default_run_options[:pty] = true
 set :application, "Remix"
 ssh_options[:forward_agent] = true
 set :repository,  "git@github.com:antoshalee/rm.git"
-set :deploy_to, "/usr/share/nginx/html"
+set :deploy_to, "/home/deploy/site"
 set :scm, :git
 set :deploy_via, :remote_cache
-set :user, "nginx"
+set :user, "deploy"
 set :rails_env, "production"
 set :use_sudo, false
 set :keep_releases, 3
@@ -15,7 +15,7 @@ set :shared_children, shared_children + %w{public/uploads}
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
-server "212.41.1.244", :app, :web, :db, :primary => true
+server "188.225.35.32", :app, :web, :db, :primary => true
 
 after "deploy:restart", "deploy:cleanup"
 require "bundler/capistrano"

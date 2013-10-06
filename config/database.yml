@@ -24,8 +24,8 @@ test:
 production:
   adapter: postgresql
   database: wwwremix
-  host: 192.168.2.203
-  username: wwwremix
+  host: localhost
+  username: postgres
   password: remixhtvbrc
   pool: 5
   timeout: 5000
