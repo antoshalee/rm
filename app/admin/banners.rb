@@ -12,6 +12,7 @@ ActiveAdmin.register Banner do
     column :image do |banner|
       link_to(image_tag(banner.image.url, width: 300), admin_banner_path(banner))
     end
+    column :url
     default_actions
   end
 
@@ -20,6 +21,7 @@ ActiveAdmin.register Banner do
     f.inputs do
       f.input :image
       f.input :text, as: :ckeditor
+      f.input :url
     end
     f.buttons
   end
@@ -33,6 +35,7 @@ ActiveAdmin.register Banner do
       row :text do |banner|
         raw banner.text
       end
+      row :url
     end
   end
 

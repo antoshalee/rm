@@ -2,13 +2,12 @@
   .intro-slider.intro-slider-offset.main-menu-margin.wideslider
     .slider-content
       - @banners.each do |banner|
-        %div
-          .relpos.ovh
-            .intro-text
-              .intro-text-va-m
-                != banner.text
-            /%a{href: "http://yandex.ru", style: "display: block; width: 100%; height: auto"}
-            %img.intro-slider-i{:alt => "", :src => banner.image.url}/
+        - if banner.url.present?
+          %a{href: banner.url, style: "display: block; width: 100%; height: auto"}
+            = render 'banner_content', banner: banner
+        - else
+          %div
+            = render 'banner_content', banner: banner
 .page-margin
   .main-menu-margin
     .sp-previews
