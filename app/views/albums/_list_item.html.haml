@@ -1,4 +1,4 @@
-- whole_content ||= false
+- whole_content = rest_paragraphs(album.content).blank?
 .text.text-width.white
   %h2.gold
     = link_to album.title, album, class: %w(gold thin-link)
