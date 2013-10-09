@@ -196,6 +196,7 @@ ru:
         balance: 'Баланс'
       contact_group:
         name: 'Название'
+        address: 'Адрес'
       contact:
         content: 'Текст'
       variable:

@@ -15,6 +15,7 @@ ActiveAdmin.register ContactGroup do
   form do |f|
     f.inputs do
       f.input :name
+      f.input :address
     end
 
     f.has_many :contacts do |contact|
@@ -29,6 +30,7 @@ ActiveAdmin.register ContactGroup do
   show do |group|
     attributes_table do
       row :name
+      row :address
     end
 
     panel("Записи") do

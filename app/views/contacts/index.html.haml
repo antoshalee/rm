@@ -6,6 +6,7 @@
     .text-mini.nl-mb
       - @contact_groups.each_with_is_last do |group, is_last|
         %h2= group.name
+        %h3= group.address
         .nl-4col-cnt.ns.mb14.alt-font
           - group.contacts.each do |contact|
             .nl-4col.mb14.lb
