@@ -21,7 +21,7 @@ ActiveAdmin.register Album do
       unless album_item.object.new_record?
         album_item.input :_destroy, :as => :boolean, :required => false, :label => 'Удалить'
       end
-      album_item.input :image, :as => :file, :hint => (album_item.object.new_record? ? nil : album_item.template.image_tag(album_item.object.image.thumb.url))
+      album_item.input :image, :as => :file, :hint => (album_item.object.new_record? ? nil : "<img src='#{album_item.object.image.thumb.url}' />".html_safe)
       album_item.input :description, :as => :string
     end
     f.buttons
