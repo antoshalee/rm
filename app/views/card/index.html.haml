@@ -8,8 +8,7 @@
       .nl-article-menu.alt-font
         %a.nl-am-l.gray50{:href => offers_path} Акции и скидки
         %a.nl-am-l.gray50 Дисконтная система
-      %p
-        Начиная с 2007 года вопрос «где в Красноярске можно найти самый большой выбор элегантный классических и необычных дизайнерских украшений», перестал быть актуальным. Ведь именно в это время в самом сердце города свои двери открыл Ювелирный Дом «Ремикс».
+      != variable :discount_text
     = form_tag card_check_path, id: "check_card_form", class: 'nl-top-message.text-width.alt-font', method: 'get', remote: true do
       .f-lbl.mb8 Узнайте размер вашей скидки
       .gray50.mb12.f11 Номер указан на обороте вашей карточки
