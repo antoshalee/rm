@@ -13,7 +13,7 @@
   .page-margin.content-margin
     .text.text-width.white
       %h2.gold= @album.title
-      .nl-date= l(@album.created_at, format: '%d.%m.%Y')
+      .nl-date= l(@album.published_at, format: '%d.%m.%Y')
       != @album.content
     .photo-grid
       - @album.album_items.each do |item|

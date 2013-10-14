@@ -115,6 +115,7 @@ ru:
         title: 'Заголовок'
         content: 'Текст'
         tag_list: 'Теги'
+        published_at: 'Дата публикации'
       album_item:
         image: 'Файл'
         description: 'Описание'

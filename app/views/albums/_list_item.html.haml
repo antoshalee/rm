@@ -2,7 +2,7 @@
 .text.text-width.white
   %h2.gold
     = link_to album.title, album, class: %w(gold thin-link)
-  .nl-date= l(album.created_at, format: '%d.%m.%Y')
+  .nl-date= l(album.published_at, format: '%d.%m.%Y')
   - unless whole_content
     %p
       = first_paragraph album.content

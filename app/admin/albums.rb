@@ -6,7 +6,7 @@ ActiveAdmin.register Album do
   index do
     column :id
     column :title
-    column :created_at
+    column :published_at
     default_actions
   end
 
@@ -15,6 +15,7 @@ ActiveAdmin.register Album do
       f.input :title
       f.input :content, as: :ckeditor
       f.input :tag_list, hint: tag_links(Album)
+      f.input :published_at
     end
 
     f.has_many :album_items do |album_item|
@@ -34,6 +35,7 @@ ActiveAdmin.register Album do
         raw album.content
       end
       row :tag_list
+      row :published_at
     end
 
     panel("Фотографии") do
