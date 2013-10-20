@@ -3,7 +3,7 @@ class Offer < ActiveRecord::Base
     :image, :is_main, :tag_list, :discount
   mount_uploader :image, OfferImageUploader
   acts_as_taggable
-
+  acts_as_list
   after_initialize :set_default_values
   after_commit :on_after_commit_handler
 
