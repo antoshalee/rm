@@ -15,8 +15,10 @@
           .goods-grid-i-cnt
             %img.goods-grid-i{:alt => "Изделие", :src => "#{item.image.thumb.url}"}/
           .goods-grid-text.goods-grid-text-zoom-pad
-            %div Артикул: #{item.article}
-            %div Цена #{item.price}
+            - if item.article.present?
+              %div Артикул: #{item.article}
+            - if item.price.present?
+              %div Цена #{item.price}
             %span.ico.zoom-ico.goods-grid-text-zoom-ico
 
 - if collection.note.present?
