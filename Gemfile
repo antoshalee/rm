@@ -54,5 +54,6 @@ gem 'truncate_html'
 gem 'has_scope'
 gem 'figaro'
 gem 'whenever'
+gem 'enumerize'
 
 gem "mocha", :group => :test

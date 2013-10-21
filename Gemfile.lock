@@ -104,6 +104,8 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0.3)
+    enumerize (0.7.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.25.3)
@@ -297,6 +299,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   delayed_job_active_record
   draper
+  enumerize
   figaro
   fog (~> 1.7.0)
   formtastic
