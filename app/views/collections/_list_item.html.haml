@@ -1,8 +1,8 @@
 .goods-grid-hdr
   %h2.goods-grid-h
-    %a.black.dot-link.pointer.hsb-link{"data-hsb-block" => "ubremix"}= collection.title
+    %a.black.dot-link.pointer.hsb-link{"data-hsb-block" => "collection#{collection.id}"}= collection.title
   .f14.i= collection.price
-  #ubremix.hsb-container
+  .hsb-container{id: "collection#{collection.id}"}
     .hsb-content
       .alt-font.text-mini.text-bt-mr-cllp.text-width.bc.mt14
         %p
