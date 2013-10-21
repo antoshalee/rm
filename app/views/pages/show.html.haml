@@ -6,8 +6,7 @@
   %h1.txa-c.page-h-anim= @page.title
 .content-shadow.mb12
 .page-margin.content-margin.ns
-  .nl-content-col.text.lb.pagecontent
-    != @page.content
+  = render @page.template
   .nl-aside-col.lb
     - @page.sidebar_items.each_with_is_last do |sidebar_item, is_last|
       - classes = %w(nl-aside-item nl-aside-item-user-content)

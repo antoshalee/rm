@@ -1,0 +1,13 @@
+.nl-content-col.lb.pagecontent
+  .text.text-width.nl-mb
+    != @page.content
+  = form_tag card_check_path, id: "check_card_form", class: 'nl-top-message.text-width.alt-font', method: 'get', remote: true do
+    .f-lbl.mb8 Узнайте размер вашей скидки
+    .gray50.mb12.f11 Номер указан на обороте вашей карточки
+    .f-lbl.mb10 Номер вашей карты
+    .mb16
+      %input.f-t-field{:type => "text", name: :number}/
+      %span.red.f18.base-font.ml20#check_card_result
+    %input.btn.btn-big.btn-big-gold{:type => "submit", :value => "Узнать"}/
+  :javascript
+    remix.magsubscribeform();

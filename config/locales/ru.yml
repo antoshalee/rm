@@ -106,6 +106,7 @@ ru:
         title: 'Заголовок'
         content: 'Текст'
         url: 'Адрес'
+        template: 'Шаблон'
         created_at: 'Дата создания'
         updated_at: 'Дата последнего обновления'
       sidebar_item:

@@ -14,6 +14,7 @@ ActiveAdmin.register Page do
       f.input :title
       f.input :url
       f.input :content, as: :ckeditor
+      f.input :template, as: :select, collection: Page.template.values
     end
     f.has_many :sidebar_items do |sidebar_item|
       unless sidebar_item.object.new_record?
@@ -31,6 +32,7 @@ ActiveAdmin.register Page do
       row :content do |page|
         raw page.content
       end
+      row :template
       row :created_at
       row :updated_at
     end

@@ -12,7 +12,6 @@ Remix::Application.routes.draw do
   get "catalog" => "catalog_items#index"
   get "subscribe" => "subscriptions#new"
   get "subscribe_confirmation" => "subscriptions#confirm"
-  get "discount" => "card#index"
   get "card/check" => "card#check"
   get "contacts" => "contacts#index"
 
