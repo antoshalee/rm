@@ -7,7 +7,7 @@ class CatalogItemsController < ApplicationController
   has_scope :by_article, as: :article
 
   def index
-    @items = apply_scopes(Catalog::Item).order("article asc").page(params[:page]).per(10)
+    @items = apply_scopes(Catalog::Item).order("article asc").page(params[:page]).per(25)
     @categories = Catalog::Category.order("position asc")
     @inserts = Catalog::Insert.order("position asc")
     @body_id = "goods-grids"
