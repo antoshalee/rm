@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content, :image, :title, :published_at
+  attr_accessible :content, :image, :title, :published_at, :remove_image
   validates_presence_of :content, :title, :published_at
   mount_uploader :image, ArticleImageUploader
   after_initialize :init

@@ -15,18 +15,23 @@ ActiveAdmin.register Article do
     f.inputs do
       f.input :title
       f.input :content, as: :ckeditor
-      f.input :image
+      f.input :image, :hint => (f.object.new_record? ? nil : "<img src='#{f.object.image.thumb.url}' />".html_safe)
+      if (f.object.image.present?)
+        f.input :remove_image, :as=> :boolean, :required => false, :label => 'Удалить изображение'
+      end
       f.input :published_at
     end
 
     f.buttons
   end
 
-  show do
+  show do |article|
     attributes_table do
       row :title
-      row :image do |article|
-        image_tag article.image.url, width: 100
+      if article.image.present?
+        row :image do |article|
+          image_tag article.image.thumb.url
+        end
       end
       row :content do |article|
         raw article.content
