@@ -23,7 +23,10 @@ ActiveAdmin.register Catalog::Item do
       f.input :insert
       f.input :article
       f.input :weight
-      f.input :image
+      f.input :image, :hint => (f.object.new_record? ? nil : "<img src='#{f.object.image.thumb.url}' />".html_safe)
+      if (f.object.image.present?)
+        f.input :remove_image, :as=> :boolean, :required => false, :label => 'Удалить изображение'
+      end
     end
     f.buttons
   end
@@ -39,7 +42,9 @@ ActiveAdmin.register Catalog::Item do
       row :article
       row :created_at
       row :image do |item|
-        image_tag item.image
+        if item.image.present?
+          image_tag item.image.thumb.url
+        end
       end
     end
   end
