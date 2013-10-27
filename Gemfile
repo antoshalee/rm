@@ -16,7 +16,6 @@ end
 group :development do
   gem 'letter_opener'
   gem 'nifty-generators'
-  gem 'rb-readline', '~> 0.4.2'
   gem 'pry-rails'
   gem 'pry-rescue'
 end
