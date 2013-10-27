@@ -20,18 +20,17 @@
   = render 'feedback'
 :javascript
   remix.feedBackForm();
-- if @last_album
-  .photo-bkg
-    .photo-shadow-top-ptrn
-    .photo-shadow-gold
-    %h2.h-section.gold.txa-c.mb30.page-h-anim
-      %a.gold.thin-link{:href => albums_path} Фото и мероприятия
-    .page-margin.txa-c
-      .photo-grid.photo-grid-pad
-        - @last_album.album_items.limit(10).each do |item|
-          .ph-g-item
-            %a.ph-g-i-l{:href => item.image.fullscreen.url, :title => @last_album.title}
-              %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
+.photo-bkg
+  .photo-shadow-top-ptrn
+  .photo-shadow-gold
+  %h2.h-section.gold.txa-c.mb30.page-h-anim
+    %a.gold.thin-link{:href => albums_path} Фото и мероприятия
+  .page-margin.txa-c
+    .photo-grid.photo-grid-pad
+      - @album_items.limit(10).each do |item|
+        .ph-g-item
+          %a.ph-g-i-l{:href => item.image.fullscreen.url, :title => item.album.title}
+            %img.ph-g-i{:alt => "", :src => item.image.thumb.url}/
 .sp-map-cnt
   .sp-address-on-map
     .sp-address.page-margin
