@@ -2,7 +2,7 @@
 class OfferImageUploader < BaseImageUploader
 
   version :aside do
-    process resize_to_fill: [190,160]
+    process resize_to_limit: [190,0]
   end
 
   version :main do
