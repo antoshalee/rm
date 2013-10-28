@@ -6,10 +6,13 @@
   - unless whole_content
     %p
       = first_paragraph album.content
-      %a.dot-link.white.pointer.hsb-link.hsb-link-hided{"data-hsb-block" => "album#{album.id}"} Читать далее...
+
     .hsb-container{id: "album#{album.id}"}
       .hsb-content
         = rest_paragraphs album.content
+    %p
+      %a.dot-link.white.pointer.hsb-link{data: {"hsb-block" => "album#{album.id}", "hsb-text-on-close" => "Читать далее...", "hsb-text-on-open" => "Свернуть"}} Читать далее...
+    %br
   - else
     %p
       != album.content

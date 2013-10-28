@@ -1524,6 +1524,8 @@ remix.heightSlideBlockLinks = function (p) {
 
     var link = $(this);
     var block = $("#"+link.attr('data-hsb-block')); // id блока в атрибуте ссылки
+    var txtOnClose = link.data('hsb-text-on-close');
+    var txtOnOpen = link.data('hsb-text-on-open');
 
     // ссылки, исчезающие при показе блока
     if (link.hasClass('hsb-link-hided')) {
@@ -1546,6 +1548,9 @@ remix.heightSlideBlockLinks = function (p) {
       // объект-ссылка показывающий/скрывающий выпадающий блок
       new remix.heightSlideBlockActor({
         jqNode: link,
+        txtNode: link,
+        txtOnClose: txtOnClose,
+        txtOnOpen: txtOnOpen,
         heightSlideBlockParams: { // выпадающий блок
           block: block
         }
