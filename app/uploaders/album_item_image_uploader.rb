@@ -2,7 +2,7 @@
 
 class AlbumItemImageUploader < BaseImageUploader
   version :thumb do
-    process :resize_to_fill => [180, 120]
+    process :resize_to_limit => [0, 132]
   end
 
   version :fullscreen do
