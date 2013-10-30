@@ -20,6 +20,9 @@
             - if item.price.present?
               %div Цена #{item.price}
             %span.ico.zoom-ico.goods-grid-text-zoom-ico
+      - # append empty cells
+      - (5 - slice.count).times do
+        .goods-grid-item
 
 - if collection.note.present?
   .goods-grid-subtext.txa-c.f16
