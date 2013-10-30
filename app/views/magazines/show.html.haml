@@ -3,12 +3,7 @@
   = javascript_include_tag "//e.issuu.com/embed.js", async: true
 
 .h-section.page-h-anim.txa-c О компании
-.sub-menu.alt-font
-  %a.sub-menu-link.black{:href => articles_path} Новости
-  %h1.rst.inline
-    %a.sub-menu-link.sub-menu-link-select.black Журнал
-  %a.sub-menu-link.black{:href => "/pages/edu-center.html"} Ювелирная фабрика
-  %a.sub-menu-link.black{:href => "/pages/contact.html"} Контактная информация
+= render 'shared/submenus/about'
 .content-shadow.mb12
 .page-margin.content-margin.ns
   .nl-content-col.text.lb
