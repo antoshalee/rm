@@ -17,24 +17,46 @@ remix.win = new function () {
     onResizeFunction.push(f);
   };
 
+  /*
+    флаг - ресайз окна уже произведен
+    используется для предотвращения нескольких срабатываний функций, вызываемых на событие ресайза
+    т.к. в некторых случаях браузер при физическом одном измении размеров окна вызывает несколько событий
+  */
+  var resizeDone = false;
+
+  // сбросить флаг рейсайза
+  var resetResizeDone = function () {
+      resizeDone = false;
+  };
+
+  var doResizeFunctions = function () {
+    var l = onResizeFunction.length;
+
+    if (l > 0) {
+      for (var i = 0 ; i < l; i=i+1) {
+        onResizeFunction[i]();
+      };
+    };
+
+  };
+
   // пройти по списку и выполнить функции
   var onResize = function () {
 
-    var newheight = win.jqNode.height();
-    var newwidth = win.jqNode.width();
+    if (!resizeDone) {
 
-    if (newwidth===win.width && newheight===win.height) {
+    doResizeFunctions();
 
-    var l = onResizeFunction.length;
+    resizeDone = true;
 
-    for (var i = 0 ; i < l; i=i+1) {
-      onResizeFunction[i]();
+    win.height = win.jqNode.height();
+    win.width = win.jqNode.width();
+
+    // сбросить ресайз
+    setTimeout(resetResizeDone, 50);
+
+
     };
-
-    };
-
-    win.width = newwidth;
-    win.height = newheight;
 
   };
 
@@ -55,7 +77,7 @@ remix.cutPx = function (s) {
 };
 
 // тач-устройство
-remix.isTouch = (('ontouchstart' in document.documentElement) || window.Touch) || false;
+remix.isTouch = ('ontouchstart' in document.documentElement) || false;
 
 // получить горизонтальные метрики блока (отступы, ширина, границы)
 remix.getHorMetrics = function(b) {
@@ -866,7 +888,9 @@ remix.GoodsGridFullViewsManager = function (p) {
 
   // при изменении размеров окна пересчитать расположение блока большого фото
   var onWinResize = function () {
-    execLastOnImgLoad();
+    if (fullImageCnt.is(':visible')) { // если блок показан
+      execLastOnImgLoad();
+    };
   };
 
   remix.win.addResizeFunction(onWinResize);
@@ -963,12 +987,25 @@ remix.magnificPopupGallery = function (p) {
 // лайтбокс "magnificPopupGallery" для фото галерей
 remix.magnificPopupGalleryOnPage = function (p) {
 
-  if (!(p.container || p.container.length <=0)) {
-    return;
+  var containersExist = false, // контйенеры для поиска блоков с ссылками
+      galCnts; // блоки с ссылками галерей
+
+  // конейнер, в котром ищутся блоки ссылок
+  if (p.container && p.container.length > 0 ) {
+    galCnts = p.container.find('div.photo-grid');
+    containersExist = true;
   };
 
-  // контейнер фотогалереи
-  var galCnts = p.container.find('div.photo-grid');
+  // уже выбранные блоки ссылок
+  if (p.galleryContainers && p.galleryContainers.length > 0) {
+    galCnts = p.galleryContainers;
+    containersExist = true;
+  }
+
+  // нет контейнеров, ничего не предпринимать
+  if (!containersExist) {
+    return;
+  };
 
   // при смене фото, вставить кнопки "поделиться" в блок описания фотографии
   var slideChange = function (p) {
@@ -1025,8 +1062,16 @@ remix.magnificPopupGalleryOnPage = function (p) {
 
     // создать галерею для фото внутри контейнера
     galCnts.each(function(){
+
+      var curCnt = $(this);
+
+      if (curCnt.attr('data-mpggalinited')) {
+        return;
+      };
+      curCnt.attr('data-mpggalinited','true');
+
      remix.magnificPopupGallery({ // обертка для палагина "magnificPopupGallery"
-      container: $(this),
+      container: curCnt,
       linkSelector: 'a.ph-g-i-l', // сслыки на фото
       onChange:slideChange // вставка кнопок "поделиться" при смене фото
     });
@@ -1576,7 +1621,11 @@ $('#top-nav').waypoint('sticky', {
 // прокрутка новостей на главной
 remix.startNewsScroll = function () {
 
-	var scrollBlock = $('#sp-news'), slider;
+  var scrollBlock = document.getElementById('sp-news'), slider;
+
+  if (!scrollBlock) { return; };
+
+  scrollBlock = $(scrollBlock);
 
 
 	var processBlock = function(){
