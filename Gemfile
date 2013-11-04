@@ -54,5 +54,6 @@ gem 'has_scope'
 gem 'figaro'
 gem 'whenever'
 gem 'enumerize'
+gem "jquery-fileupload-rails"
 
 gem "mocha", :group => :test

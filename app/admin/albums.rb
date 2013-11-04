@@ -3,6 +3,19 @@ ActiveAdmin.register Album do
   config.clear_sidebar_sections!
   menu priority: 0
 
+  member_action :multiple_file_loading, method: :post do
+    album = Album.find params[:id]
+    album_item = AlbumItem.new(
+      album: album,
+      image: params[:album_item]
+    )
+    if album_item.save
+      render status: 200, json: {thumb_url: album_item.image.thumb.url}
+    else
+      render status: 500
+    end
+  end
+
   index do
     column :id
     column :title
@@ -39,7 +52,15 @@ ActiveAdmin.register Album do
     end
 
     panel("Фотографии") do
-      table_for(album.album_items) do
+      div id: 'album_files_dropzone' do
+        "Перетащите файлы в эту область"
+      end
+      div do
+        form_tag multiple_file_loading_admin_album_path(album), method: :post, multipart: true, id: 'album_multiupload_form' do
+          file_field_tag :album_item
+        end
+      end
+      table_for album.album_items, id: "album_items_table" do
         column "Фотография" do |item|
           if item.image?
             image_tag(item.image.thumb.url)

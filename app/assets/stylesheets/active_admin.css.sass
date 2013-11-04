@@ -3,6 +3,7 @@
 // @import "active_admin/base"
 @import "jquery.ui.tabs"
 @import "jquery.Jcrop"
+@import "jquery.fileupload-ui"
 
 body
   @include global-reset
@@ -50,3 +51,13 @@ a.cke_dialog_ui_button
 .cke_chrome
   width: 76% !important
   overflow: hidden
+
+#album_files_dropzone
+  outline: 4px dotted white
+  background-color: #ecedee
+  color: white
+  font-size: 18px
+  height: 40px
+  padding: 5px 5px
+#album_multiupload_form input
+  display: none
