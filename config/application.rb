@@ -66,6 +66,7 @@ module Remix
         remix.css
         remix-ie.css
         additional.css
-        ckeditor/plugins/mediaembed/plugin.js]
+        ckeditor/plugins/mediaembed/plugin.js
+        ckeditor/plugins/link/dialogs/link.js]
   end
 end

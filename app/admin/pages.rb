@@ -3,6 +3,10 @@ ActiveAdmin.register Page do
   config.clear_sidebar_sections!
   menu parent: "Текстовое содержимое"
 
+  collection_action :select_box_options, method: :get do
+    render json: Page.select([:url, :title])
+  end
+
   index do
     column :title
     column :url
