@@ -44,6 +44,9 @@ ru:
       catalog/insert:
         one: 'Вид вставки'
         other: 'Виды вставок'
+      catalog/metal:
+        one: 'Металл'
+        other: 'Металлы'
       page:
         one: 'Страницу'
         other: 'Страницы'
@@ -182,13 +185,16 @@ ru:
         confirmed?: 'Подтверждено?'
       catalog/insert:
         name: 'Название'
+      catalog/metal:
+        name: 'Название'
       catalog/category:
         name: 'Название'
       catalog/item:
         category: 'Категория'
-        metal: 'Металл'
         inserts: 'Вставки'
         inserts_to_string: 'Вставки'
+        metals: 'Металлы'
+        metals_to_string: 'Металлы'
         article: 'Артикул'
         created_at: 'Дата создания'
         weight: 'Вес'

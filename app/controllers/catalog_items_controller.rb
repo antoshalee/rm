@@ -10,20 +10,21 @@ class CatalogItemsController < ApplicationController
     @items = apply_scopes(Catalog::Item).order("article asc").page(params[:page]).per(25)
     @categories = Catalog::Category.order("position asc")
     @inserts = Catalog::Insert.order("position asc")
+    @metals = Catalog::Metal.order("position asc")
     @body_id = "goods-grids"
   end
 
   private
 
   def selected_category
-    @selected_category ||= Catalog::Category.find(params[:category]) if params[:category].present?
+    @selected_category ||= params[:category] && Catalog::Category.find(params[:category])
   end
 
   def selected_insert
-    @selected_insert ||= Catalog::Insert.find(params[:insert]) if params[:insert].present?
+    @selected_insert ||= params[:insert] && Catalog::Insert.find(params[:insert])
   end
 
   def selected_metal
-    @selected_metal ||= params[:metal] if params[:metal].present? && Catalog::Item::METALS.include?(params[:metal])
+    @selected_metal ||= params[:metal] && Catalog::Metal.find(params[:metal])
   end
 end

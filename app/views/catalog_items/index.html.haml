@@ -22,15 +22,15 @@
           .drop-down-btn.alt-font
             .drop-down-btn-of
               .drop-down-btn-long
-              = selected_metal.present? ? t("catalog.metals.#{selected_metal}") : "Все металлы"
+              = selected_metal.present? ? selected_metal.name : "Все металлы"
             %span.drop-down-btn-arr
           .drop-down-list-in.na
             %ul.drop-down-list-cnt.alt-font
               %li.ddl-item
                 %a.ddl-i-l{href: current_catalog_path_except(:metal)} Все металлы
-              - Catalog::Item::METALS.each do |metal|
+              - @metals.each do |metal|
                 %li.ddl-item
-                  %a.ddl-i-l{href: current_catalog_path_with(metal: metal)}= t("catalog.metals.#{metal}")
+                  %a.ddl-i-l{href: current_catalog_path_with(metal: metal)}= metal.name
             .drop-down-list-shadow
       .goods-filter-col.lb
         .drop-down-list-out

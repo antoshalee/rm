@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131116094644) do
+ActiveRecord::Schema.define(:version => 20131116101036) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -127,6 +127,21 @@ ActiveRecord::Schema.define(:version => 20131116094644) do
   add_index "catalog_items", ["article"], :name => "index_catalog_items_on_article"
   add_index "catalog_items", ["category_id"], :name => "index_catalog_items_on_category_id"
   add_index "catalog_items", ["metal"], :name => "index_catalog_items_on_metal"
+
+  create_table "catalog_items_metals", :force => true do |t|
+    t.integer "metal_id", :null => false
+    t.integer "item_id",  :null => false
+  end
+
+  add_index "catalog_items_metals", ["item_id"], :name => "index_catalog_items_metals_on_item_id"
+  add_index "catalog_items_metals", ["metal_id"], :name => "index_catalog_items_metals_on_metal_id"
+
+  create_table "catalog_metals", :force => true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false

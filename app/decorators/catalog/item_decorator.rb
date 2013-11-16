@@ -5,4 +5,8 @@ class Catalog::ItemDecorator < Draper::Decorator
   def inserts_to_string
     inserts.pluck(:name).join ", "
   end
+
+  def metals_to_string
+    metals.pluck(:name).join ", "
+  end
 end
