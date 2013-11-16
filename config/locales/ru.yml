@@ -188,6 +188,7 @@ ru:
         category: 'Категория'
         metal: 'Металл'
         insert: 'Вставка'
+        inserts_to_string: 'Вставки'
         article: 'Артикул'
         created_at: 'Дата создания'
         weight: 'Вес'

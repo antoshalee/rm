@@ -5,12 +5,13 @@ ActiveAdmin.register Catalog::Item do
   filter :metal, :as => :select, collection: Catalog::Item::METALS.map{|m| [I18n.t("catalog.metals.#{m}"), m]}
   filter :insert
   filter :article
+  decorate_with Catalog::ItemDecorator
 
   index do
     column :id
     column :category
     column :metal
-    column :insert
+    column :inserts_to_string
     column :article
     column :created_at
     default_actions
@@ -20,7 +21,7 @@ ActiveAdmin.register Catalog::Item do
     f.inputs do
       f.input :category
       f.input :metal, collection: Catalog::Item::METALS.map{|m| [t("catalog.metals.#{m}"), m]}
-      f.input :insert
+      f.input :inserts, :as => :check_boxes
       f.input :article
       f.input :weight
       f.input :image, :hint => (f.object.new_record? ? nil : "<img src='#{f.object.image.thumb.url}' />".html_safe)
@@ -38,7 +39,7 @@ ActiveAdmin.register Catalog::Item do
       row :metal do |item|
         t("catalog.metals.#{item.metal}")
       end
-      row :insert
+      row :inserts_to_string
       row :article
       row :created_at
       row :image do |item|
