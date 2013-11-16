@@ -1,9 +1,8 @@
 class Catalog::Item < ActiveRecord::Base
   METALS = %w(gold silver)
   belongs_to :category
-  belongs_to :insert
   has_and_belongs_to_many :inserts, join_table: "catalog_inserts_items"
-  attr_accessible :article, :metal, :weight, :insert_id, :insert_ids, :category_id, :image, :remove_image
+  attr_accessible :article, :metal, :weight, :insert_ids, :category_id, :image, :remove_image
   validates :metal, presence: true, inclusion: METALS
   validates :article, presence: true
   validates :category, presence: true

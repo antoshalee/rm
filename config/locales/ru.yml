@@ -187,7 +187,7 @@ ru:
       catalog/item:
         category: 'Категория'
         metal: 'Металл'
-        insert: 'Вставка'
+        inserts: 'Вставки'
         inserts_to_string: 'Вставки'
         article: 'Артикул'
         created_at: 'Дата создания'
