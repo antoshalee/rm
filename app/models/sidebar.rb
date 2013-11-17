@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Sidebar < ActiveRecord::Base
   extend Enumerize
   attr_accessible :kind, :sidebar_items_attributes, :display_on_articles_page, :display_on_offers_page
