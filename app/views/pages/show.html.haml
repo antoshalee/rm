@@ -7,9 +7,6 @@
 .content-shadow.mb12
 .page-margin.content-margin.ns
   = render @page.template
-  .nl-aside-col.lb
-    - @page.sidebar_items.each_with_is_last do |sidebar_item, is_last|
-      - classes = %w(nl-aside-item nl-aside-item-user-content)
-      - classes << 'nl-aside-item-brd' unless is_last
-      %div{class: classes}
-        != sidebar_item.text
+  - if @page.sidebar.present?
+    .nl-aside-col.lb
+      = render "sidebars/#{@page.sidebar.kind}", sidebar: @page.sidebar

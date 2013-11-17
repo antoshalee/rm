@@ -42,6 +42,8 @@ ActiveAdmin.register Article do
   end
 
   sidebar 'Предпросмотр сайдбара', :only => [:edit, :new] do
-    render :partial => "admin/sidebar", locals: {block: resource.sidebar}
+    if resource.sidebar.present?
+      render :partial => "sidebars/#{resource.sidebar.kind}", locals: {sidebar: resource.sidebar}
+    end
   end
 end

@@ -12,3 +12,6 @@
     .txa-c.nl-mb
       .dissolve-accent.dissolve-accent-gold
         = link_to 'Все новости', articles_path, class: 'thin-link black'
+  - if @article.sidebar.present?
+    .nl-aside-col.lb
+      = render "sidebars/#{@article.sidebar.kind}", sidebar: @article.sidebar

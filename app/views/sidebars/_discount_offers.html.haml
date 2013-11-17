@@ -1,3 +1,5 @@
+%h2.aside-hdr.tb-brd.gold-brd.alt-font.gold
+  Постоянные акции
 - Offer.order('created_at desc').where(discount: true).each do |o|
   .nl-aside-item.nl-aside-item-brd
     %a.onhoverlink.block.black{:href => offer_path(o)}

@@ -16,16 +16,12 @@ ActiveAdmin.register Page do
   form do |f|
     f.inputs do
       f.input :title
+      f.input :sidebar, input_html: {class: 'sidebar_changer'}
       f.input :url
       f.input :content, as: :ckeditor
       f.input :template, as: :select, collection: Page.template.values
     end
-    f.has_many :sidebar_items do |sidebar_item|
-      unless sidebar_item.object.new_record?
-        sidebar_item.input :_destroy, :as => :boolean, :required => false, :label => 'Удалить'
-      end
-      sidebar_item.input :text, as: :ckeditor, hint: 'Для того чтобы вставить заголовок золотого цвета, используйте формат Heading1'
-    end
+
     f.buttons
   end
 
@@ -39,6 +35,12 @@ ActiveAdmin.register Page do
       row :template
       row :created_at
       row :updated_at
+    end
+  end
+
+  sidebar 'Предпросмотр сайдбара', :only => [:edit, :new] do
+    if resource.sidebar.present?
+      render :partial => "sidebars/#{resource.sidebar.kind}", locals: {sidebar: resource.sidebar}
     end
   end
 

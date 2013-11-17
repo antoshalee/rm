@@ -8,7 +8,6 @@ class Sidebar < ActiveRecord::Base
 
   enumerize :kind, in: %w(
     customized
-    last_offers
     discount_offers
   )
 
