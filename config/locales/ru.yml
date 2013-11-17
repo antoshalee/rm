@@ -26,6 +26,13 @@ ru:
       brown: 'Коричневый'
       bistre: 'Бистр'
       gray: 'Серый'
+  enumerize:
+    sidebar:
+      kind:
+        customized: 'Кастомный'
+        last_offers: 'Последние акции'
+        discount_offers: 'Постоянные акции'
+
   activerecord:
     models:
       contact_group:
@@ -78,6 +85,11 @@ ru:
         few: 'Акции'
         many: 'Акция'
         other: 'Акции'
+      sidebar:
+        one: 'Сайдбар'
+        few: 'Сайдбара'
+        many: 'Сайдбаров'
+        other: 'Сайдбары'
       variable:
         one: 'Переменная'
         other: 'Переменные'
@@ -203,6 +215,11 @@ ru:
         number: 'Номер'
         discount: 'Размер скидки'
         balance: 'Баланс'
+      sidebar:
+        kind: Тип
+        title: Описание
+        display_on_offers_page: 'Отображать на странице акций'
+        display_on_articles_page: 'Отображать на странице новостей'
       contact_group:
         name: 'Название'
         address: 'Адрес'

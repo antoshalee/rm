@@ -14,6 +14,7 @@ ActiveAdmin.register Article do
   form :html => { :enctype=> 'multipart/form-data'} do |f|
     f.inputs do
       f.input :title
+      f.input :sidebar, input_html: {class: 'sidebar_changer'}
       f.input :content, as: :ckeditor
       f.input :image, :hint => (f.object.new_record? ? nil : "<img src='#{f.object.image.thumb.url}' />".html_safe)
       if (f.object.image.present?)
@@ -40,4 +41,7 @@ ActiveAdmin.register Article do
     end
   end
 
+  sidebar 'Предпросмотр сайдбара', :only => [:edit, :new] do
+    render :partial => "admin/sidebar", locals: {block: resource.sidebar}
+  end
 end

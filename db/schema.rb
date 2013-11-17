@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131116101036) do
+ActiveRecord::Schema.define(:version => 20131117185904) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20131116101036) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.date     "published_at"
+    t.integer  "sidebar_id"
   end
 
   create_table "banners", :force => true do |t|
@@ -274,9 +275,19 @@ ActiveRecord::Schema.define(:version => 20131116101036) do
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "sidebar_id"
   end
 
   add_index "sidebar_items", ["page_id"], :name => "index_sidebar_items_on_page_id"
+  add_index "sidebar_items", ["sidebar_id"], :name => "index_sidebar_items_on_sidebar_id"
+
+  create_table "sidebars", :force => true do |t|
+    t.string   "kind"
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.boolean  "display_on_articles_page", :default => false
+    t.boolean  "display_on_offers_page",   :default => false
+  end
 
   create_table "subscriptions", :force => true do |t|
     t.string   "kind"

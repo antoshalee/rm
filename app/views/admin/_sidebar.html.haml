@@ -1,0 +1,6 @@
+- if block.present?
+  - block.sidebar_items.each_with_is_last do |sidebar_item, is_last|
+    - classes = %w(nl-aside-item nl-aside-item-user-content)
+    - classes << 'nl-aside-item-brd' unless is_last
+    %div{class: classes}
+      != sidebar_item.text

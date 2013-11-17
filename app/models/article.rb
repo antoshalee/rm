@@ -1,8 +1,9 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content, :image, :title, :published_at, :remove_image
+  attr_accessible :content, :image, :title, :published_at, :remove_image, :sidebar_id
   validates_presence_of :content, :title, :published_at
   mount_uploader :image, ArticleImageUploader
   after_initialize :init
+  belongs_to :sidebar
 
   private
 
