@@ -14,9 +14,6 @@
     .txa-c.nl-mb
       .dissolve-accent.dissolve-accent-gold
         = link_to 'Вернуться к акциям', offers_path, class: 'black thin-link'
-  / end nl-content-col text
-  / nl-aside-col
-  .nl-aside-col.lb
-    %h2.aside-hdr.tb-brd.gold-brd.alt-font.gold
-      Постоянные акции
-    = render 'sidebars/offers', offers:  Offer.order('created_at desc').where(discount: true)
+  - if @offer.sidebar.present?
+    .nl-aside-col.lb
+      = render "sidebars/#{@offer.sidebar.kind}", sidebar: @offer.sidebar

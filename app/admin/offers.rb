@@ -25,6 +25,7 @@ ActiveAdmin.register Offer do
   form :html => { :enctype=> 'multipart/form-data'} do |f|
     f.inputs do
       f.input :title
+      f.input :sidebar, input_html: {class: 'sidebar_changer'}
       f.input :date_start
       f.input :date_finish
       f.input :lead, :input_html => {rows: 4}
@@ -57,6 +58,12 @@ ActiveAdmin.register Offer do
       row :discount do |item|
         item.discount? ? 'Да' : 'Нет'
       end
+    end
+  end
+
+  sidebar 'Предпросмотр сайдбара', :only => [:edit, :new] do
+    if resource.sidebar.present?
+      render :partial => "sidebars/#{resource.sidebar.kind}", locals: {sidebar: resource.sidebar}
     end
   end
 
