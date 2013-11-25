@@ -10,7 +10,7 @@ ActiveAdmin.register Banner do
     sortable_handle_column # inserts a drag handle
     column :text
     column :image do |banner|
-      link_to(image_tag(banner.image.url, width: 300), admin_banner_path(banner))
+      "<a href='#{admin_banner_path(banner)}'><img src='#{banner.image.url}' width='300' /></a>".html_safe
     end
     column :url
     default_actions
