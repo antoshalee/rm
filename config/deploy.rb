@@ -21,6 +21,7 @@ after "deploy:restart", "deploy:cleanup"
 require "rvm/capistrano"
 require "bundler/capistrano"
 require "whenever/capistrano"
+set :whenever_roles, nil
 set :whenever_command, "bundle exec whenever"
 
 before "deploy:assets:precompile" do
