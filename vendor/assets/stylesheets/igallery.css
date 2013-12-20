@@ -1,0 +1,147 @@
+#ig__overlay {
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:9997;
+	margin:0;
+	padding:0;
+	background:rgba(0,0,0,0.7);
+	}
+
+#ig {
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:9998;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	height:100%;
+	}
+	#ig .ig__wrap {
+		position:absolute;
+		top:0;
+		left:50%;
+		width:846px;
+		height:100%;
+		margin:0 0 0 -423px;
+		padding:0;
+		white-space:nowrap;
+		}
+		#ig .ig__control {
+			position:absolute;
+			top:0;
+			right:0;
+			bottom:0;
+			left:0;
+			}
+			#ig .ig__prev,
+			#ig .ig__next {
+				position: absolute;
+				top:50%;
+				width:15px;
+				height:22px;
+				margin:-15px 0 0;
+				padding:0;
+				cursor:pointer;
+				z-index:9999;
+				}
+			#ig .ig__prev {
+				left:0;
+				background:url('/assets/ig_sprite.png') left top no-repeat;
+				}
+			#ig .ig__next {
+				right:0;
+				background:url('/assets/ig_sprite.png') right top no-repeat;
+				}
+			#ig .ig__prev:hover,
+			#ig .ig__next:hover {
+				opacity:0.8;
+				}
+		#ig__layer {
+			position:relative;
+			width:99999px;
+			list-style:none;
+			margin:0;
+			padding:0;
+			font-size:0;
+			display:inline-block;
+			vertical-align:middle;
+			zoom:1;
+			*display:inline;
+			}
+			#ig .ig__item {
+				display:inline-block;
+				vertical-align:middle;
+				width:846px;
+				margin:0;
+				padding:0;
+				text-align:center;
+				zoom:1;
+				*display:inline;
+				}
+				#ig .ig__item_wrap {
+					position:relative;
+					display:inline-block;
+					border:8px solid #fff;
+					background:#000;
+					font-size:12px;
+					color:#fff;
+					}
+					#ig .ig__item_wrap .ig__image {
+						vertical-align:top;
+						}
+					#ig .ig__item_wrap .ig__image.landscape {
+						}
+					#ig .ig__item_wrap .ig__image.portrait {
+						}
+					#ig .ig__item_wrap iframe {
+						vertical-align:top;
+						}
+				#ig .ig__shadow {
+					position:absolute;
+					top:0;
+					right:0;
+					bottom:0;
+					left:0;
+					z-index:-1;
+					-webkit-box-shadow:0 10px 40px 0 rgba(0,0,15,0.7);
+					box-shadow:0 10px 40px 0 rgba(0,0,15,0.7);
+					opacity:0;
+					}
+					#ig .ig__info {
+						position: absolute;
+						top:-40px;
+						right:-8px;
+						left:-8px;
+						height:20px;
+						font:bold 12px/20px Arial, Helvetica, sans-serif;
+						color:#fff;
+						text-align:left;
+						}
+						#ig .ig__close {
+							float:right;
+							width:18px;
+							height:18px;
+							background:url('/assets/ig_sprite.png') right bottom no-repeat;
+							cursor:pointer;
+							}
+						#ig .ig__close:hover {
+							opacity:0.8;
+							}
+						#ig .ig__num {}
+							#ig .ig__current {}
+							#ig .ig__count {}
+		#ig .ig__helper {
+			display:inline-block;
+			vertical-align:middle;
+			height:100%;
+			width:0;
+			background:red;
+			zoom:1;
+			*display:inline;
+			}

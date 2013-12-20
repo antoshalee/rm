@@ -6,6 +6,7 @@
 //= require_tree ./admin
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require igallery
 
 $(document).ready(function(){
 	$('#album_multiupload_form').fileupload({
@@ -13,13 +14,16 @@ $(document).ready(function(){
 		done: function(e, data) {
 			console.log(data)
 			var thumb_url = data.result.thumb_url;
+			var fullscreen_url = data.result.fullscreen_url;
 			var new_tr = '<tr>' +
                       	'<td class="">' +
-                      	'<img alt="" src=" '+ thumb_url +'"></td>' +
+                      	'<a class="igallery_item" href="' + fullscreen_url + '">' +
+                      	'<img alt="" src="'+ thumb_url +'"></a></td>' +
                       	'<td class=""></td></tr>';
 
 			// var new_tr = $('#album_items_table tr').last().clone();
 			$('#album_items_table').append(new_tr);
+			initIgallery();
 		}
 	});
 
@@ -37,6 +41,8 @@ $(document).ready(function(){
 		}
 
 	});
+
+	initIgallery();
 })
 
 // Sidebar form
@@ -52,3 +58,9 @@ $(document).ready(function() {
 	$('select#sidebar_kind').change(handleSidebarKindChanged);
 	handleSidebarKindChanged();
 })
+
+function initIgallery() {
+	if($('a.igallery_item').size()) {
+		$('a.igallery_item').iGallery();
+	}
+}

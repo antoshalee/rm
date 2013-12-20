@@ -10,7 +10,7 @@ ActiveAdmin.register Album do
       image: params[:album_item]
     )
     if album_item.save
-      render status: 200, json: {thumb_url: album_item.image.thumb.url}
+      render status: 200, json: {fullscreen_url: album_item.image.fullscreen.url, thumb_url: album_item.image.thumb.url}
     else
       render status: 500
     end
@@ -63,7 +63,9 @@ ActiveAdmin.register Album do
       table_for album.album_items, id: "album_items_table" do
         column "Фотография" do |item|
           if item.image?
-            image_tag(item.image.thumb.url)
+            link_to item.image.fullscreen.url, class: 'igallery_item' do
+              image_tag(item.image.thumb.url)
+            end
           end
         end
         column "Описание" do |item|
