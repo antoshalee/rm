@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
   extend Enumerize
-  attr_accessible :content, :title, :url, :sidebar_items_attributes, :template, :sidebar_id
+  attr_accessible :content, :title, :url, :sidebar_items_attributes, :template, :sidebar_id, :submenu
   has_many :sidebar_items, dependent: :destroy, order: :position
   belongs_to :sidebar
   validates :title, presence: true

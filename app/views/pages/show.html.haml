@@ -1,9 +1,8 @@
 - title "Ювелирный дом \"Ремикс\": #{@page.title}"
-- if current_page?('/about')
-  %h1.txa-c.page-h-anim О компании
-  = render 'shared/submenus/about'
-- else
-  %h1.txa-c.page-h-anim= @page.title
+
+%h1.txa-c.page-h-anim= @page.title
+- if @page.submenu.present?
+  = @page.submenu.html_safe
 .content-shadow.mb12
 .page-margin.content-margin.ns
   = render @page.template

@@ -19,6 +19,7 @@ ActiveAdmin.register Page do
       f.input :sidebar, input_html: {class: 'sidebar_changer'}
       f.input :url
       f.input :content, as: :ckeditor
+      f.input :submenu, input_html: {rows: 10}
       f.input :template, as: :select, collection: Page.template.values
     end
 

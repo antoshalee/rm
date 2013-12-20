@@ -124,6 +124,7 @@ ru:
         template: 'Шаблон'
         created_at: 'Дата создания'
         updated_at: 'Дата последнего обновления'
+        submenu: 'Подменю'
       sidebar_item:
         title: 'Заголовок'
         text: 'Текст'
