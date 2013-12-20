@@ -15,9 +15,10 @@
           %a.onhoverlink-signal.thin-link{href: offer_path(@main_offer)}>= @main_offer.title
           »
         .nl-date.nl-top-mes-pad Срок проведения: с #{l(@main_offer.date_start)}–#{l(@main_offer.date_finish)}
-        %a.black.onhoverlink.block{:href => offer_path(@main_offer)}
-          .nl-i-cnt.onhover-op
-            = image_tag @main_offer.image.main, class: 'img-b'
+        - if offer.image.present?
+          %a.black.onhoverlink.block{:href => offer_path(@main_offer)}
+            .nl-i-cnt.onhover-op
+              = image_tag @main_offer.image.main, class: 'img-b'
         .text.nl-top-mes-pad
           %p
             = @main_offer.lead
@@ -28,9 +29,10 @@
       .nl-2col-cnt.nl-mb.ns
         - slice.each do |offer|
           .nl-2col.lb
-            %a.black.onhoverlink.block{:href => offer_path(offer)}
-              .nl-i-cnt.onhover-opz
-                = image_tag offer.image.main, class: 'img-b'
+            - if offer.image.present?
+              %a.black.onhoverlink.block{:href => offer_path(offer)}
+                .nl-i-cnt.onhover-opz
+                  = image_tag offer.image.main, class: 'img-b'
             %h2
               «
               %a.thin-link.onhoverlink-signal{href: offer_path(offer)}>= offer.title

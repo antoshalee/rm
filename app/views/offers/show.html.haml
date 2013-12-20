@@ -9,7 +9,8 @@
     %h2= @offer.title
     - unless @offer.discount?
       .nl-date-mini Срок проведения: с #{l(@offer.date_start)}–#{l(@offer.date_finish)}
-    %img{:alt => "", :src => @offer.image.main}/
+    - if @offer.image.present?
+      %img{:alt => "", :src => @offer.image.main}/
     != @offer.content
     .txa-c.nl-mb
       .dissolve-accent.dissolve-accent-gold
