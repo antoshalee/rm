@@ -2957,9 +2957,9 @@ label.f-error {
 
 .sp-promos-i {
   border: 0;
-  -moz-box-shadow: 0 2px 10px rgba(0,0,0,.85);
+/*  -moz-box-shadow: 0 2px 10px rgba(0,0,0,.85);
   -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.85);
-  box-shadow: 0 2px 10px rgba(0,0,0,.85);
+  box-shadow: 0 2px 10px rgba(0,0,0,.85);*/
   display: block;
   margin: 0 auto;
   max-height: 100%;
