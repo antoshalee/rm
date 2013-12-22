@@ -15,7 +15,7 @@
                 = succeed "," do
                   %a.thin-link.ib{href: @top_store.email}= @top_store.email
               %div
-                %a.thin-link{href: "#"} Посмотреть на карте
+                %a.thin-link{href: url_to_store_location_on_gmap(@top_store), target: 'blank'} Посмотреть на карте
           .nl-2col.lb
             .nl-top-mes-pad
               .nl-2col-cnt.ns.mb8
@@ -40,7 +40,7 @@
             .text-mini
               = store_info(store)
               %div
-                %a.thin-link{href: "#"} Посмотреть на карте
+                %a.thin-link{href: url_to_store_location_on_gmap(store), target: 'blank'} Посмотреть на карте
       .gem-sep.gem-sep-linen.nl-mb
         %span.ico.gem-sep-ico
 
