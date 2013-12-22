@@ -13,7 +13,7 @@
               = store_info(@top_store)
               - if @top_store.email.present?
                 = succeed "," do
-                  %a.thin-link.ib{href: @top_store.email} @top_store.email
+                  %a.thin-link.ib{href: @top_store.email}= @top_store.email
               %div
                 %a.thin-link{href: "#"} Посмотреть на карте
           .nl-2col.lb
