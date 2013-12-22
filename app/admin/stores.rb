@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.register Store do
   menu parent: "Текстовое содержимое"
   config.clear_sidebar_sections!
