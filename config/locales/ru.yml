@@ -85,6 +85,11 @@ ru:
         few: 'Акции'
         many: 'Акция'
         other: 'Акции'
+      store:
+        one: 'Магазин'
+        few: 'Магазина'
+        many: 'Магазинов'
+        other: 'Магазины'
       sidebar:
         one: 'Сайдбар'
         few: 'Сайдбара'
@@ -143,6 +148,16 @@ ru:
         image: 'Изображение'
         created_at: 'Создана'
         published_at: 'Дата публикации'
+      store:
+        name: 'Название'
+        address: 'Адрес'
+        phone: Телефон
+        email: Email
+        image: Изображение
+        lat: Широта
+        lng: Долгота
+        opening_hours: 'Часы работы'
+        description: 'Описание'
       collection:
         title: 'Название'
         price: 'Цена'
