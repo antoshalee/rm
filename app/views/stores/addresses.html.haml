@@ -2,66 +2,47 @@
 .content-shadow.mb12
 .page-margin.content-margin.ns
   .nl-content-col.lb
-    .nl-top-message
-      %h2.nl-hdr Ювелирный дом «Ремикс»
-      .nl-2col-cnt.ns
-        .nl-2col.lb
-          %img.nl-img.mb6{alt: "", src: "/assets/addr/adrr1.jpg"}/
-          .text-mini
-            г. Красноярск, ул. Перенсона, 23а, +7 (391) 227-06-27,
-            = succeed "," do
-              %a.thin-link.ib{href: "mailto:info@af-remix.ru"} info@af-remix.ru
-            %div
-              %a.thin-link{href: "#"} Посмотреть на карте
-        .nl-2col.lb
-          .nl-top-mes-pad
-            .nl-2col-cnt.ns.mb8
-              .nl-2col.lb
-                %img.nl-img{alt: "", src: "/assets/addr/adrr5.jpg"}/
-              .nl-2col.lb
-                %img.nl-img{alt: "", src: "/assets/addr/adrr2.jpg"}/
+    - if @top_store
+      .nl-top-message
+        %h2.nl-hdr= @top_store.name
+        .nl-2col-cnt.ns
+          .nl-2col.lb
+            - if @top_store.image.present?
+              = image_tag @top_store.image.main.url, class: %w(nl-img mb6)
             .text-mini
-              В ювелирном доме «Ремикс» находятся
-              %a.thin-link{href: "/jewelry-discounter"} ювелирный дискаунтер
-              и
-              = succeed "." do
-                %a.thin-link{href: "/wedding-rings-center"} центр обручальных колец
-    .nl-2col-cnt.nl-mb.ns
-      .nl-2col.lb
-        %h2.nl-hdr ЦУМ
-        %img.nl-img.mb8{alt: "", src: "/assets/addr/adrr2.jpg"}/
-        .text-mini
-          г. Красноярск, ул. Карла Маркса, 102, +7 (391) 211-01-20,
-          с 10:00–20:00 (без перерыва и выходных)
-          %div
-            %a.thin-link{href: "#"} Посмотреть на карте
-      .nl-2col.lb
-        %h2.nl-hdr Дом Быта
-        %img.nl-img.mb8{alt: "", src: "/assets/addr/adrr3.jpg"}/
-        .text-mini
-          г. Красноярск, пр. Мира, 60, 1 этаж, +7 (391) 227-98-07,
-          понедельник–суббота: с 10:00–20:00, воскресенье: с 10:00–19:00
-          %div
-            %a.thin-link{href: "#"} Посмотреть на карте
+              = store_info(@top_store)
+              - if @top_store.email.present?
+                = succeed "," do
+                  %a.thin-link.ib{href: @top_store.email} @top_store.email
+              %div
+                %a.thin-link{href: "#"} Посмотреть на карте
+          .nl-2col.lb
+            .nl-top-mes-pad
+              .nl-2col-cnt.ns.mb8
+                .nl-2col.lb
+                  %img.nl-img{alt: "", src: "/assets/addr/adrr5.jpg"}/
+                .nl-2col.lb
+                  %img.nl-img{alt: "", src: "/assets/addr/adrr2.jpg"}/
+              .text-mini
+                В ювелирном доме «Ремикс» находятся
+                %a.thin-link{href: "/jewelry-discounter"} ювелирный дискаунтер
+                и
+                = succeed "." do
+                  %a.thin-link{href: "/wedding-rings-center"} центр обручальных колец
+
+    - @stores.each_slice(2) do |slice|
+      .nl-2col-cnt.nl-mb.ns
+        - slice.each do |store|
+          .nl-2col.lb
+            %h2.nl-hdr= store.name
+            = image_tag store.image.main.url, class: %w(nl-img mb8)
+            .text-mini
+              = store_info(store)
+              %div
+                %a.thin-link{href: "#"} Посмотреть на карте
     .gem-sep.gem-sep-linen.nl-mb
       %span.ico.gem-sep-ico
-    .nl-2col-cnt.nl-mb.ns
-      .nl-2col.lb
-        %h2.nl-hdr ТЦ «Квант»
-        %img.nl-img.mb8{alt: "", src: "/assets/addr/adrr4.jpg"}/
-        .text-mini
-          г. Красноярск, ул. Красной Армии, 10, +7 (391) 252-93-22
-          с 10:00–20:00 (без перерыва и выходных)
-          %div
-            %a.thin-link{href: "#"} Посмотреть на карте
-      .nl-2col.lb
-        %h2.nl-hdr ТЦ «Красноярье»
-        %img.nl-img.mb8{alt: "", src: "/assets/addr/adrr5.jpg"}/
-        .text-mini
-          г. Красноярск, пр. Красноярский Рабочий, 120
-          +7 (391) 295-57-59, с 10:00–20:00, (без перерыва и выходных)
-          %div
-            %a.thin-link{href: "#"} Посмотреть на карте
+
   .nl-aside-col.lb
     %h2.aside-hdr.tb-brd.gold-brd.alt-font
       %a.thin-link.gold{href: "/offers"} Акции и скидки
