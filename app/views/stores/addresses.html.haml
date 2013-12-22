@@ -35,7 +35,8 @@
         - slice.each do |store|
           .nl-2col.lb
             %h2.nl-hdr= store.name
-            = image_tag store.image.main.url, class: %w(nl-img mb8)
+            - if store.image.present?
+              = image_tag store.image.main.url, class: %w(nl-img mb8)
             .text-mini
               = store_info(store)
               %div
