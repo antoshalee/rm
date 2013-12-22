@@ -5,5 +5,6 @@ class StartController < ApplicationController
     @offers = Offer.where(discount: false).order("position asc").limit(3)
     @album_items = AlbumItem.random
     @last_magazine = Magazine.order('position asc').first
+    @stores = Store.order('position asc')
   end
 end

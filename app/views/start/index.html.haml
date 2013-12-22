@@ -39,66 +39,12 @@
       %h2.h-section.gold.txa-c.mb24.page-h-anim
         %a.thin-link.gold{:href => "/stores"} Сеть магазинов
       #sp-address-list.sp-address-list.jst-layout
-        .sp-address-item
-          .sp-address-item-highlight.sp-address-item-highlight-on{"data-latitude" => "56.011343", "data-longitude" => "92.866605"}
-            .h-item ЮД «Ремикс»
-            .text-mini
-              г. Красноярск
-              %span.sp-address-value ул. Перенсона, 23а
-              %br/
-              +7 (391) 227-06-27, с 10:00–20:00
-              %br/
-              (без перерыва и выходных)
-        .sp-address-item
-          .sp-address-item-highlight{"data-latitude" => "56.012754", "data-longitude" => "92.87566"}
-            .h-item Дом Быта
-            .text-mini
-              г. Красноярск,
-              = succeed "," do
-                %span.sp-address-value пр. Мира, 60
-              1 этаж,
-              %br/
-              +7 (391) 227-98-07, понедельник–суббота:
-              %br/
-              с 10:00–20:00, воскресенье: с 10:00–19:00
-              %br/
-        .sp-address-item
-          .sp-address-item-highlight{"data-latitude" => "56.013989", "data-longitude" => "92.856465"}
-            .h-item ТЦ «Квант»
-            .text-mini
-              г. Красноярск,
-              %span.sp-address-value ул. Красной Армии, 10
-              %br/
-              +7 (391) 252-93-22 с 10:00–20:00
-              %br/
-              (без перерыва и выходных)
-        .sp-address-item
-          .sp-address-item-highlight{"data-latitude" => "56.010313", "data-longitude" => "92.860445"}
-            .h-item ЦУМ
-            .text-mini
-              г. Красноярск,
-              %span.sp-address-value ул. Карла Маркса, 102, 1 этаж
-              %br/
-              +7 (391) 211-01-20, с 10:00–20:00
-              %br/
-              (без перерыва и выходных)
-        .sp-address-item
-          .sp-address-item-highlight{"data-latitude" => "55.98698", "data-longitude" => "92.886297"}
-            .h-item ТК "Енисей"
-            .text-mini
-              г. Красноярск,
-              %span.sp-address-value ул. 60 лет Октября, 48, 1 этаж
-              %br/
-              с 10:00 до 20:00 (без перерыва и выходных)
-              %br/
-        .sp-address-item
-          .sp-address-item-highlight{"data-latitude" => "56.00402", "data-longitude" => "92.931501"}
-            .h-item ТЦ «Красноярье»
-            .text-mini
-              %span.sp-address-value.na пр. им. г. «Красноярский рабочий», 120
-              г. Красноярск, пр. Красноярский
-              %br/
-              Рабочий, 120 +7 (391) 295-57-59,
-              %br/
-              с 10:00–20:00 (без перерыва и выходных)
+        - @stores.each do |store|
+          .sp-address-item
+            .sp-address-item-highlight.sp-address-item-highlight-on{"data-latitude" => "#{store.lat}", "data-longitude" => "#{store.lng}"}
+              .h-item= store.name
+              .text-mini
+                = store.address
+                %br/
+                #{store.phone}, #{store.opening_hours}
   #sp-map.sp-map-layout-block
