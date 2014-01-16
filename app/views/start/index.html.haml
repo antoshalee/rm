@@ -39,9 +39,9 @@
       %h2.h-section.gold.txa-c.mb24.page-h-anim
         %a.thin-link.gold{:href => "/stores"} Сеть магазинов
       #sp-address-list.sp-address-list.jst-layout
-        - @stores.each do |store|
+        - @stores.each_with_index do |store, ind|
           .sp-address-item
-            .sp-address-item-highlight.sp-address-item-highlight-on{"data-latitude" => "#{store.lat}", "data-longitude" => "#{store.lng}"}
+            .sp-address-item-highlight{"data-latitude" => "#{store.lat}", "data-longitude" => "#{store.lng}", class: (ind==0) && 'sp-address-item-highlight-on'}
               .h-item= store.name
               .text-mini
                 = store.address
