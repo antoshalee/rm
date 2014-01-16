@@ -15,4 +15,4 @@
   .nl-aside-col.lb
     %h2.aside-hdr.tb-brd.gold-brd.alt-font
       %a.thin-link.gold{:href => offers_path} Акции и скидки
-    = render 'sidebars/offers', offers:  Offer.order('created_at desc').first(2)
+    = render 'sidebars/offers', offers:  Offer.order('created_at desc').where(discount: true)
