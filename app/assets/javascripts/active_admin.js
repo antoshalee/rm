@@ -27,6 +27,24 @@ $(document).ready(function(){
 		}
 	});
 
+	$('#collection_multiupload_form').fileupload({
+		dropZone: $('#collection_files_dropzone'),
+		done: function(e, data) {
+			console.log(data)
+			var thumb_url = data.result.thumb_url;
+			var fullscreen_url = data.result.fullscreen_url;
+			var new_tr = '<tr>' +
+                      	'<td class="">' +
+                      	'<a class="igallery_item" href="' + fullscreen_url + '">' +
+                      	'<img alt="" src="'+ thumb_url +'"></a></td>' +
+                      	'<td class=""></td><td class=""></td></tr>';
+
+			// var new_tr = $('#collection_items_table tr').last().clone();
+			$('#collection_items_table').append(new_tr);
+			initIgallery();
+		}
+	});
+
 	$('.sidebar_changer').change(function() {
 		// alert('huy')
 
