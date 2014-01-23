@@ -18,3 +18,11 @@
 /config/application.yml
 /csv
 *.DS_Store
+
+.rvmrc
+.ruby-gemset
+.powrc
+.powder
+.railsrc
+.idea
+.sass-cache
