@@ -69,7 +69,9 @@ ActiveAdmin.register Collection do
       table_for collection.collection_items, id: "collection_items_table" do
         column "Фотография" do |item|
           if item.image?
-            image_tag(item.image.thumb.url)
+            link_to item.image.url, class: 'igallery_item' do
+              image_tag(item.image.thumb.url)
+            end
           end
         end
         column "Артикул" do |item|
