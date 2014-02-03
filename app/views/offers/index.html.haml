@@ -15,7 +15,7 @@
           %a.onhoverlink-signal.thin-link{href: offer_path(@main_offer)}>= @main_offer.title
           »
         .nl-date.nl-top-mes-pad Срок проведения: с #{l(@main_offer.date_start)}–#{l(@main_offer.date_finish)}
-        - if offer.image.present?
+        - if @main_offer.image.present?
           %a.black.onhoverlink.block{:href => offer_path(@main_offer)}
             .nl-i-cnt.onhover-op
               = image_tag @main_offer.image.main, class: 'img-b'
