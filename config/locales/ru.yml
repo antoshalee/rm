@@ -121,6 +121,11 @@ ru:
         one: 'Менеджер'
         many: 'Менеджеров'
         other: 'Менеджеры'
+      ckeditor/picture:
+        one: 'Загруженное изображение'
+        few: 'Загруженных изображения'
+        many: 'Загруженных изображений'
+        other: 'Загруженные изображения'
     attributes:
       page:
         title: 'Заголовок'
@@ -246,3 +251,7 @@ ru:
         key: 'Ключ'
         label: 'Название'
         value: 'Значение'
+      ckeditor/picture:
+        data_file_name: 'Файл'
+        data_content_type: 'Тип файла'
+        data_file_size: 'Размер файла'

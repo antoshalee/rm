@@ -20,15 +20,13 @@
             .nl-top-mes-pad
               .nl-2col-cnt.ns.mb8
                 .nl-2col.lb
-                  %img.nl-img{alt: "", src: "/assets/addr/adrr5.jpg"}/
+                  - if (img_link = variable(:stores_descr_img_1)).present?
+                    %img.nl-img{alt: "", src: img_link}/
                 .nl-2col.lb
-                  %img.nl-img{alt: "", src: "/assets/addr/adrr2.jpg"}/
+                  - if (img_link = variable(:stores_descr_img_2)).present?
+                    %img.nl-img{alt: "", src: img_link}/
               .text-mini
-                В ювелирном доме «Ремикс» находятся
-                %a.thin-link{href: "/jewelry-discounter"} ювелирный дискаунтер
-                и
-                = succeed "." do
-                  %a.thin-link{href: "/wedding-rings-center"} центр обручальных колец
+                != variable :stores_descr_text
 
     - @stores.each_slice(2) do |slice|
       .nl-2col-cnt.nl-mb.ns
