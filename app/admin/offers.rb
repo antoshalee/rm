@@ -30,7 +30,8 @@ ActiveAdmin.register Offer do
       f.input :date_finish
       f.input :lead, :input_html => {rows: 4}
       f.input :content, as: :ckeditor
-      f.input :image
+      f.input :image, hint: ("Допустимые форматы .jpg, .jpeg, .png, .gif" + (f.object.image.present? && !f.object.new_record? ? "<br>Текущее изображение:<br>" + image_tag(f.object.image.aside.url) : "")).html_safe
+      f.input :slide_image, hint: ("Допустимые форматы .jpg, .jpeg, .png, .gif" + (f.object.slide_image.present? && !f.object.new_record? ? "<br>Текущее изображение:<br>" + image_tag(f.object.slide_image.aside.url) : "")).html_safe
       f.input :tag_list
       f.input :is_main, label: t("activerecord.attributes.offer.is_main") + " (если галочка выставлена, данная акция будет отображаться самой большой на странице акций)"
       f.input :discount
@@ -51,6 +52,9 @@ ActiveAdmin.register Offer do
       row :tag_list
       row :image do |a|
         image_tag a.image.url
+      end
+      row :slide_image do |a|
+        image_tag a.slide_image.url
       end
       row :is_main do |item|
         item.is_main? ? 'Да' : 'Нет'

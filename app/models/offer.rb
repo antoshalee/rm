@@ -1,8 +1,9 @@
 class Offer < ActiveRecord::Base
   attr_accessible :date_start, :date_finish, :lead, :content, :title,
-    :image, :is_main, :tag_list, :discount, :sidebar_id
+    :image, :slide_image, :is_main, :tag_list, :discount, :sidebar_id
   belongs_to :sidebar
   mount_uploader :image, OfferImageUploader
+  mount_uploader :slide_image, OfferImageUploader
   acts_as_taggable
   acts_as_list
   after_initialize :set_default_values
