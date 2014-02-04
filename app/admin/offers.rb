@@ -51,10 +51,10 @@ ActiveAdmin.register Offer do
       end
       row :tag_list
       row :image do |a|
-        a.image.blank? ? "" : image_tag a.image.url
+        a.image.blank? ? "" : image_tag(a.image.url)
       end
       row :slide_image do |a|
-        a.slide_image.blank? ? "" : image_tag a.slide_image.url
+        a.slide_image.blank? ? "" : image_tag(a.slide_image.url)
       end
       row :is_main do |item|
         item.is_main? ? 'Да' : 'Нет'
